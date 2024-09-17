@@ -1,7 +1,7 @@
 :root{
     --couleur-violet: #46475c;
     --couleur-violet-assombri-70-prct: #15151c;
-    --couleur-jaune: #e6b512;
+
 
     --couleur-gris-clair: #4e6c84;
     --couleur-gris-moyen: #374c5d;
@@ -72,7 +72,7 @@ font-style: normal;
 blockquote{
     padding: 20px;
     border-top-left-radius: 15px;
-    color: var(--couleur-vert-fonce);
+    color: var(--couleur-vert-moyen);
     background-color: #2b2b2b;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size:2.5svw;
@@ -86,7 +86,7 @@ blockquote{
     font-weight: 400;
     font-style: normal;
     font-size:3svw;
-    color: var(--couleur-jaune);
+    color: var(--couleur-jaune-fonc);
 }
 
 .titre-bandeau-lecon{
@@ -99,7 +99,9 @@ blockquote{
 
 .fond-activite{
     background-color: var(--couleur-jaune-assombri-70-prct);
-    padding:20px;
+    padding:2svw;
+    margin-bottom:1svw;
+    border-radius: 2svw;
 }
 
 .fond-lecon{

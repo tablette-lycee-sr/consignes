@@ -2,7 +2,23 @@
     --couleur-violet: #46475c;
     --couleur-violet-assombri-70-prct: #15151c;
     --couleur-jaune: #e6b512;
+
+    --couleur-gris-clair: #4e6c84;
+    --couleur-gris-moyen: #374c5d;
+    --couleur-gris-fonce: #212e38;
+    --couleur-vert-clair: #00bcc6;
+    --couleur-vert-moyen: #00a4ad;
+    --couleur-vert-fonce: #006d72;
+    --couleur-bleu-clair: #cceeff;
+    --couleur-bleu-moyen: #aae3ff;
+    --couleur-bleu-fonce: #47c3ff;
+    --couleur-jaune-clair: #ffd867;
+    --couleur-jaune-moyen: #ffc009;
+    --couleur-jaune-fonce: #e6b512;
+    --couleur-jaune-orange: #e78800;
     --couleur-jaune-assombri-70-prct: #453605;
+
+
 }
 body{
     background-color: #1f1f1f;
@@ -23,6 +39,15 @@ h1{
     font-size:5svw;
     color: #aae3ff;
 }
+
+h3{
+    font-family: "Indie Flower", cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size:4svw;
+    color: #aae3ff;
+}
+
 
 details > summary {
     list-style: none;
@@ -47,7 +72,7 @@ font-style: normal;
 blockquote{
     padding: 20px;
     border-top-left-radius: 15px;
-    color: rgb(235, 228, 188);
+    color: var(--couleur-vert-fonce);
     background-color: #2b2b2b;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size:2.5svw;

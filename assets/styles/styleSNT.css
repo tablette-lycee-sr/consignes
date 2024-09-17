@@ -38,6 +38,12 @@ details > summary {
     padding-left: 30px;
 }
 
+.bandeau {
+font-family: "Indie Flower", cursive;
+font-weight: 400;
+font-style: normal;
+}
+
 blockquote{
     padding: 20px;
     border-top-left-radius: 15px;
@@ -73,9 +79,19 @@ blockquote{
 
 .fond-lecon{
     background-color: var(--couleur-violet-assombri-70-prct);
-    padding:20px;
+    padding:2svw;
+    margin-bottom:1svw;
+    border-radius: 2svw;
 }
 
 .trash{
 background-color: #136e71;
 }
+
+
+span{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size:2.5svw;
+  }

@@ -15,12 +15,17 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
     <title>SNT Consignes - Python Partie 1</title>
   </head>
 
   <body>
-    <h1 id="instructions">Instructions</h1>
     <div class="bandeau">
+      <br />
       <img src="assets/bandeaux/Cover_Th0_Partie-2.png" alt="img" />
     </div>
     <h1 id="objectifs">OBJECTIFS</h1>
@@ -37,7 +42,7 @@
 
     <p><br /><br /><br /></p>
     <h1 id="-tapes">ÉTAPES</h1>
-    <p><br /><br /></p>
+    <p><br /></p>
     <!--  === ÉTAPE 03 === -->
     <div class="bandeau"><img src="assets/bandeaux/03.png" /></div>
     <h3 id="03-1-la-d-claration-de-variable">
@@ -46,70 +51,82 @@
     <details>
       <summary>
         <div class="titre-bandeau-lecon">
-          <img
-            src="assets/bandeaux/bandeau_lecon.png"
-            width="80svw"
-          /> Leçon
+          <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
         </div>
       </summary>
       <div class="fond-lecon">
+        -
+        <span class="copier"
+          >Une variable est une zone de la mémoire de l&#39;ordinateur dans
+          laquelle on peut stocker une valeur. L&#39;expression
+          &quot;variable&quot; signifie que cette valeur peut changer.</span
+        >
+        <p>
+          <ins>Par exemple:</ins>
+          Dans un jeu vidéo, une variable sert à stocker le score d&#39;un
+          joueur. Ce score évolue pendant toute la partie, la variable va donc
+          tout le temps changer de valeur (dans la capture d&#39;écran
+          ci-dessous Mario a 2600 points...pour l'instant).
+        </p>
+        <img src="assets/images/mario.jpg" width="30%" /><br />
+      </div>
+      <div class="fond-lecon">
+        - On peut se représenter une variable comme une boite dans laquelle on
+        va stocker des affaires (=nos<em><strong>données</strong></em
+        >). Cette boite est rangée avec d&#39;autres sur une étagère (=la
+        <em><strong>mémoire</strong></em> de l&#39;ordinateur). Suivant ce que
+        l&#39;on stocke dedans, les boites peuvent avoir des tailles différentes
+        (=le <em><strong>type</strong></em> de donnée). Le plus important pour
+        pouvoir retrouver nos affaires, c&#39;est d&#39;indiquer son contenu en
+        collant une étiquette sur la boite (=le <strong><em>nom</em></strong> de
+        la variable). 
+        <p></p> <ins>Par exemple:</ins>
+        &gt; On crée deux variables: &gt; l&#39;une est nommée
+        <code>score</code> et va servir à stocker un nombre entier (pour le
+        moment sa valeur est 10), l&#39;autre variable est nommée
+        <code>message</code> et contiendra une chaîne de caractères (il
+        s&#39;agit du message de fin de partie. Suivant la langue sélectionnée
+        par le joueur, il sera différent. Pour l&#39;instant on y a placé
+        l&#39;expression &quot;Game over&quot;).
+        </p>
+        <img src="assets/boites.png" width="300px" />
 
-      - Une variable est une zone de la mémoire de l&#39;ordinateur dans
-      laquelle on peut stocker une valeur. L&#39;expression &quot;variable&quot;
-      signifie que cette valeur peut changer. &gt; <ins>Par exemple:</ins><br />
-      &gt; Dans un jeu vidéo, une variable sert à stocker le score d&#39;un
-      joueur. Ce score évolue pendant toute la partie, la variable va donc tout
-      le temps changer de valeur (dans la capture d&#39;écran ci-dessous Mario a
-      14 points). &gt; <img src="assets/mario.jpg" width="300px" />
-      - On peut se représenter une variable comme une boite dans laquelle on va
-      stocker des affaires (=nos
-      <em><strong>données</strong></em
-      >). Cette boite est rangée avec d&#39;autres sur une étagère (=la
-      <em><strong>mémoire</strong></em> de l&#39;ordinateur). Suivant ce que
-      l&#39;on stocke dedans, les boites peuvent avoir des tailles différentes
-      (=le <em><strong>type</strong></em> de donnée). Le plus important pour
-      pouvoir retrouver nos affaires, c&#39;est d&#39;indiquer son contenu en
-      collant une étiquette sur la boite (=le <strong><em>nom</em></strong> de
-      la variable). &gt; <ins>Par exemple:</ins><br />
-      &gt; On crée deux variables: &gt; l&#39;une est nommée
-      <code>score</code> et va servir à stocker un nombre entier (pour le moment
-      sa valeur est 10), l&#39;autre variable est nommée <code>message</code> et
-      contiendra une chaîne de caractères (il s&#39;agit du message de fin de
-      partie. Suivant la langue sélectionnée par le joueur, il sera différent.
-      Pour l&#39;instant on y a placé l&#39;expression &quot;Game over&quot;).
-      &gt; <img src="assets/boites.png" width="300px" />
+        - Pour effectuer cette opération en language informatique, il faut donc
+        -
+        <ins>typer</ins> une variable pour réserver un espace mémoire plus ou
+        moins grand (une chaine de caractère prend souvent plus de place
+        qu&#39;un nombre entier).
+        <em>Cela revient à choisir la taille de la boite</em> -
+        <ins>déclarer</ins> la variable en lui donnant un nom.
+        <em
+          >C&#39;est l&#39;étape où l&#39;on colle une étiquette sur la
+          boite</em
+        >
+        - <ins>affecter</ins> une valeur à la variable.
+        <em>C&#39;est le moment où l&#39;on met nos affaires dans la boite</em
+        ><br /><br />
+      </div>
+      <div class="fond-lecon">
+        Heureusement, en Python la syntaxe de cette opération est très simple:
+        <img src="assets/affectation.png" width="300px" />
 
-      - Pour effectuer cette opération en language informatique, il faut donc -
-      <ins>typer</ins> une variable pour réserver un espace mémoire plus ou
-      moins grand (une chaine de caractère prend souvent plus de place qu&#39;un
-      nombre entier). <em>Cela revient à choisir la taille de la boite</em> -
-      <ins>déclarer</ins> la variable en lui donnant un nom.
-      <em
-        >C&#39;est l&#39;étape où l&#39;on colle une étiquette sur la boite</em
-      >
-      - <ins>affecter</ins> une valeur à la variable.
-      <em>C&#39;est le moment où l&#39;on met nos affaires dans la boite</em
-      ><br /><br />
-      Heureusement, en Python la syntaxe de cette opération est très simple:
-      <img src="assets/affectation.png" width="300px" />
-
-      &gt; <ins>Remarque:</ins><br />
-      &gt; C&#39;est bien pratique pour nous, le language Python, contrairement
-      à d&#39;autres languages, n&#39;exige pas que nous précisions la taille de
-      la boite (c&#39;est à dire le type de la variable). Un simple signe
-      <code>=</code>
-      et Python crée une variable à la bonne dimension (c&#39;est à dire
-      qu&#39;il réserve une portion de mémoire suffisante pour stocker vos
-      données).
+        &gt; <ins>Remarque:</ins><br />
+        &gt; C&#39;est bien pratique pour nous, le language Python,
+        contrairement à d&#39;autres languages, n&#39;exige pas que nous
+        précisions la taille de la boite (c&#39;est à dire le type de la
+        variable). Un simple signe
+        <code>=</code>
+        et Python crée une variable à la bonne dimension (c&#39;est à dire
+        qu&#39;il réserve une portion de mémoire suffisante pour stocker vos
+        données).
+      </div>
     </details>
 
     <details>
       <summary>
         <div class="titre-bandeau-activite">
-          <img
-            src="assets/bandeaux/bandeau_activite.png"
-            width="80svw"
-          /> Activité
+          <img src="assets/bandeaux/bandeau_activite.png" width="80svw" />
+          Activité
         </div>
       </summary>
       <div class="fond-activite">

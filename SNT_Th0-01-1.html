@@ -26,7 +26,7 @@
   <body>
     <div class="bandeau">
       <br />
-      <img src="assets/bandeaux/Cover_Th0_Partie-2.png" alt="img" />
+      <img src="assets/bandeaux/Cover_Th0_Partie-1.png" alt="img" />
     </div>
     <h1 id="objectifs">OBJECTIFS</h1>
     <blockquote>
@@ -43,6 +43,193 @@
     <p><br /><br /><br /></p>
     <h1 id="-tapes">ÉTAPES</h1>
     <p><br /></p>
+	
+	
+	<!--  === ÉTAPE 01 === -->
+    <div class="bandeau"><img src="assets/bandeaux/01.png" /></div>
+    
+	<h3 id="01-1-les-instructions">01-1. Les instructions</h3>
+    
+	<details>
+      <summary>
+        <div class="titre-bandeau-lecon">
+          <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+        </div>
+      </summary>
+      <div class="fond-lecon">
+	    - <span>Un programme est composé d&#39;une suite <ins>d&#39;instructions</ins>.</span>
+      Chaque instruction est une action que le programme doit exécuter. <br />
+	  </div>
+	  <div class="fond-lecon">
+      - On rédige généralement une seule instruction par ligne de code.
+      <span>Celles-ci sont lues <ins>l&#39;une après l&#39;autre</ins>, de haut en
+      bas, de la première à la dernière ligne.</span>
+      <img src="assets/images/algo-instructions.png" height="100px" />
+	  </div>
+	  <div class="fond-lecon">
+      - <span>Ensuite ce script est lu par l&#39;interpréteur Python </span>que l&#39;on
+      lance en appuyant sur le bouton Exécuter en bas de la fenêtre de Script
+      <img src="assets/images/bouton-executer.png" height="32px" />
+	  </div>
+    </details>
+
+    <details>
+      <summary>
+		<div class="titre-bandeau-activite">
+          <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
+        </div>
+      </summary>
+      <div class="fond-activite">
+      - Repérez la fenêtre du script <code>main.py</code>. <br />
+
+      - <code>main</code> signifie principal. C&#39;est le code de démarrage
+      de tout programme python <br />
+      - <code>.py</code> est l&#39;extension des fichiers python
+	  </div>
+	  <div class="fond-activite">
+	  - Lancez ce script en cliquant sur le bouton en haut de la fenêtre.
+	  <img src="assets/images/bouton-executer.png" height="32px" />
+	  - Observez le résultat dans la fenêtre Console.
+	  </div>
+    </details>
+
+	<h3 id="01-2-la-syntaxe">01-2. La syntaxe</h3>
+    
+	<details>
+      <summary>
+        <div class="titre-bandeau-lecon">
+          <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+        </div>
+      </summary>
+      <div class="fond-lecon">
+      - Il existe une <ins>syntaxe</ins> propre à chaque langage informatique
+      pour rédiger une instruction. En Python, il faut en particulier faire
+      attention à 
+	  - respecter la <ins>casse</ins> (Majuscules et minuscules).
+      Par exemple <code>Print</code> et <code>print</code> ne sont pas compris
+      de la même manière par le programme. 
+	  - respecter les <ins>indentations</ins> (espaces au début de la ligne d&#39;instruction).
+      Par exemple, <code>print(&quot;Cette ligne fonctionne&quot;) print(&quot;Celle-là génère
+        une erreur&quot;)</code>
+      </div>
+	  <div class="fond-lecon">
+	  - Enfin, tout le texte du script n&#39;est pas exécuté. Les programmeurs
+      ajoutent des <ins>commentaires</ins> pour faciliter la lecture et la
+      correction du code.
+      <code># Une ligne de commentaires &quot;&quot;&quot; Un bloc de commentaires
+        sur plusieurs lignes &quot;&quot;&quot;</code>
+		</div>
+    </details>
+
+    <details>
+      <summary>
+		<div class="titre-bandeau-activite">
+          <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
+        </div>
+      </summary>
+      <div class="fond-activite">
+
+      - Dans la fenêtre <code>main.py</code>, repérez la ligne 22 du script
+
+      <code>22 # Print(&quot;Ça marche !!!&quot;)</code>
+      - Modifiez cette ligne afin qu&#39;elle affiche &quot;Ça marche !!!&quot;
+      dans la fenêtre de la Console <br />
+      &gt; <ins>Indice:</ins> Il y a 3 modifications à apporter à cette ligne
+      pour qu&#39;elle s&#39;affiche correctement. &gt; - Lancez le script pour
+      vérifier. Corrigez à nouveau en cas de message d&#39;erreur dans la
+      console.
+	  </div>
+    </details>
+
+    <p><br /><br /></p>
+    <!--  === ÉTAPE 02 === -->
+    <p><img src="assets/bandeaux/02.png" /></p>
+    <h3 id="02-1-les-donn-es-num-riques">02-1. Les données numériques</h3>
+    <details>
+      <summary>
+        Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
+      </summary>
+
+      - Avec la fonction <code>print()</code>, on peut afficher un nombre entier
+      dans la console. <br />
+      <em>Par exemple:</em>
+      <code>print(1234)</code>
+      &gt; Il est aussi possible de manipuler des nombres décimaux (c&#39;est à
+      dire avec une virgule). <br />
+      Attention: on utilise alors le point du pavé numérique <code>.</code>, et
+      non la virgule <code>,</code> qui est réservée aux textes. <br />
+      &gt; <em>Par exemple:</em> &gt; <code>&gt; print(12.34) &gt;</code> &gt; -
+      On peut aussi effectuer des calculs et en afficher le résultat: <br />
+      <em>Par exemple:</em>
+      <code
+        >print(13+2) # Addition print(400-50) # Soustraction print(20*10) #
+        Multiplication print(12/4) # Division</code
+      ><br />&gt; Attention: le symbole de la multiplication n&#39;est pas un
+      <code>x</code> mais l&#39;astérisque <code>*</code> <br />
+    </details>
+
+    <details>
+      <summary>
+        Activité<img src="assets/bandeaux/activite.png" width="50%" />
+      </summary>
+
+      - Repérez les lignes 31, 33 et 35 du script. Elles proposent une fonction
+      <code>print()</code> dont les arguments sont vides (il n&#39;y a rien
+      entre les parenthèses). &gt; À partir de maintenant, vous savez qu&#39;il
+      faut lancer le script avec le bouton &quot;Run&quot; à chaque fois que
+      vous voulez vérifier que votre code fonctionne. - Complétez chacune des
+      fonctions pour qu&#39;elles affichent les résultats suivants dans la
+      console: - <ins>A.</ins> Le nombre 10 &gt; (aucun calcul n&#39;est
+      nécessaire) - <ins>B.</ins> Le nombre de jours restant dans ce mois &gt;
+      (soustraction) - <ins>C.</ins> Le nombre d&#39;heures théoriques de SNT en
+      Seconde. Pour mémoire, l&#39;année scolaire compte en théorie 36 semaines
+      et on se voit 1h30 par semaine. &gt; (multiplication)
+    </details>
+
+    <h3 id="02-2-les-cha-nes-de-caract-res">02-2. Les chaînes de caractères</h3>
+    <details>
+      <summary>
+        Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
+      </summary>
+
+      - Avec la fonction <code>print()</code>, on peut aussi afficher du texte
+      dans la console. On utilise alors des <ins>guillemets</ins> autour de la
+      chaine de caractères. <br />
+      <em>Par exemple:</em>
+      <code>print(&quot;Coucou !&quot;)</code><br />
+      - De manière plus surprenante, on peut également faire des opérations
+      mathématiques sur du texte: - Pour ajouter une chaine de caractère à une
+      autre: &gt; (On parle alors de &quot;concaténation&quot; )
+      <code
+        >print(&quot;Salut&quot;+&quot; &quot;+&quot;Bob !&quot;) # Salut Bob
+        !</code
+      ><br />
+      - Pour répéter un affichage de texte
+      <code>print(3*&quot;Coucou ! &quot;) # Coucou ! Coucou ! Coucou !</code
+      ><br />
+    </details>
+
+    <details>
+      <summary>
+        Activité<img src="assets/bandeaux/activite.png" width="50%" />
+      </summary>
+
+      - Repérez les lignes 40, 42 et 44 du script. Elles proposent une fonction
+      <code>print()</code> dont les arguments sont vides. - Complétez chacune
+      des fonctions pour qu&#39;elles affichent les résultats suivants dans la
+      console: - <ins>A.</ins> Salut &gt; (aucune opération n&#39;est
+      nécessaire, mais attention aux guillemets) - <ins>B.</ins> Je
+      m&#39;appelle Bob &gt; Le prénom (que vous pouvez remplacer par le votre)
+      doit être ajouté à une première chaîne de caractères contenant tout le
+      début de la phrase. <br />
+      &gt; (concaténation par addition, attention aux espaces) -
+      <ins>C.</ins> Un motif composé de <code>O</code> et de
+      <code>X</code> répété 500 fois &gt; (répétition par multiplication,
+      attention aux espaces) &gt; <img src="assets/XOXO.png" width="60%" />
+      &gt;
+    </details>
+	
+	
     <!--  === ÉTAPE 03 === -->
     <div class="bandeau"><img src="assets/bandeaux/03.png" /></div>
     <h3 id="03-1-la-d-claration-de-variable">
@@ -303,170 +490,7 @@
     </details>
 
     <p><a href="ActivitePython_2.pdf">fichier pdf</a></p>
-    <!--  === ÉTAPE 01 === -->
-    <p><img src="assets/bandeaux/01.png" /></p>
-    <h3 id="01-1-les-instructions">01-1. Les instructions</h3>
-    <details>
-      <summary>
-        Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
-      </summary>
-      - Un programme est composé d&#39;une suite <ins>d&#39;instructions</ins>.
-      Chaque instruction est une action que le programme doit exécuter. <br />
-      - On rédige généralement une seule instruction par ligne de code.
-      Celles-ci sont lues <ins>l&#39;une après l&#39;autre</ins>, de haut en
-      bas, de la première à la dernière ligne.
-      <img src="assets/algo-instructions.png" height="100px" />
-      - Ensuite ce script est lu par l&#39;interpréteur Python que l&#39;on
-      lance en appuyant sur le bouton Run en haut de la fenêtre
-      <img src="assets/bouton-run.png" height="32px" />
-    </details>
-
-    <details>
-      <summary>
-        Activité<img src="assets/bandeaux/activite.png" width="50%" />
-      </summary>
-
-      - Repérez la fenêtre du script <code>main.py</code>. <br />
-
-      &gt; <code>main</code> signifie principal. C&#39;est le code de démarrage
-      de tout programme python <br />
-      &gt; <code>.py</code> est l&#39;extension des fichiers python - Lancez ce
-      script en cliquant sur le bouton en haut de la fenêtre.<img
-        src="assets/bouton-run.png"
-        height="32px"
-      />
-
-      - Observez le résultat dans la fenêtre Console.
-    </details>
-
-    <h3 id="01-2-la-syntaxe">01-2. La syntaxe</h3>
-    <details>
-      <summary>
-        Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
-      </summary>
-
-      - Il existe une <ins>syntaxe</ins> propre à chaque langage informatique
-      pour rédiger une instruction. En Python, il faut en particulier faire
-      attention à - respecter la <ins>casse</ins> (Majuscules et minuscules).
-      Par exemple <code>Print</code> et <code>print</code> ne sont pas compris
-      de la même manière par le programme. - respecter les
-      <ins>indentations</ins> (espaces au début de la ligne d&#39;instruction).
-      Par exemple,
-      <code
-        >print(&quot;Cette ligne fonctionne&quot;) print(&quot;Celle-là génère
-        une erreur&quot;)</code
-      >
-      - Enfin, tout le texte du script n&#39;est pas exécuté. Les programmeurs
-      ajoutent des <ins>commentaires</ins> pour faciliter la lecture et la
-      correction du code.
-      <code
-        ># Une ligne de commentaires &quot;&quot;&quot; Un bloc de commentaires
-        sur plusieurs lignes &quot;&quot;&quot;</code
-      >
-    </details>
-
-    <details>
-      <summary>
-        Activité<img src="assets/bandeaux/activite.png" width="50%" />
-      </summary>
-
-      - Dans la fenêtre <code>main.py</code>, repérez la ligne 22 du script
-
-      <code>22 # Print(&quot;Ça marche !!!&quot;)</code>
-      - Modifiez cette ligne afin qu&#39;elle affiche &quot;Ça marche !!!&quot;
-      dans la fenêtre de la Console <br />
-      &gt; <ins>Indice:</ins> Il y a 3 modifications à apporter à cette ligne
-      pour qu&#39;elle s&#39;affiche correctement. &gt; - Lancez le script pour
-      vérifier. Corrigez à nouveau en cas de message d&#39;erreur dans la
-      console.
-    </details>
-
-    <p><br /><br /></p>
-    <!--  === ÉTAPE 02 === -->
-    <p><img src="assets/bandeaux/02.png" /></p>
-    <h3 id="02-1-les-donn-es-num-riques">02-1. Les données numériques</h3>
-    <details>
-      <summary>
-        Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
-      </summary>
-
-      - Avec la fonction <code>print()</code>, on peut afficher un nombre entier
-      dans la console. <br />
-      <em>Par exemple:</em>
-      <code>print(1234)</code>
-      &gt; Il est aussi possible de manipuler des nombres décimaux (c&#39;est à
-      dire avec une virgule). <br />
-      Attention: on utilise alors le point du pavé numérique <code>.</code>, et
-      non la virgule <code>,</code> qui est réservée aux textes. <br />
-      &gt; <em>Par exemple:</em> &gt; <code>&gt; print(12.34) &gt;</code> &gt; -
-      On peut aussi effectuer des calculs et en afficher le résultat: <br />
-      <em>Par exemple:</em>
-      <code
-        >print(13+2) # Addition print(400-50) # Soustraction print(20*10) #
-        Multiplication print(12/4) # Division</code
-      ><br />&gt; Attention: le symbole de la multiplication n&#39;est pas un
-      <code>x</code> mais l&#39;astérisque <code>*</code> <br />
-    </details>
-
-    <details>
-      <summary>
-        Activité<img src="assets/bandeaux/activite.png" width="50%" />
-      </summary>
-
-      - Repérez les lignes 31, 33 et 35 du script. Elles proposent une fonction
-      <code>print()</code> dont les arguments sont vides (il n&#39;y a rien
-      entre les parenthèses). &gt; À partir de maintenant, vous savez qu&#39;il
-      faut lancer le script avec le bouton &quot;Run&quot; à chaque fois que
-      vous voulez vérifier que votre code fonctionne. - Complétez chacune des
-      fonctions pour qu&#39;elles affichent les résultats suivants dans la
-      console: - <ins>A.</ins> Le nombre 10 &gt; (aucun calcul n&#39;est
-      nécessaire) - <ins>B.</ins> Le nombre de jours restant dans ce mois &gt;
-      (soustraction) - <ins>C.</ins> Le nombre d&#39;heures théoriques de SNT en
-      Seconde. Pour mémoire, l&#39;année scolaire compte en théorie 36 semaines
-      et on se voit 1h30 par semaine. &gt; (multiplication)
-    </details>
-
-    <h3 id="02-2-les-cha-nes-de-caract-res">02-2. Les chaînes de caractères</h3>
-    <details>
-      <summary>
-        Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
-      </summary>
-
-      - Avec la fonction <code>print()</code>, on peut aussi afficher du texte
-      dans la console. On utilise alors des <ins>guillemets</ins> autour de la
-      chaine de caractères. <br />
-      <em>Par exemple:</em>
-      <code>print(&quot;Coucou !&quot;)</code><br />
-      - De manière plus surprenante, on peut également faire des opérations
-      mathématiques sur du texte: - Pour ajouter une chaine de caractère à une
-      autre: &gt; (On parle alors de &quot;concaténation&quot; )
-      <code
-        >print(&quot;Salut&quot;+&quot; &quot;+&quot;Bob !&quot;) # Salut Bob
-        !</code
-      ><br />
-      - Pour répéter un affichage de texte
-      <code>print(3*&quot;Coucou ! &quot;) # Coucou ! Coucou ! Coucou !</code
-      ><br />
-    </details>
-
-    <details>
-      <summary>
-        Activité<img src="assets/bandeaux/activite.png" width="50%" />
-      </summary>
-
-      - Repérez les lignes 40, 42 et 44 du script. Elles proposent une fonction
-      <code>print()</code> dont les arguments sont vides. - Complétez chacune
-      des fonctions pour qu&#39;elles affichent les résultats suivants dans la
-      console: - <ins>A.</ins> Salut &gt; (aucune opération n&#39;est
-      nécessaire, mais attention aux guillemets) - <ins>B.</ins> Je
-      m&#39;appelle Bob &gt; Le prénom (que vous pouvez remplacer par le votre)
-      doit être ajouté à une première chaîne de caractères contenant tout le
-      début de la phrase. <br />
-      &gt; (concaténation par addition, attention aux espaces) -
-      <ins>C.</ins> Un motif composé de <code>O</code> et de
-      <code>X</code> répété 500 fois &gt; (répétition par multiplication,
-      attention aux espaces) &gt; <img src="assets/XOXO.png" width="60%" />
-      &gt;
-    </details>
+    
   </body>
 </html>
+

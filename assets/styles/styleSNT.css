@@ -1,3 +1,9 @@
+:root{
+    --couleur-violet: #46475c;
+    --couleur-violet-assombri-70-prct: #15151c;
+    --couleur-jaune: #e6b512;
+    --couleur-jaune-assombri-70-prct: #453605;
+}
 body{
     background-color: #1f1f1f;
     color: white;
@@ -18,6 +24,15 @@ h1{
     color: #aae3ff;
 }
 
+details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  
+
+
 .bandeau img{
     width:90%;
     padding-left: 30px;
@@ -32,6 +47,33 @@ blockquote{
     font-size:2.5svw;
 
 
+}
+
+
+.titre-bandeau-activite{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3svw;
+    color: var(--couleur-jaune);
+}
+
+.titre-bandeau-lecon{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3svw;
+    color: var(--couleur-violet);
+}
+
+.fond-activite{
+    background-color: var(--couleur-jaune-assombri-70-prct);
+    padding:20px;
+}
+
+.fond-lecon{
+    background-color: var(--couleur-violet-assombri-70-prct);
+    padding:20px;
 }
 
 .trash{

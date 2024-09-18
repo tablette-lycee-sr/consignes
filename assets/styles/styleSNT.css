@@ -29,7 +29,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-    font-size:2svw;
+    font-size:2.5svw;
 }
 
 h1{
@@ -80,6 +80,15 @@ blockquote{
 
 }
 
+.titre-bandeau-activite:hover{
+    cursor: pointer;
+}
+
+.titre-bandeau-lecon:hover{
+    cursor: pointer;
+}
+
+
 
 .titre-bandeau-activite{
     font-family: "Anton", sans-serif;
@@ -120,5 +129,5 @@ span{
     font-family: "Indie Flower", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size:2.5svw;
+    font-size:3svw;
   }

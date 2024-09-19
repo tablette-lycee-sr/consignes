@@ -102,21 +102,22 @@
     </summary>
     <div class="fond-lecon">
       - Il existe une <ins>syntaxe</ins> propre à chaque langage informatique
-      pour rédiger une instruction. En Python, il faut en particulier faire
-      attention à
-      - respecter la <ins>casse</ins> (Majuscules et minuscules).
+      pour rédiger une instruction. <span>En Python, il faut particulièrement faire
+      attention à</span>
+      <ul>
+        <li>
+      <span>- respecter la <ins>casse</ins> (Majuscules et minuscules). </span>
       Par exemple <code>Print</code> et <code>print</code> ne sont pas compris
-      de la même manière par le programme.
-      - respecter les <ins>indentations</ins> (espaces au début de la ligne d&#39;instruction).
-      Par exemple, <code>print(&quot;Cette ligne fonctionne&quot;) print(&quot;Celle-là génère
-        une erreur&quot;)</code>
-    </div>
+      de la même manière par le programme.</li>
+    <li><span>- respecter les <ins>indentations</ins> (espaces au début de la ligne d&#39;instruction).</span>
+      <br />Par exemple, <br/><img src="assets/images/print(erreur).png" width="70%" /></li>
+      </ul>
+      </div>
     <div class="fond-lecon">
-      - Enfin, tout le texte du script n&#39;est pas exécuté. Les programmeurs
-      ajoutent des <ins>commentaires</ins> pour faciliter la lecture et la
-      correction du code.
-      <code># Une ligne de commentaires &quot;&quot;&quot; Un bloc de commentaires
-        sur plusieurs lignes &quot;&quot;&quot;</code>
+      - Enfin, tout le texte du script n&#39;est pas exécuté. <span>Les programmeurs
+      ajoutent aussi des <ins>commentaires</ins> pour faciliter la lecture et la
+      correction du code en plaçant un hashtag (#) en début de ligne</span> ou bien 3 guillements avant et après un commentaire sur plusieurs lignes.<br />
+      <br /><img src="assets/images/commentaires.png" width="50%" />
     </div>
   </details>
 
@@ -127,15 +128,17 @@
       </div>
     </summary>
     <div class="fond-activite">
-
-      - Dans la fenêtre <code>main.py</code>, repérez la ligne 22 du script
-
-      <code>22 # Print(&quot;Ça marche !!!&quot;)</code>
+      - Dans la fenêtre Script, repérez la ligne 22 du programme
+      <br /><img src="assets/images/print(ca-marche).png" width="60%" /><br />
+    </div>
+    <div class="fond-activite">
       - Modifiez cette ligne afin qu&#39;elle affiche &quot;Ça marche !!!&quot;
       dans la fenêtre de la Console <br />
-      &gt; <ins>Indice:</ins> Il y a 3 modifications à apporter à cette ligne
-      pour qu&#39;elle s&#39;affiche correctement. &gt; - Lancez le script pour
-      vérifier. Corrigez à nouveau en cas de message d&#39;erreur dans la
+      <ins>Indice:</ins> Il y a 3 modifications à apporter à cette ligne
+      pour qu&#39;elle s&#39;affiche correctement.<br />
+    </div>
+    <div class="fond-activite">
+      - Exécutez le script pour vérifier. Corrigez à nouveau en cas de message d&#39;erreur dans la
       console.
     </div>
   </details>
@@ -151,23 +154,24 @@
       </div>
     </summary>
     <div class="fond-lecon">
-      - Avec la fonction <code>print()</code>, on peut afficher un nombre entier
-      dans la console. <br />
+      - <span>Avec la fonction <code>print()</code>, on peut afficher un nombre entier
+      dans la console. </span><br />
       <em>Par exemple:</em>
-      <code>print(1234)</code>
+      <br /><img src="assets/images/print(1234).png" width="30%" /><br />
     </div>
     <div class="fond-lecon">
-      &gt; Il est aussi possible de manipuler des nombres décimaux (c&#39;est à
+      - Il est aussi possible de manipuler des nombres décimaux (c&#39;est à
       dire avec une virgule). <br />
       Attention: on utilise alors le point du pavé numérique <code>.</code>, et
       non la virgule <code>,</code> qui est réservée aux textes. <br />
-      &gt; <em>Par exemple:</em> &gt; <code>&gt; print(12.34) &gt;</code> &gt; -
+      <em>Par exemple:</em> <br />
+      <br /><img src="assets/images/print(12-34).png" width="30%" /><br />
     </div>
     <div class="fond-lecon">
-      On peut aussi effectuer des calculs et en afficher le résultat: <br />
+      <span>On peut aussi effectuer des calculs en utilisant les opérateurs (+-/*) </span>et en afficher le résultat: <br />
       <em>Par exemple:</em>
-      <code>print(13+2) # Addition print(400-50) # Soustraction print(20*10) #
-        Multiplication print(12/4) # Division</code><br />&gt; Attention: le symbole de la multiplication n&#39;est pas
+      <br /><img src="assets/images/print-operations.png" width="60%" /><br />
+      Attention: le symbole de la multiplication n&#39;est pas
       un
       <code>x</code> mais l&#39;astérisque <code>*</code> <br />
     </div>
@@ -176,22 +180,31 @@
   <details>
     <summary>
       <div class="titre-bandeau-activite">
-        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Leçon
+        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
       </div>
     </summary>
     <div class="fond-activite">
-
       - Repérez les lignes 31, 33 et 35 du script. Elles proposent une fonction
       <code>print()</code> dont les arguments sont vides (il n&#39;y a rien
-      entre les parenthèses). &gt; À partir de maintenant, vous savez qu&#39;il
-      faut lancer le script avec le bouton &quot;Run&quot; à chaque fois que
-      vous voulez vérifier que votre code fonctionne. - Complétez chacune des
-      fonctions pour qu&#39;elles affichent les résultats suivants dans la
-      console: - <ins>A.</ins> Le nombre 10 &gt; (aucun calcul n&#39;est
-      nécessaire) - <ins>B.</ins> Le nombre de jours restant dans ce mois &gt;
-      (soustraction) - <ins>C.</ins> Le nombre d&#39;heures théoriques de SNT en
+      entre les parenthèses). À partir de maintenant, vous savez qu&#39;il
+      faut lancer le script avec le bouton &quot;Exécuter&quot; à chaque fois que
+      vous voulez vérifier que votre code fonctionne. 
+    </div>
+    <div class="fond-activite">
+      - Complétez chacune des fonctions pour qu&#39;elles affichent les résultats suivants dans la
+      console: 
+      <ul>
+      <li><ins>A.</ins> Le nombre 10 (aucun calcul n&#39;est
+      nécessaire) 
+      </li>
+      <li>
+      <ins>B.</ins> Le nombre de jours restant dans ce mois (soustraction)
+      </li>
+      <li><ins>C.</ins> Le nombre d&#39;heures théoriques de SNT en
       Seconde. Pour mémoire, l&#39;année scolaire compte en théorie 36 semaines
-      et on se voit 1h30 par semaine. &gt; (multiplication)
+      et on se voit 1h30 par semaine. (multiplication)
+      </li>
+    </ul>
   </details>
 
   <h3 id="02-2-les-cha-nes-de-caract-res">02-2. Les chaînes de caractères</h3>
@@ -220,7 +233,7 @@
   <details>
     <summary>
       <div class="titre-bandeau-activite">
-        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Leçon
+        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
       </div>
     </summary>
     <div class="fond-activite">

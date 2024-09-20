@@ -1,8 +1,6 @@
 :root{
     --couleur-violet: #46475c;
     --couleur-violet-assombri-70-prct: #15151c;
-
-
     --couleur-gris-clair: #4e6c84;
     --couleur-gris-moyen: #374c5d;
     --couleur-gris-fonce: #212e38;
@@ -16,10 +14,9 @@
     --couleur-jaune-moyen: #ffc009;
     --couleur-jaune-fonce: #e6b512;
     --couleur-jaune-orange: #e78800;
-    --couleur-jaune-assombri-70-prct: #453605;
-
-
+    --couleur-jaune-assombri-95-prct: #181302;
 }
+
 body{
     background-color: #1f1f1f;
     color: white;
@@ -107,7 +104,7 @@ blockquote{
 }
 
 .fond-activite{
-    background-color: var(--couleur-jaune-assombri-70-prct);
+    background-color: var(--couleur-jaune-assombri-95-prct);
     padding:2svw;
     margin-bottom:1svw;
     border-radius: 2svw;
@@ -130,4 +127,5 @@ span{
     font-weight: 400;
     font-style: normal;
     font-size:3svw;
+line-height: 0.8;
   }

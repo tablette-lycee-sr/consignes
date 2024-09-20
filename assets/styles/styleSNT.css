@@ -117,6 +117,12 @@ blockquote{
     border-radius: 2svw;
 }
 
+.imgCentree {  
+    position:relative;
+    top: 0.8svw;
+
+}
+
 .trash{
 background-color: #136e71;
 }

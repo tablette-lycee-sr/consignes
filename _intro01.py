@@ -5,10 +5,30 @@ def setup():
     colorMode(HSB)
     # Set angle mode so that atan2() returns angles in degrees
     angleMode(DEGREES)
+    
+
+
+
+    
 
 
 def draw():
-    background(0)
+    background(45,100,70)
+
+    lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z']
+    lettre1 = int(random(0, 24))
+    lettre2 = int(random(0, 24))
+    lettre3 = int(random(0, 24))
+    numerohasard = int(random(1, 9))
+    code = str(numerohasard)+str(lettres[lettre1])+str(lettres[lettre2])+str(lettres[lettre3])+str(10-numerohasard)
+    textSize(22)
+    fill('limegree')
+    text("Python c'est aussi du dessin !", 100, 20)
+    fill('cornflowerblue')
+    text(code, 6, 45)
+    fill('tomato')
+    text('rainbows', 6, 70)
+
     # Draw left eye
     leftX = 150
     leftY = 200
@@ -35,3 +55,5 @@ def draw():
     fill(0)
     ellipse(12.5, 0, 25, 25)
     pop()
+
+    

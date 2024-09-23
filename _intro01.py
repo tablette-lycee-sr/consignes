@@ -1,33 +1,29 @@
 from p5 import *
 
+lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z']
+lettre1 = int(random(0, 24))
+lettre2 = int(random(0, 24))
+lettre3 = int(random(0, 24))
+numerohasard = int(random(1, 9))
+code = str(numerohasard)+str(lettres[lettre1])+str(lettres[lettre2])+str(lettres[lettre3])+str(10-numerohasard)
+
 def setup():
     createCanvas(400, 400)
     colorMode(RGB)
     # Set angle mode so that atan2() returns angles in degrees
     angleMode(DEGREES)
-    
-
-
-
-    
+       
 
 
 def draw():
     background(255,216,103)
-
-    lettres = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z']
-    lettre1 = int(random(0, 24))
-    lettre2 = int(random(0, 24))
-    lettre3 = int(random(0, 24))
-    numerohasard = int(random(1, 9))
-    code = str(numerohasard)+str(lettres[lettre1])+str(lettres[lettre2])+str(lettres[lettre3])+str(10-numerohasard)
+   
     textSize(18)
-    fill('limegree')
+    fill('tomato')
     text("Python c'est aussi du dessin !", 50, 300)
     fill('cornflowerblue')
-    text(code, 6, 45)
-    fill('tomato')
-    text('rainbows', 6, 70)
+    textSize(30)
+    text(code, 100, 340)
 
     # Draw left eye
     leftX = 150

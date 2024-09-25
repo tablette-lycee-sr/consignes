@@ -23,7 +23,7 @@
     <br />
     <img src="assets/bandeaux/Cover_Th0_Partie-1.png" alt="image" />
   </div>
-  <h1 id="objectifs">OBJECTIFS</h1>
+  <h1 id="objectifs">OBJECTIFS ET CONSEILS</h1>
   <blockquote>
     <p>
       <strong>Découvrir les premières instructions</strong> en
@@ -33,6 +33,18 @@
       Dans cette première partie, vous apprendrez d'une part à rédiger puis lancer un script et d'autre part à afficher
       des données dans la console.
     </p>
+  </blockquote>
+  <blockquote>
+    <ul><ins>Quelques conseils pratiques:</ins>
+      <li>Cliquez <strong>d'abord</strong> sur le bouton <img class="imageCentree" src="assets/bandeaux/bandeau_lecon.png" width="30svw" /> pour afficher la partie "Leçon" du cours. Passez <strong>ensuite</strong> à la partie de
+        mise en pratique en cliquant sur le bouton <img class="imageCentree" src="assets/bandeaux/bandeau_activite.png" width="30svw" /> pour dérouler la partie "Activité".</li>
+      <li>Quand le texte apparaît en <span style="font-size:4svw;"><strong>manuscrit</strong></span>, cela signifie qu'il faut recopier ce passage dans votre
+        cahier de SNT. </li>
+      <li>Attendez d'y être invité pour commencer à modifier ou exécuter du code.</li>
+    </ul>
+  </blockquote>
+  <blockquote>
+    Bon courage et... bonne découverte de Python !!!
   </blockquote>
 
   <p><br /><br /><br /></p>
@@ -59,15 +71,17 @@
       - On rédige généralement une seule instruction par ligne de code.
       <span>Celles-ci sont lues <ins>l&#39;une après l&#39;autre</ins>, de haut en
         bas, de la première à la dernière ligne.</span> On peut saisir une à une des instructions dans la fenêtre
-        <code>Console</code>, mais si l'on veut enregistrer toutes les actions dans un programme,<span> on les rédige dans un
+      <code>Console</code>, mais si l'on veut enregistrer toutes les actions dans un programme,<span> on les rédige dans
+        un
         <ins>script</ins> que l'on sauvegarde.</span>
       <p><img src="assets/images/algo-instructions.png" width="30%" /><img
           src="assets/images/algo-instructions-python.png" width="70%" /></p>
     </div>
     <div class="fond-lecon">
-      - <span>Ensuite ce script doit être converti en langage machine par <ins>l&#39;interpréteur Python</ins></span>
-      que l&#39;on
-      lance en appuyant sur le bouton <code>Exécuter</code> en bas de la fenêtre de Script
+      - Ensuite ce script doit être converti en langage machine pour pouvoir être exécuté par l'ordinateur. 
+      <span>En python, le code source du script est traduit par un <ins>interpréteur</ins></span> qui produit le code binaire que seul l'ordinateur sait lire.
+      - 
+
       <p><img src="assets/images/bouton-executer.png" width="25%" /></p>
     </div>
   </details>
@@ -118,9 +132,10 @@
     <div class="fond-lecon">
       - Enfin, tout le texte du script n&#39;est pas exécuté. <span>Les programmeurs
         ajoutent aussi des <ins>commentaires</ins> pour faciliter la lecture et la
-        correction du code en plaçant un hashtag en début de ligne</span> 
-        <br /><img src="assets/images/touches/Touche_Alt-Gr.png" width="7%" />+<img src="assets/images/touches/Touche_3-hashtag.png" width="7%" /> <br />
-        ou bien 3 guillements avant et après un commentaire sur plusieurs lignes.<br />
+        correction du code en plaçant un hashtag en début de ligne</span>
+      <br /><img src="assets/images/touches/Touche_Alt-Gr.png" width="7%" />+<img
+        src="assets/images/touches/Touche_3-hashtag.png" width="7%" /> <br />
+      ou bien 3 guillements avant et après un commentaire sur plusieurs lignes.<br />
       <br /><img src="assets/images/commentaires.png" width="50%" />
     </div>
   </details>
@@ -166,9 +181,10 @@
     <div class="fond-lecon">
       - Il est aussi possible de manipuler des nombres décimaux (c&#39;est à
       dire avec une virgule). <br />
-      Attention: on utilise alors le point du pavé numérique <img class="imgCentree" src="assets/images/touches/Touche_point.png"
-        width="5%" />, et
-      non la virgule <img class="imgCentree" src="assets/images/touches/Touche_virgule.png" width="5%" /> qui est réservée aux textes.
+      Attention: on utilise alors le point du pavé numérique <img class="imgCentree"
+        src="assets/images/touches/Touche_point.png" width="5%" />, et
+      non la virgule <img class="imgCentree" src="assets/images/touches/Touche_virgule.png" width="5%" /> qui est
+      réservée aux textes.
       <br />
       <em>Par exemple:</em>
       <br /><img src="assets/images/print(12-34).png" width="30%" /><br />
@@ -198,17 +214,20 @@
     </summary>
     <div class="fond-activite">
       - Repérez les lignes 31, 33 et 35 du script. Elles proposent une fonction
-      <img class="imgCentree" src="assets/images/print().png" width="14%" /> dont les arguments sont vides (il n&#39;y a rien
-      entre les parenthèses). <br /> <br/>
+      <img class="imgCentree" src="assets/images/print().png" width="14%" /> dont les arguments sont vides (il n&#39;y a
+      rien
+      entre les parenthèses). <br /> <br />
       <em>Rappel:</em> À partir de maintenant, vous savez qu&#39;il
-      faut lancer le script avec le bouton <img class="imgCentree" src="assets/images/bouton-executer.png" width="15%" /> à chaque fois que
+      faut lancer le script avec le bouton <img class="imgCentree" src="assets/images/bouton-executer.png"
+        width="15%" /> à chaque fois que
       vous voulez vérifier que votre code fonctionne.
     </div>
     <div class="fond-activite">
       - Complétez chacune des fonctions pour qu&#39;elles affichent les résultats suivants dans la
       console:
       <ul>
-        <li><code>#A.</code> <br />Le nombre <img class="imgCentree" src="assets/images/10.png" width="7%" /> <br />(aucun calcul n&#39;est
+        <li><code>#A.</code> <br />Le nombre <img class="imgCentree" src="assets/images/10.png" width="7%" />
+          <br />(aucun calcul n&#39;est
           nécessaire)
         </li>
         <li>
@@ -241,13 +260,13 @@
       - De manière plus surprenante, on peut également faire des opérations
       mathématiques sur du texte:
       <ul>
-        <li><span>On peut ajouter une chaine de caractères à une autre: </span> 
-          <br />(on parle alors de &quot;concaténation&quot; ) <span>en utilisant l'addition</span><br/>
-          <img src="assets/images/touches/Touche_plus.png" width="7%" /> 
+        <li><span>On peut ajouter une chaine de caractères à une autre: </span>
+          <br />(on parle alors de &quot;concaténation&quot; ) <span>en utilisant l'addition</span><br />
+          <img src="assets/images/touches/Touche_plus.png" width="7%" />
           <img src="assets/images/print(salut-bob).png" width="75%" /><br />
         </li>
         <li>On peut répéter un affichage de texte en utilisant la multiplication <br />
-          <img src="assets/images/touches/Touche_asterisque.png" width="7%" /> 
+          <img src="assets/images/touches/Touche_asterisque.png" width="7%" />
           <img src="assets/images/print(3xCoucou).png" width="85%" /><br />
         </li>
       </ul>

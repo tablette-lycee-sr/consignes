@@ -24,12 +24,17 @@ def draw():
     fill('tomato')
     text("Python c'est aussi du dessin !", 90, 30)
     fill('cornflowerblue')
-    text("Notez le code ci-dessous sur votre cahier", 20, 270)
-    text("et revenez dans la console ( bouton >_ )", 20, 290)
-    text("Saissez ce code au prompt >>> ", 20, 310)
-    text("puis appuyez sur Entrée", 20, 330)
+    text("Notez le code ci-dessous à la ligne 17 du script", 15, 230)
+    fill('gray')
+    text("#|   Mon code est:", 25, 260)
     textSize(30)
-    text(code, 150, 360)
+    text(code, 180, 260)
+    fill('cornflowerblue')
+    textSize(18)
+    text("Revenez ensuite dans la vue Console", 20, 300)
+    text("( utilisez le bouton  >_  ci-dessous)", 20, 320)
+    text("et saissez ce code au prompt >>> ", 20, 340)
+    text("puis appuyez sur la touche Entrée", 20, 360)
 
     # Draw left eye
     leftX = 150

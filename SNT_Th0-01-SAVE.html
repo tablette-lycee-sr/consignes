@@ -321,3 +321,252 @@
       </ul>
     </div>
   </details>
+
+  <p><br /><br /></p>
+  <!--  === ÉTAPE 03 === -->
+  <div class="bandeau"><img src="assets/bandeaux/SNT_Python_Etape-03.png" /></div>
+  <h3 id="03-1-la-d-claration-de-variable">
+    03-1. La déclaration de variable
+  </h3>
+  <details>
+    <summary>
+      <div class="titre-bandeau-lecon">
+        <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+      </div>
+    </summary>
+    <div class="fond-lecon">
+      -
+      <span class="copier">Une variable est une zone de la mémoire de l&#39;ordinateur dans
+        laquelle on peut stocker une valeur. L&#39;expression
+        &quot;variable&quot; signifie que cette valeur peut changer.</span>
+      <p>
+        <ins>Par exemple:</ins>
+        Dans un jeu vidéo, une variable sert à stocker le score d&#39;un
+        joueur. Ce score évolue pendant toute la partie, la variable va donc
+        tout le temps changer de valeur (dans la capture d&#39;écran
+        ci-dessous Mario a 2600 points...pour l'instant).
+      </p>
+      <img src="assets/images/mario.jpg" width="60%" /><br />
+    </div>
+    <div class="fond-lecon">
+      - On peut se représenter une variable comme une boite dans laquelle on
+      va stocker des affaires (=nos<em><strong>données</strong></em>). Cette boite est rangée avec d&#39;autres sur une
+      étagère (=la
+      <em><strong>mémoire</strong></em> de l&#39;ordinateur). Suivant ce que
+      l&#39;on stocke dedans, les boites peuvent avoir des tailles différentes
+      (=le <em><strong>type</strong></em> de donnée). Le plus important pour
+      pouvoir retrouver nos affaires, c&#39;est d&#39;indiquer son contenu en
+      collant une étiquette sur la boite (=le <strong><em>nom</em></strong> de
+      la variable).
+      <p></p> <ins>Par exemple:</ins>
+      On crée deux variables: l&#39;une est nommée
+      <code>score</code> et va servir à stocker un nombre entier (pour le
+      moment sa valeur est 10), l&#39;autre variable est nommée
+      <code>message</code> et contiendra une chaîne de caractères (il
+      s&#39;agit du message de fin de partie. Suivant la langue sélectionnée
+      par le joueur, il sera différent. Pour l&#39;instant on y a placé
+      l&#39;expression &quot;Game over&quot;).
+      </p>
+      <img src="assets/boites.png" width="300px" />
+
+      - Pour effectuer cette opération en language informatique, il faut donc
+      -
+      <ins>typer</ins> une variable pour réserver un espace mémoire plus ou
+      moins grand (une chaine de caractère prend souvent plus de place
+      qu&#39;un nombre entier).
+      <em>Cela revient à choisir la taille de la boite</em> -
+      <ins>déclarer</ins> la variable en lui donnant un nom.
+      <em>C&#39;est l&#39;étape où l&#39;on colle une étiquette sur la
+        boite</em>
+      - <ins>affecter</ins> une valeur à la variable.
+      <em>C&#39;est le moment où l&#39;on met nos affaires dans la boite</em><br /><br />
+    </div>
+    <div class="fond-lecon">
+      Heureusement, en Python la syntaxe de cette opération est très simple:
+      <img src="assets/affectation.png" width="300px" />
+
+      <ins>Remarque:</ins><br />
+      C&#39;est bien pratique pour nous, le language Python,
+      contrairement à d&#39;autres languages, n&#39;exige pas que nous
+      précisions la taille de la boite (c&#39;est à dire le type de la
+      variable). Un simple signe
+      <code>=</code>
+      et Python crée une variable à la bonne dimension (c&#39;est à dire
+      qu&#39;il réserve une portion de mémoire suffisante pour stocker vos
+      données).
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <div class="titre-bandeau-activite">
+        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" />
+        Activité
+      </div>
+    </summary>
+    <div class="fond-activite">
+      - Repérez les lignes 17, 19 et 21 du script. - Modifiez chacune de ces
+      déclarations de variable en fonction des indications suivantes: -
+      <ins>A.</ins> Pour l&#39;instant la variable <code>score</code> est vide
+      (l&#39;expression <code>None</code> signifie qu&#39;il n&#39;y a
+      &quot;aucune&quot; valeur dans cette variable). Affectez la valeur
+      <code>100</code> (<strong>un nombre entier</strong>) à la variable
+      <code>score</code>.<br />
+      L&#39;expression <code>None</code> permet de vider le contenu de la
+      variable mais celle-ci existe toujours. - <ins>B.</ins> Le héros de
+      notre jeu peut devenir invisible. C&#39;est la variable
+      <code>invisible</code> qui enregistre cet état. Pour l&#39;instant ce
+      n&#39;est pas le cas car la valeur est <code>False</code>. Modifez cette
+      valeur pour que notre héros devienne invisible. Il ne vous reste plus
+      qu&#39;à trouver quelle
+      <strong>expression anglaise signifie <em>&quot;Vrai&quot;</em></strong>... Cette variable est de type bouléen
+      (<em>Vrai/Faux</em>).
+      C&#39;est la plus petite boite qui existe, elle ne contient qu&#39;un
+      <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>). -
+      <ins>C.</ins> Le nom du joueur est enregistré dans la variable
+      <code>n</code>. Mais comme cela peut prêter à confusion, on veut
+      modifier ce nom de variable en
+      <strong>&quot;nom du joueur&quot;</strong>. Suivez les règles et
+      conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
+      de variable à la place de <code>n</code>. <ins>Attention:</ins> Le
+      nom de variable...<br />
+      ~ ...ne peut pas contenir d&#39;espace<br />
+      ~ ...ne peut pas commencer par un chiffre<br />
+      ~ ...ne peut pas contenir d&#39;autres symboles que
+      <code>_</code> (<em>underscore</em>)<br />
+      ~ ...ne peut pas être un mot-clé qui appartient au langage Python
+      (par exemple <code>print</code> est déjà utilisé) <br />
+      <ins>Remarque:</ins> Par convention, les noms de variable
+      s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
+      le début de chaque nouveau mot. Par exemple:
+      <code> jourDeLaSemaine  anneeDeNaissance </code>
+
+      Enfin, affectez à cette variable la chaîne de caractères de votre choix,
+      pourquoi pas votre propre prénom. - Vous pouvez maintenant lancer ce
+      script en appuyant sur le bouton &quot;Run&quot; en haut de la fenêtre.
+      Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
+      concernées.
+    </div>
+  </details>
+
+  <h3 id="03-2-l-utilisation-des-variables">
+    03-2. L&#39;utilisation des variables
+  </h3>
+  <details>
+    <summary>
+      Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
+    </summary>
+
+    - Maintenant que les variables sont déclarées et qu&#39;elles stockent des
+    valeurs, on peut lire leur contenu dans la suite du script. Ici on
+    utilisera la fonction <code>print()</code> pour afficher ces valeurs dans
+    la console. Il suffit alors de passer le nom de la variable comme argument
+    entre les parenthèses. <ins>Par exemple:</ins> <br />
+
+    <code> a = 1000 # Déclare une variable de type entier  print(a) #
+        Affiche 1000 dans la console  print(a*5) # Affiche 5000 dans la
+        console </code>
+    <ins>Attention:</ins> Il ne faut pas mettre de guillemets au nom de
+    la variable quand on l&#39;appelle. Sinon la fonction
+    <code>print()</code> l&#39;affichera sous la forme d&#39;une chaîne de
+    caractères. Par exemple: <br />
+
+    <code> a = 1000 # Déclare une variable de type entier 
+        print(&quot;a&quot;) # Affiche a dans la console, car ce n&#39;est pas
+        la variable qui est appelée  print(&quot;a&quot;*5) # Affiche aaaaa
+        dans la console, c&#39;est à dire 5 fois la lettre &quot;a&quot;
+        </code>
+    - On peut concaténer (c&#39;est à dire additionner) des chaînes de
+    caractères et des variables en utilisant le signe
+    <code>+</code>. <ins>Par exemple:</ins> <br />
+
+    <code> nom = &quot;Bob&quot; # Déclare une variable de type chaîne de
+        caractères  print(&quot;Bonjour &quot; + nom + &quot;. Comment ça va
+        ?&quot;)  # Affiche Bonjour Bob. Comment ça va ? dans la console
+        </code>
+    - Quand on souhaite augmenter la valeur d&#39;une variable, la syntaxe
+    suivante est utile à connaître: <ins>Par exemple:</ins> <br />
+
+    <code> a = 1000 # Déclare une variable de type entier  a = a + 1 #
+        Incrémente la valeur de la variable de 1  print(a) # Affiche 1001
+        dans la console </code>
+
+
+    <code> # Déclare une variable de type chaîne de caractères:  message
+        = &quot;Bravo !&quot;  # Ajoute de nouveaux textes à la chaîne de
+        caractères existante:  message = message + &quot; Vous avez gagné
+        !&quot;  # Affiche le résultat dans la console:  print(message)
+        # Affiche Bravo ! Vous avez gagné !  </code>
+  </details>
+
+  <details>
+    <summary>
+      Activité<img src="assets/bandeaux/activite.png" width="50%" />
+    </summary>
+
+    - Repérez les lignes 26, 28-29 et 31-32 du script. - Modifiez chacune de
+    ces lignes en fonction des indications suivantes: - <ins>A.</ins> Affichez
+    la valeur de la variable <code>score</code> dans la console. - Il
+    suffit de passer le bon argument à la fonction <code>print()</code> de la
+    ligne 26. <br />
+    - <ins>B.</ins> Affichez un message de bienvenue sous la forme
+    &quot;Bonjour ... !&quot;, avec la valeur de la variable qui stocke le nom
+    du joueur à la place des points de suspension. - Modifiez
+    l&#39;instruction à la ligne 28. N&#39;écrivez pas directement le nom du
+    joueur, il faut bien sûr que le résultat puisse varier à chaque partie.
+    N&#39;oubliez pas le point d&#39;exclamation ni les espaces.<br />
+    - Modifiez la ligne 29 pour afficher ce message dans la console. Ne
+    rédigez pas tout le texte à nouveau, appelez la variable
+    <code>message</code> qui le contient. - <ins>C.</ins> Notre joueur vient
+    de remporter un bonus qui double son score. Effectuez le calcul puis
+    affichez le nouveau score. - Complétez la ligne 31 pour réaliser
+    l&#39;opération qui fera doubler le score du joueur.<br />
+    - Utilisez la ligne 32 pour afficher ce nouveau score.
+    N&#39;effectuez pas le calcul vous-même, appelez seulement la variable. -
+    Vous pouvez maintenant lancer ce script en appuyant sur le bouton
+    &quot;Run&quot; en haut de la fenêtre. Vérifiez si vous avez tout juste,
+    sinon modifiez à nouveau les lignes concernées.
+  </details>
+
+  <p><br /><br /></p>
+  <!--  === ÉTAPE 04 === -->
+  <div class="bandeau"><img src="assets/bandeaux/SNT_Python_Etape-04.png" /></div>
+  </p>
+  <h3 id="04-1-xxx">04-1. Xxx</h3>
+  <details>
+    <summary>
+      Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
+    </summary>
+
+    -<br />
+  </details>
+
+  <details>
+    <summary>
+      Activité<img src="assets/bandeaux/activite.png" width="50%" />
+    </summary>
+
+    -
+  </details>
+
+  <h3 id="04-2-xxx">04-2. Xxx</h3>
+  <details>
+    <summary>
+      Leçon<img src="assets/bandeaux/leçon.png" width="50%" />
+    </summary>
+
+    -<br />
+  </details>
+
+  <details>
+    <summary>
+      Activité<img src="assets/bandeaux/activite.png" width="50%" />
+    </summary>
+
+    -
+  </details>
+
+
+</body>
+
+</html>

@@ -137,10 +137,10 @@
           <code>score</code>.<br />
           L&#39;expression <code>None</code> permet de vider le contenu de la
           variable mais celle-ci existe toujours.
-        </li><br/>
+        </li><br />
         <li><code>#B.</code>
           <br />
-           Le héros de notre jeu peut devenir invisible. C&#39;est la variable
+          Le héros de notre jeu peut devenir invisible. C&#39;est la variable
           <code>invisible</code> qui enregistre cet état. Pour l&#39;instant ce
           n&#39;est pas le cas car la valeur est <code>False</code>. Modifez cette
           valeur pour que notre héros devienne invisible. Il ne vous reste plus
@@ -149,14 +149,14 @@
           (<em>Vrai/Faux</em>).
           C&#39;est la plus petite boite qui existe, elle ne contient qu&#39;un
           <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>). -
-        </li><br/>
+        </li><br />
         <li><code>#C.</code>
-          <br />          
+          <br />
           Le nom du joueur est enregistré dans la variable
           <code>n</code>. Mais comme cela peut prêter à confusion, on veut
-          modifier ce nom de variable en <strong>&quot;nom du joueur&quot;</strong>. 
+          modifier ce nom de variable en <strong>&quot;nom du joueur&quot;</strong>.
           Suivez les règles et conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
-          de variable à la place de <code>n</code>. <br/>
+          de variable à la place de <code>n</code>. <br />
           <ins>Attention:</ins> Le
           nom de variable...<br />
           ~ ...ne peut pas contenir d&#39;espace<br />
@@ -167,20 +167,20 @@
           (par exemple <img class="imgCentree" src="assets/images/print().png" width="14%" /> est déjà utilisé) <br />
           <ins>Remarque:</ins> Par convention, les noms de variable
           s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
-          le début de chaque nouveau mot. Par exemple:<br/>
-          <code> jourDeLaSemaine  anneeDeNaissance </code>          
-          <br/>
+          le début de chaque nouveau mot. Par exemple:<br />
+          <code> jourDeLaSemaine  anneeDeNaissance </code>
+          <br />
           Enfin, affectez à cette variable la chaîne de caractères de votre choix,
           pourquoi pas votre propre prénom.
         </li>
       </ul>
     </div>
-      <div class="fond-activite">
-           - Vous pouvez maintenant lancer ce script en appuyant sur le bouton 
-           <p><img src="assets/images/bouton-executer.png" width="20%" /></p>
-          Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
-          concernées.
-      </div> 
+    <div class="fond-activite">
+      - Vous pouvez maintenant lancer ce script en appuyant sur le bouton
+      <p><img src="assets/images/bouton-executer.png" width="20%" /></p>
+      Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
+      concernées.
+    </div>
 
     </div>
   </details>
@@ -188,87 +188,101 @@
   <h3 id="03-2-l-utilisation-des-variables">
     03-2. L&#39;utilisation des variables
   </h3>
-    <details>
-      <summary>
-        <div class="titre-bandeau-lecon">
-          <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
-        </div>
-      </summary>
-      <div class="fond-lecon">
+  <details>
+    <summary>
+      <div class="titre-bandeau-lecon">
+        <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+      </div>
+    </summary>
+    <div class="fond-lecon">
+      - Maintenant que les variables sont déclarées et qu&#39;elles stockent des
+      valeurs, on peut lire leur contenu dans la suite du script. Ici on
+      utilisera la fonction <code>print()</code> pour afficher ces valeurs dans
+      la console. Il suffit alors de passer le nom de la variable comme argument
+      entre les parenthèses. <ins>Par exemple:</ins> <br />
 
-    - Maintenant que les variables sont déclarées et qu&#39;elles stockent des
-    valeurs, on peut lire leur contenu dans la suite du script. Ici on
-    utilisera la fonction <code>print()</code> pour afficher ces valeurs dans
-    la console. Il suffit alors de passer le nom de la variable comme argument
-    entre les parenthèses. <ins>Par exemple:</ins> <br />
-
-    <code> a = 1000 # Déclare une variable de type entier  print(a) #
+      <code> a = 1000 # Déclare une variable de type entier  print(a) #
           Affiche 1000 dans la console  print(a*5) # Affiche 5000 dans la
           console </code>
-    <ins>Attention:</ins> Il ne faut pas mettre de guillemets au nom de
-    la variable quand on l&#39;appelle. Sinon la fonction
-    <code>print()</code> l&#39;affichera sous la forme d&#39;une chaîne de
-    caractères. Par exemple: <br />
+      <ins>Attention:</ins> Il ne faut pas mettre de guillemets au nom de
+      la variable quand on l&#39;appelle. Sinon la fonction
+      <code>print()</code> l&#39;affichera sous la forme d&#39;une chaîne de
+      caractères. Par exemple: <br />
 
-    <code> a = 1000 # Déclare une variable de type entier 
+      <code> a = 1000 # Déclare une variable de type entier 
           print(&quot;a&quot;) # Affiche a dans la console, car ce n&#39;est pas
           la variable qui est appelée  print(&quot;a&quot;*5) # Affiche aaaaa
           dans la console, c&#39;est à dire 5 fois la lettre &quot;a&quot;
           </code>
-    - On peut concaténer (c&#39;est à dire additionner) des chaînes de
-    caractères et des variables en utilisant le signe
-    <code>+</code>. <ins>Par exemple:</ins> <br />
+      - On peut concaténer (c&#39;est à dire additionner) des chaînes de
+      caractères et des variables en utilisant le signe
+      <code>+</code>. <ins>Par exemple:</ins> <br />
 
-    <code> nom = &quot;Bob&quot; # Déclare une variable de type chaîne de
+      <code> nom = &quot;Bob&quot; # Déclare une variable de type chaîne de
           caractères  print(&quot;Bonjour &quot; + nom + &quot;. Comment ça va
           ?&quot;)  # Affiche Bonjour Bob. Comment ça va ? dans la console
           </code>
-    - Quand on souhaite augmenter la valeur d&#39;une variable, la syntaxe
-    suivante est utile à connaître: <ins>Par exemple:</ins> <br />
+      - Quand on souhaite augmenter la valeur d&#39;une variable, la syntaxe
+      suivante est utile à connaître: <ins>Par exemple:</ins> <br />
 
-    <code> a = 1000 # Déclare une variable de type entier  a = a + 1 #
+      <code> a = 1000 # Déclare une variable de type entier  a = a + 1 #
           Incrémente la valeur de la variable de 1  print(a) # Affiche 1001
           dans la console </code>
 
 
-    <code> # Déclare une variable de type chaîne de caractères:  message
+      <code> # Déclare une variable de type chaîne de caractères:  message
           = &quot;Bravo !&quot;  # Ajoute de nouveaux textes à la chaîne de
           caractères existante:  message = message + &quot; Vous avez gagné
           !&quot;  # Affiche le résultat dans la console:  print(message)
           # Affiche Bravo ! Vous avez gagné !  </code>
   </details>
 
-</div>
-<details>
-  <summary>
-    <div class="titre-bandeau-activite">
-      <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
-    </div>
-  </summary>
-  <div class="fond-activite">
-    - Repérez les lignes 26, 28-29 et 31-32 du script. - Modifiez chacune de
-    ces lignes en fonction des indications suivantes: - <ins>A.</ins> Affichez
-    la valeur de la variable <code>score</code> dans la console. - Il
-    suffit de passer le bon argument à la fonction <code>print()</code> de la
-    ligne 26. <br />
-    - <ins>B.</ins> Affichez un message de bienvenue sous la forme
-    &quot;Bonjour ... !&quot;, avec la valeur de la variable qui stocke le nom
-    du joueur à la place des points de suspension. - Modifiez
-    l&#39;instruction à la ligne 28. N&#39;écrivez pas directement le nom du
-    joueur, il faut bien sûr que le résultat puisse varier à chaque partie.
-    N&#39;oubliez pas le point d&#39;exclamation ni les espaces.<br />
-    - Modifiez la ligne 29 pour afficher ce message dans la console. Ne
-    rédigez pas tout le texte à nouveau, appelez la variable
-    <code>message</code> qui le contient. - <ins>C.</ins> Notre joueur vient
-    de remporter un bonus qui double son score. Effectuez le calcul puis
-    affichez le nouveau score. - Complétez la ligne 31 pour réaliser
-    l&#39;opération qui fera doubler le score du joueur.<br />
-    - Utilisez la ligne 32 pour afficher ce nouveau score.
-    N&#39;effectuez pas le calcul vous-même, appelez seulement la variable. -
-    Vous pouvez maintenant lancer ce script en appuyant sur le bouton
-    &quot;Run&quot; en haut de la fenêtre. Vérifiez si vous avez tout juste,
-    sinon modifiez à nouveau les lignes concernées.
   </div>
+  <details>
+    <summary>
+      <div class="titre-bandeau-activite">
+        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
+      </div>
+    </summary>
+    <div class="fond-activite">
+      - Repérez les lignes 26, 28-29 et 31-32 du script. <br />
+      - Modifiez chacune de ces lignes en fonction des indications suivantes: <br />
+      <ul>
+        <li><code>#A.</code>
+          <br />
+          Affichez la valeur de la variable <code>score</code> dans la console. <br />
+          Il suffit de passer le bon argument à la fonction <code>print()</code> de la
+          ligne 26.
+        </li><br />
+        <li><code>#B.</code>
+          <br />
+          Affichez un message de bienvenue sous la forme
+          &quot;Bonjour ... !&quot;, avec la valeur de la variable qui stocke le nom
+          du joueur à la place des points de suspension. - Modifiez
+          l&#39;instruction à la ligne 28. N&#39;écrivez pas directement le nom du
+          joueur, il faut bien sûr que le résultat puisse varier à chaque partie.
+          N&#39;oubliez pas le point d&#39;exclamation ni les espaces.<br />
+          - Modifiez la ligne 29 pour afficher ce message dans la console. Ne
+          rédigez pas tout le texte à nouveau, appelez la variable
+          <code>message</code> qui le contient.
+        </li><br />
+        <li><code>#C.</code>
+          <br />
+          Notre joueur vient
+          de remporter un bonus qui double son score. Effectuez le calcul puis
+          affichez le nouveau score. - Complétez la ligne 31 pour réaliser
+          l&#39;opération qui fera doubler le score du joueur.<br />
+          - Utilisez la ligne 32 pour afficher ce nouveau score.
+          N&#39;effectuez pas le calcul vous-même, appelez seulement la variable.
+        </li><br />
+      </ul>
+    </div>
+    <div class="fond-activite">
+      - Vous pouvez maintenant lancer ce script en appuyant sur le bouton
+      <p><img src="assets/images/bouton-executer.png" width="20%" /></p>
+      Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
+      concernées.
+    </div>
   </details>
 
   <p><br /><br /></p>

@@ -60,13 +60,15 @@
     </div>
     <div class="fond-lecon">
       - <span>On peut se représenter une variable comme une boite dans laquelle on
-      va stocker </span> des affaires (= <span>nos <em><strong>données</strong></em></span>). Cette boite est rangée avec d&#39;autres sur une
+        va stocker </span> des affaires (= <span>nos <em><strong>données</strong></em></span>). Cette boite est rangée
+      avec d&#39;autres sur une
       étagère (=la
       <em><strong>mémoire</strong></em> de l&#39;ordinateur). Suivant ce que
       l&#39;on stocke dedans, les boites peuvent avoir des tailles différentes
-      (=le <em><strong>type</strong></em> de donnée). Pour pouvoir ensuite retrouver nos affaires, <span>il est impératif d'indiquer son contenu en
-      collant une étiquette sur la boite (=le <strong><em>nom</em></strong> de
-      la variable).</span>
+      (=le <em><strong>type</strong></em> de donnée). Pour pouvoir ensuite retrouver nos affaires, <span>il est
+        impératif d'indiquer son contenu en
+        collant une étiquette sur la boite (=le <strong><em>nom</em></strong> de
+        la variable).</span>
       <p></p> <ins>Par exemple:</ins>
       On crée deux variables: l&#39;une est nommée
       <code>score</code> et va servir à stocker un nombre entier (pour le
@@ -78,7 +80,7 @@
       </p>
       <img src="assets/images/variables-illustration.png" width="60%" /><br />
 
-      - <span> Pour effectuer cette opération en language informatique, il faut:</span> 
+      - <span> Pour effectuer cette opération en language informatique, il faut:</span>
       <ul>
         <li><ins>typer</ins> une variable pour réserver un espace mémoire plus ou
           moins grand (une chaine de caractère prend souvent plus de place
@@ -86,14 +88,14 @@
           <em>Cela revient à choisir la taille de la boite</em> -
         </li>
         <li>
-        <span>
-          <ins>déclarer</ins> la variable en lui donnant un nom.</span>
+          <span>
+            <ins>déclarer</ins> la variable en lui donnant un nom.</span>
           <em>C&#39;est l&#39;étape où l&#39;on colle une étiquette sur la
             boite</em>
         </li>
         <li>
-        <span>
-          <ins>affecter</ins> une valeur à la variable.</span>
+          <span>
+            <ins>affecter</ins> une valeur à la variable.</span>
           <em>C&#39;est le moment où l&#39;on met nos affaires dans la boite</em>
         </li>
       </ul>
@@ -108,8 +110,8 @@
       contrairement à d&#39;autres languages, n&#39;exige pas que nous
       précisions la taille de la boite (c&#39;est à dire le type de la
       variable). <span>Un simple signe
-      <code>=</code>
-      et Python crée une variable à la bonne dimension </span>(c&#39;est à dire
+        <code>=</code>
+        et Python crée une variable à la bonne dimension </span>(c&#39;est à dire
       qu&#39;il réserve une portion de mémoire suffisante pour stocker vos
       données).
     </div>
@@ -123,47 +125,63 @@
       </div>
     </summary>
     <div class="fond-activite">
-      - Repérez les lignes 17, 19 et 21 du script. - Modifiez chacune de ces
-      déclarations de variable en fonction des indications suivantes: -
-      <ins>A.</ins> Pour l&#39;instant la variable <code>score</code> est vide
-      (l&#39;expression <code>None</code> signifie qu&#39;il n&#39;y a
-      &quot;aucune&quot; valeur dans cette variable). Affectez la valeur
-      <code>100</code> (<strong>un nombre entier</strong>) à la variable
-      <code>score</code>.<br />
-      L&#39;expression <code>None</code> permet de vider le contenu de la
-      variable mais celle-ci existe toujours. - <ins>B.</ins> Le héros de
-      notre jeu peut devenir invisible. C&#39;est la variable
-      <code>invisible</code> qui enregistre cet état. Pour l&#39;instant ce
-      n&#39;est pas le cas car la valeur est <code>False</code>. Modifez cette
-      valeur pour que notre héros devienne invisible. Il ne vous reste plus
-      qu&#39;à trouver quelle
-      <strong>expression anglaise signifie <em>&quot;Vrai&quot;</em></strong>... Cette variable est de type bouléen
-      (<em>Vrai/Faux</em>).
-      C&#39;est la plus petite boite qui existe, elle ne contient qu&#39;un
-      <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>). -
-      <ins>C.</ins> Le nom du joueur est enregistré dans la variable
-      <code>n</code>. Mais comme cela peut prêter à confusion, on veut
-      modifier ce nom de variable en
-      <strong>&quot;nom du joueur&quot;</strong>. Suivez les règles et
-      conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
-      de variable à la place de <code>n</code>. <ins>Attention:</ins> Le
-      nom de variable...<br />
-      ~ ...ne peut pas contenir d&#39;espace<br />
-      ~ ...ne peut pas commencer par un chiffre<br />
-      ~ ...ne peut pas contenir d&#39;autres symboles que
-      <code>_</code> (<em>underscore</em>)<br />
-      ~ ...ne peut pas être un mot-clé qui appartient au langage Python
-      (par exemple <code>print</code> est déjà utilisé) <br />
-      <ins>Remarque:</ins> Par convention, les noms de variable
-      s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
-      le début de chaque nouveau mot. Par exemple:
-      <code> jourDeLaSemaine  anneeDeNaissance </code>
+      - Repérez les lignes 17, 19 et 21 du script. <br />
+      - Modifiez chacune de ces déclarations de variable en fonction des indications suivantes:
+      <ul>
+        <li><code>#A.</code>
+          <br />
+          Pour l&#39;instant la variable <code>score</code> est vide
+          (l&#39;expression <code>None</code> signifie qu&#39;il n&#39;y a
+          &quot;aucune&quot; valeur dans cette variable). Affectez la valeur
+          <code>100</code> (<strong>un nombre entier</strong>) à la variable
+          <code>score</code>.<br />
+          L&#39;expression <code>None</code> permet de vider le contenu de la
+          variable mais celle-ci existe toujours.
+        </li><br/>
+        <li><code>#B.</code>
+          <br />
+           Le héros de notre jeu peut devenir invisible. C&#39;est la variable
+          <code>invisible</code> qui enregistre cet état. Pour l&#39;instant ce
+          n&#39;est pas le cas car la valeur est <code>False</code>. Modifez cette
+          valeur pour que notre héros devienne invisible. Il ne vous reste plus
+          qu&#39;à trouver quelle
+          <strong>expression anglaise signifie <em>&quot;Vrai&quot;</em></strong>... Cette variable est de type bouléen
+          (<em>Vrai/Faux</em>).
+          C&#39;est la plus petite boite qui existe, elle ne contient qu&#39;un
+          <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>). -
+        </li><br/>
+        <li><code>#C.</code>
+          <br />          
+          Le nom du joueur est enregistré dans la variable
+          <code>n</code>. Mais comme cela peut prêter à confusion, on veut
+          modifier ce nom de variable en <strong>&quot;nom du joueur&quot;</strong>. 
+          Suivez les règles et conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
+          de variable à la place de <code>n</code>. <br/>
+          <ins>Attention:</ins> Le
+          nom de variable...<br />
+          ~ ...ne peut pas contenir d&#39;espace<br />
+          ~ ...ne peut pas commencer par un chiffre<br />
+          ~ ...ne peut pas contenir d&#39;autres symboles que
+          <code>_</code> (<em>underscore</em>)<br />
+          ~ ...ne peut pas être un mot-clé qui appartient au langage Python
+          (par exemple <img class="imgCentree" src="assets/images/print().png" width="14%" /> est déjà utilisé) <br />
+          <ins>Remarque:</ins> Par convention, les noms de variable
+          s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
+          le début de chaque nouveau mot. Par exemple:<br/>
+          <code> jourDeLaSemaine  anneeDeNaissance </code>          
+          <br/>
+          Enfin, affectez à cette variable la chaîne de caractères de votre choix,
+          pourquoi pas votre propre prénom.
+        </li>
+      </ul>
+    </div>
+      <div class="fond-activite">
+           - Vous pouvez maintenant lancer ce script en appuyant sur le bouton 
+           <p><img src="assets/images/bouton-executer.png" width="20%" /></p>
+          Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
+          concernées.
+      </div> 
 
-      Enfin, affectez à cette variable la chaîne de caractères de votre choix,
-      pourquoi pas votre propre prénom. - Vous pouvez maintenant lancer ce
-      script en appuyant sur le bouton &quot;Run&quot; en haut de la fenêtre.
-      Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
-      concernées.
     </div>
   </details>
 

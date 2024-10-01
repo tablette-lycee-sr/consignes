@@ -55,7 +55,7 @@
         tout le temps changer de valeur (dans la capture d&#39;écran
         ci-dessous Mario a 2600 points...pour l'instant).
       </p>
-      <img src="assets/images/mario.jpg" width="60%" /><br />
+      <img src="assets/images/mario-commentaires.png" width="85%" /><br />
     </div>
     <div class="fond-lecon">
       - <span>On peut se représenter une variable comme une boite dans laquelle on
@@ -69,9 +69,9 @@
         la variable).</span>
       <p></p> <ins>Par exemple:</ins>
       On crée deux variables: l&#39;une est nommée
-      <code>score</code> et va servir à stocker un nombre entier (pour le
+      <img class="imgCentree" src="assets/images/score.png" width="9%" /> et va servir à stocker un nombre entier (pour le
       moment sa valeur est 10), l&#39;autre variable est nommée
-      <code>message</code> et contiendra une chaîne de caractères (il
+      <img class="imgCentree" src="assets/images/message.png" width="12%" /> et contiendra une chaîne de caractères (il
       s&#39;agit du message de fin de partie. Suivant la langue sélectionnée
       par le joueur, il sera différent. Pour l&#39;instant on y a placé
       l&#39;expression &quot;Game over&quot;).
@@ -97,20 +97,21 @@
           <em>C&#39;est le moment où l&#39;on met nos affaires dans la boite</em>
         </li>
       </ul>
-      <br />
-
     </div>
+
     <div class="fond-lecon">
       <p>Heureusement, <span>en Python la syntaxe de cette instruction est </span>très simple:</p>
       <img src="assets/images/affectation-commentaires.png" width="85%" /><br />
+      <p>
       <ins>Remarque:</ins><br />
-      C&#39;est bien pratique pour nous, le language Python,
-      contrairement à d&#39;autres languages, n&#39;exige pas que nous
+      C&#39;est bien pratique pour nous, le langage Python,
+      contrairement à d&#39;autres langages, n&#39;exige pas que nous
       précisions la taille de la boite (c&#39;est à dire le type de la
-      variable). Un simple signe <code>=</code>
+      variable). Un simple signe <img class="imgCentree" src="assets/images/touches/Touche_egal.png" width="4%" />
         et Python crée une variable à la bonne dimension (c&#39;est à dire
       qu&#39;il réserve une portion de mémoire suffisante pour stocker vos
       données).
+    </p>
     </div>
   </details>
 
@@ -192,33 +193,33 @@
     </summary>
     <div class="fond-lecon">
       - Maintenant que les variables sont déclarées et qu&#39;elles stockent des
-      valeurs, on peut lire leur contenu dans la suite du script. Ici on
-      utilisera la fonction <code>print()</code> pour afficher ces valeurs dans
+      valeurs, on peut lire leur contenu dans la suite du script. 
+      <span>On utilise la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" /> pour afficher la valeur des variables dans
       la console. Il suffit alors de passer le nom de la variable comme argument
-      entre les parenthèses. <ins>Par exemple:</ins> <br />
-
-      <code> a = 1000 # Déclare une variable de type entier  print(a) #
-          Affiche 1000 dans la console  print(a*5) # Affiche 5000 dans la
-          console </code>
+      entre les parenthèses.</span><br/>
+      <p> 
+      <ins>Par exemple:</ins> 
+      <br/>
+      <img src="assets/images/code-a-entier.png" width="95%" /><br />
+    </p>
       <ins>Attention:</ins> Il ne faut pas mettre de guillemets au nom de
       la variable quand on l&#39;appelle. Sinon la fonction
-      <code>print()</code> l&#39;affichera sous la forme d&#39;une chaîne de
-      caractères. Par exemple: <br />
+      <img class="imgCentree" src="assets/images/print().png" width="12%" /> l&#39;affichera sous la forme d&#39;une chaîne de
+      caractères. Par exemple: 
 
-      <code> a = 1000 # Déclare une variable de type entier 
-          print(&quot;a&quot;) # Affiche a dans la console, car ce n&#39;est pas
-          la variable qui est appelée  print(&quot;a&quot;*5) # Affiche aaaaa
-          dans la console, c&#39;est à dire 5 fois la lettre &quot;a&quot;
-          </code>
+      <img src="assets/images/code-a-string.png" width="95%" /><br />
+      </div>
+          <div class="fond-lecon">
       - On peut concaténer (c&#39;est à dire additionner) des chaînes de
       caractères et des variables en utilisant le signe
-      <code>+</code>. <ins>Par exemple:</ins> <br />
+      <img class="imgCentree" src="assets/images/touches/Touche_plus.png" width="5%" />. <ins>Par exemple:</ins> <br />
 
       <code> nom = &quot;Bob&quot; # Déclare une variable de type chaîne de
           caractères  print(&quot;Bonjour &quot; + nom + &quot;. Comment ça va
           ?&quot;)  # Affiche Bonjour Bob. Comment ça va ? dans la console
           </code>
-      - Quand on souhaite augmenter la valeur d&#39;une variable, la syntaxe
+          <div class="fond-lecon">
+      - Quand on souhaite incrémenter (c&#39;est à dire augmenter) la valeur d&#39;une variable, la syntaxe
       suivante est utile à connaître: <ins>Par exemple:</ins> <br />
 
       <code> a = 1000 # Déclare une variable de type entier  a = a + 1 #
@@ -231,6 +232,7 @@
           caractères existante:  message = message + &quot; Vous avez gagné
           !&quot;  # Affiche le résultat dans la console:  print(message)
           # Affiche Bravo ! Vous avez gagné !  </code>
+          </div>
   </details>
 
   </div>

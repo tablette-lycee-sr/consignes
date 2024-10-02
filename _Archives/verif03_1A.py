@@ -8,7 +8,11 @@ def verifA(score):
     if score == None:
       print("Vous n'avez pas affecté de valeur à la variable `score`. Essayez à nouveau...")
     elif isinstance(score, int): 
-      print("Bravo ! Vous avez affecté un nombre entier à la variable score. Vous lui avez donné `"+ str(score)+"` comme valeur.")
+      print("Bravo ! Vous avez affecté un nombre entier à la variable score.") 
+      if score == 100:
+        print("Vous lui avez donné la bonne valeur.")
+      else:
+        print("Mais vous lui avez donné `"+ str(score)+"` comme valeur, qui n'est pas celle qui était attendue.")
     else:
       print("La valeur que vous avez affectée ne correspond pas au type de la variable `score`. Vous devez lui affecter un nombre entier. Essayez à nouveau...")
 

@@ -110,6 +110,11 @@ blockquote{
     border-radius: 2svw;
 }
 
+.texte-activite{
+    color: var(--couleur-jaune-fonce);
+}
+
+
 .fond-lecon{
     background-color: var(--couleur-violet-assombri-70-prct);
     padding:2svw;
@@ -122,9 +127,6 @@ blockquote{
     top: 0.8svw;
 }
 
-.trash{
-background-color: #136e71;
-}
 
 
 span{
@@ -132,5 +134,19 @@ span{
     font-weight: 400;
     font-style: normal;
     font-size:3svw;
-line-height: 0.8;
+    line-height: 0.8;
   }
+
+ .commentaire{
+    opacity: 0.6;
+    padding: 1svw 1svw 1svw 3svw;
+    background-color:rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin:1svw;
+  }
+
+
+  .trash{
+    background-color: #136e71;
+    }
+    

@@ -334,6 +334,68 @@
     </div>
   </details>
 
+  <p><br /><br /></p>
+  <!--  === ÉTAPE 04 === -->
+  <div class="bandeau"><img src="assets/bandeaux/SNT_Python_Etape-04.png" /></div>
+  </p>
+  <h3 id="04-1-xxx">04-1. Xxx</h3>
+  <details>
+    <summary>
+      <div class="titre-bandeau-lecon">
+        <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+      </div>
+    </summary>
+    <div class="fond-lecon">
+      -
+      <br />
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <div class="titre-bandeau-activite">
+        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
+      </div>
+    </summary>
+    <div class="fond-activite">
+
+      #C
+      lignes 39-42:
+      nomDuJoueur2 = input("...")
+      print("Bienvenue "+nomDuJoueur2)
+      <br />
+    </div>
+  </details>
+
+  <h3 id="04-2-xxx">04-2. Xxx</h3>
+  <details>
+    <summary>
+      <div class="titre-bandeau-lecon">
+        <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+      </div>
+    </summary>
+    <div class="fond-lecon">
+      -
+      <br />
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <div class="titre-bandeau-activite">
+        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
+      </div>
+    </summary>
+    <div class="fond-activite">
+
+      #C
+      Lignes 45...:
+      date = input("Année de naissance")
+      age = 2023-int(date)
+      print([nom]+" a "+str(age)+" ans")
+      <br />
+    </div>
+  </details>
   <br /><br /><br /><br /><br /><br />
 
 </body>

@@ -47,13 +47,15 @@
         const dweet = data.with[0].content;
   
         // Récupérer les valeurs du niveau et de l'humidité
+        const nom = dweet.nom;
         const niveau = dweet.niveau;
-        const humidite = dweet.humidite;
+        
   
         // Préparer dynamiquement le contenu HTML
-        let html_x1234abcd = "<h3>x1234abcd:</h3>";
+        let html_x1234abcd = "<h2>x1234abcd</h2>";
+        html_x1234abcd += `<p>${nom}</p>`;
         html_x1234abcd += `<p>Niveau: ${niveau}</p>`;
-        html_x1234abcd += `<p>Humidité: ${humidite}%</p>`;
+
   
         // Sélectionner la div et insérer le contenu
         const div = document.getElementById('live-data_x1234abcd');

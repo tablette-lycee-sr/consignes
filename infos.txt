@@ -1,0 +1,16 @@
+https://github.com/buglabs/dweetio-client
+
+
+https://tablette-lycee-sr.github.io/consignes/SNT_tableau_de_bord.html
+
+
+
+
+import requests
+
+niveau=180
+# simple get request
+url = "https://dweet.io/dweet/for/1234abcd?niveau="+str(niveau)
+response = requests.get(url)
+print(response.headers)
+print(response.text)

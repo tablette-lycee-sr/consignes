@@ -1,9 +1,20 @@
+POUR CONNAÎTRE LA SYNTAXE DE DWEET.IO
+
 https://github.com/buglabs/dweetio-client
 
+
+
+
+POUR AFFICHER LA PAGE DU TABLEAU DE BORD DEPUIS UN NAVIGATEUR
 
 https://tablette-lycee-sr.github.io/consignes/SNT_tableau_de_bord.html
 
 
+
+
+
+
+DEPUIS ENVOYER UN DWEET DEPUIS UN NAVIGATEUR
 
 https://dweet.io/dweet/for/x1234abcd?niveau=50
 
@@ -11,11 +22,15 @@ https://dweet.io/dweet/for/x1234abcd?niveau=50
 
 
 
+
+
+POUR ENVOYER UN DWEET EN PYTHON DANS CAPYTALE
+
 import requests
 
 niveau=180
 # simple get request
-url = "https://dweet.io/dweet/for/1234abcd?niveau="+str(niveau)
+url = "https://dweet.io/dweet/for/x1234abcd?niveau="+str(niveau)
 response = requests.get(url)
 print(response.headers)
 print(response.text)

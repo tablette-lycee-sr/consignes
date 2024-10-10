@@ -1,0 +1,152 @@
+:root{
+    --couleur-violet: #46475c;
+    --couleur-violet-assombri-70-prct: #15151c;
+    --couleur-gris-clair: #4e6c84;
+    --couleur-gris-moyen: #374c5d;
+    --couleur-gris-fonce: #212e38;
+    --couleur-vert-clair: #00bcc6;
+    --couleur-vert-moyen: #00a4ad;
+    --couleur-vert-fonce: #006d72;
+    --couleur-bleu-clair: #cceeff;
+    --couleur-bleu-moyen: #aae3ff;
+    --couleur-bleu-fonce: #47c3ff;
+    --couleur-jaune-clair: #ffd867;
+    --couleur-jaune-moyen: #ffc009;
+    --couleur-jaune-fonce: #e6b512;
+    --couleur-jaune-orange: #e78800;
+    --couleur-jaune-assombri-95-prct: #181302;
+}
+
+body{
+    background-color: #1f1f1f;
+    color: white;
+    margin-left: 30px;
+    width:90%;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size:2.5svw;
+}
+
+h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:5svw;
+    color: #aae3ff;
+}
+
+h3{
+    font-family: "Indie Flower", cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size:4svw;
+    color: #aae3ff;
+}
+
+
+details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  
+
+
+.bandeau img{
+    width:90%;
+    padding-left: 30px;
+}
+
+.bandeau {
+font-family: "Indie Flower", cursive;
+font-weight: 400;
+font-style: normal;
+}
+
+blockquote{
+    padding: 20px;
+    border-top-left-radius: 15px;
+    color: var(--couleur-vert-moyen);
+    background-color: #2b2b2b;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:2.5svw;
+
+
+}
+
+.titre-bandeau-activite:hover{
+    cursor: pointer;
+}
+
+.titre-bandeau-lecon:hover{
+    cursor: pointer;
+}
+
+
+
+.titre-bandeau-activite{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3svw;
+    color: var(--couleur-jaune-fonce);
+}
+
+.titre-bandeau-lecon{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3svw;
+    color: var(--couleur-violet);
+}
+
+.fond-activite{
+    background-color: var(--couleur-jaune-assombri-95-prct);
+    padding:2svw;
+    margin-bottom:1svw;
+    border-radius: 2svw;
+}
+
+.texte-activite{
+    color: var(--couleur-jaune-fonce);
+}
+
+
+.fond-lecon{
+    background-color: var(--couleur-violet-assombri-70-prct);
+    padding:2svw;
+    margin-bottom:1svw;
+    border-radius: 2svw;
+}
+
+.imgCentree {  
+    position:relative;
+    top: 0.8svw;
+}
+
+
+
+span{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3svw;
+    line-height: 0.8;
+  }
+
+ .commentaire{
+    opacity: 0.6;
+    padding: 1svw 1svw 1svw 3svw;
+    background-color:rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin:1svw;
+  }
+
+
+  .trash{
+    background-color: #136e71;
+    }
+    

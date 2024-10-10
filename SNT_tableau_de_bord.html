@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="assets/styles/styleSNT_tableau_de_bord.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+
+  <title>SNT - Tableau de bord</title>
+
+<style type="text/css">
+
+
+ h3 {
+  	color: #FFFFFF;
+    font-size: 0.8 em;
+}
+  p {
+  	padding: 0px;
+  	margin: 0px;
+  }
+  .cadre {
+  	display: flex;
+  	margin: 10px;
+  }
+.boite {
+  	border-radius: 25px;
+ 	background: #73AD21;
+ 	padding: 20px;
+  	margin: 20px;
+ 	width: 200px;
+  color: #000000;
+  	
+}
+</style>
+<script src="https://dweet.io/client/dweet.io.min.js">
+</script><script
+function formatDate(dateString) {
+      var horadatage = new Date(dateString);
+      var jour = horadatage.getDate();
+      var mois = horadatage.getMonth() + 1;
+      var annee = horadatage.getFullYear();
+      var heures = horadatage.getHours();
+      var minutes = horadatage.getMinutes();
+      var secondes = horadatage.getSeconds();
+
+      var formattedDate = " " + jour + "-" + mois + "-" + annee + ":" + heures + "-" + minutes + "-" + secondes + " ";
+      return minutes;
+}>
+</script><script>
+     dweetio.listen_for("SRHG83580", function(dweet) {
+      var liveData_SRHG83580 = dweet.content;
+      var liveDataDate_SRHG83580 = dweet.created;
+     var html_SRHG83580 = "<h3>SRHG83580:</h3>";
+          html_SRHG83580 += "<p>Température: " + liveData_SRHG83580.temperature + " °C</p>";
+          html_SRHG83580 += "<p>Humidité: " + liveData_SRHG83580.humidite + "%</p>";
+      $("#live-data_SRHG83580").html(html_SRHG83580);
+    });
+      dweetio.listen_for("SRHG83581", function(dweet) {
+      var liveData_SRHG83581 = dweet.content;
+      var liveDataDate_SRHG83581 = dweet.created;
+      var html_SRHG83581 = "<h3>SRHG83581:</h3>";
+          html_SRHG83581 += "<p>Température: " + liveData_SRHG83581.temperature + " °C</p>";
+          html_SRHG83581 += "<p>Humidité: " + liveData_SRHG83581.humidite + "%</p>";
+      $("#live-data_SRHG83581").html(html_SRHG83581);
+    });
+        dweetio.listen_for("SRHG83582", function(dweet) {
+      var liveData_SRHG83582 = dweet.content;
+      var liveDataDate_SRHG83582 = dweet.created;
+      var html_SRHG83582 = "<h3>SRHG83582:</h3>";
+          html_SRHG83582 += "<p>Température: " + liveData_SRHG83582.temperature + " °C</p>";
+          html_SRHG83582 += "<p>Humidité: " + liveData_SRHG83582.humidite + "%</p>";
+      $("#live-data_SRHG83582").html(html_SRHG83582);
+    });
+
+  </script>
+
+
+
+  
+</head>
+
+  <body>
+
+<p>
+</p>
+<div class="commentaire">Tableau de bord</div> 
+<div class="cadre">
+<div class="boite" id="live-data_SRHG83580"> </div>
+
+<div class="boite" id="live-data_SRHG83581"> </div>
+
+<div class="boite" id="live-data_SRHG83582"> </div>
+</div>
+<!--
+<p>html += "<p>Date: " + liveDataDate +" </p>";
+-->
+    
+  </body>
+</html>
+
+

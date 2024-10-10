@@ -15,6 +15,7 @@
     --couleur-jaune-fonce: #e6b512;
     --couleur-jaune-orange: #e78800;
     --couleur-jaune-assombri-95-prct: #181302;
+    --couleur-rouge-moyen: #752500;
 }
 
 body{
@@ -47,7 +48,7 @@ h3{
 
 h4{
   font-family: "Anton", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   font-size:1.5svw;
   line-height: 100%;
@@ -208,18 +209,26 @@ span{
 
 
 
+.no-data {
+    background-color: var(--couleur-violet-);
+    color: white; /* Ajuste la couleur du texte si nécessaire */
+    opacity:0.4;
+}
+  
+
+
 .low-level {
-  background-color: var(--couleur-violet);
+  background-color: var(--couleur-rouge-moyen);
   color: white; /* Ajuste la couleur du texte si nécessaire */
 }
 
 .medium-level {
-  background-color: yellow;
+  background-color: var(--couleur-jaune-orange);
   color: black;
 }
 
 .high-level {
-  background-color: red;
+  background-color: var(--couleur-vert-moyen);
   color: white;
 }
 

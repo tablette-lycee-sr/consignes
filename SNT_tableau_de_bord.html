@@ -113,15 +113,17 @@
         .catch(error => {
           console.error(`Erreur lors de la récupération des données pour ${nom} :`, error);
           div.innerHTML = `<h4>${nom}</h4><p>(Aucune donnée)</p>`; // Remplacer entièrement le contenu par le message d'erreur
+          div.classList.remove('no-data','low-level', 'medium-level', 'high-level');
+          div.classList.add('no-data');
         });
     }
 
     // Fonction pour mettre à jour la couleur du div en fonction du niveau
     function updateDivStyle(div, niveau) {
-      div.classList.remove('low-level', 'medium-level', 'high-level');
-      if (niveau < 30) {
+      div.classList.remove('no-data','low-level', 'medium-level', 'high-level');
+      if (niveau < 1) {
         div.classList.add('low-level');
-      } else if (niveau >= 30 && niveau < 70) {
+      } else if (niveau >= 1 && niveau < 3) {
         div.classList.add('medium-level');
       } else {
         div.classList.add('high-level');

@@ -175,9 +175,30 @@ span{
     padding: 20px;
     margin: 20px;
     width: 200px;
-    color: #000000;
-    font-size: 1 em;
+    color: #FFFFFF;
+    font-size: 2 em;
   }
+
+
+
+
+
+
+.low-level {
+  background-color: var(--couleur-violet);
+  color: white; /* Ajuste la couleur du texte si nécessaire */
+}
+
+.medium-level {
+  background-color: yellow;
+  color: black;
+}
+
+.high-level {
+  background-color: red;
+  color: white;
+}
+
 
 
 

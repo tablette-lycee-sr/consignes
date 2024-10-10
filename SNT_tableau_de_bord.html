@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,63 +17,96 @@
 
   <title>SNT - Tableau de bord</title>
 
+  <!-- Inclusion de jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
 <body>
 
+  <h1>Tableau de bord SNT</h1>
 
+  <div class="cadre">
+    <div class="boite" id="live-data_x1234abcd"></div>
+    <div class="boite" id="live-data_SRHG83581"></div>
+    <div class="boite" id="live-data_SRHG83582"></div>
+  </div>
 
-
-  <script src="assets/javascript/dweet.io.js"></script>
-  <script function formatDate(dateString) { var horadatage=new Date(dateString); var jour=horadatage.getDate(); var
-    mois=horadatage.getMonth() + 1; var annee=horadatage.getFullYear(); var heures=horadatage.getHours(); var
-    minutes=horadatage.getMinutes(); var secondes=horadatage.getSeconds(); var formattedDate=" " + jour + "-" + mois
-    + "-" + annee + ":" + heures + "-" + minutes + "-" + secondes + " " ; return minutes; }>
-    </script>
   <script>
+    // Exemple pour un dweet ID : 'x1234abcd'
+    const dweetID = 'x1234abcd';
+  
+    // URL de l'API de dweet.io pour récupérer les derniers dweets
+    const url = `https://dweet.io/get/latest/dweet/for/${dweetID}`;
+  
+    // Fonction pour récupérer les données avec fetch
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Extraire les données dweet
+        const dweet = data.with[0].content;
+  
+        // Récupérer les valeurs du niveau et de l'humidité
+        const niveau = dweet.niveau;
+        const humidite = dweet.humidite;
+  
+        // Préparer dynamiquement le contenu HTML
+        let html_x1234abcd = "<h3>x1234abcd:</h3>";
+        html_x1234abcd += `<p>Niveau: ${niveau}</p>`;
+        html_x1234abcd += `<p>Humidité: ${humidite}%</p>`;
+  
+        // Sélectionner la div et insérer le contenu
+        const div = document.getElementById('live-data_x1234abcd');
+        div.innerHTML = html_x1234abcd;
+  
+        // Retirer toutes les classes pour éviter les conflits
+        div.classList.remove('low-level', 'medium-level', 'high-level');
+  
+        // Ajouter la classe appropriée en fonction de la valeur de niveau
+        if (niveau < 30) {
+          div.classList.add('low-level'); // Classe pour le niveau bas
+        } else if (niveau >= 30 && niveau < 70) {
+          div.classList.add('medium-level'); // Classe pour le niveau moyen
+        } else {
+          div.classList.add('high-level'); // Classe pour le niveau élevé
+        }
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération des données :', error);
+        document.getElementById('live-data_x1234abcd').textContent = 'Erreur de récupération des données.';
+      });
+  </script>
+  
+  
+  
+  
+
+  <script>
+    // Utilisation de dweetio pour écouter les données en temps réel
     dweetio.listen_for("x1234abcd", function (dweet) {
       var liveData_x1234abcd = dweet.content;
-      var liveDataDate_x1234abcd = dweet.created;
       var html_x1234abcd = "<h3>x1234abcd:</h3>";
       html_x1234abcd += "<p>Niveau: " + liveData_x1234abcd.niveau + "</p>";
       html_x1234abcd += "<p>Humidité: " + liveData_x1234abcd.humidite + "%</p>";
       $("#live-data_x1234abcd").html(html_x1234abcd);
     });
+
     dweetio.listen_for("SRHG83581", function (dweet) {
       var liveData_SRHG83581 = dweet.content;
-      var liveDataDate_SRHG83581 = dweet.created;
       var html_SRHG83581 = "<h3>SRHG83581:</h3>";
       html_SRHG83581 += "<p>Température: " + liveData_SRHG83581.temperature + " °C</p>";
       html_SRHG83581 += "<p>Humidité: " + liveData_SRHG83581.humidite + "%</p>";
       $("#live-data_SRHG83581").html(html_SRHG83581);
     });
+
     dweetio.listen_for("SRHG83582", function (dweet) {
       var liveData_SRHG83582 = dweet.content;
-      var liveDataDate_SRHG83582 = dweet.created;
       var html_SRHG83582 = "<h3>SRHG83582:</h3>";
       html_SRHG83582 += "<p>Température: " + liveData_SRHG83582.temperature + " °C</p>";
       html_SRHG83582 += "<p>Humidité: " + liveData_SRHG83582.humidite + "%</p>";
       $("#live-data_SRHG83582").html(html_SRHG83582);
     });
-
   </script>
-
-
-
-  <p>
-  </p>
-  <h3>Tableau de bord</h3>
-  <div class="cadre">
-    <div class="boite" id="live-data_x1234abcd"> </div>
-
-    <div class="boite" id="live-data_SRHG83581"> </div>
-
-    <div class="boite" id="live-data_SRHG83582"> </div>
-  </div>
-  <!--
-<p>html += "<p>Date: " + liveDataDate +" </p>";
--->
 
 </body>
 

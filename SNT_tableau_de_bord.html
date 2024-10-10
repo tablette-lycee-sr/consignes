@@ -83,19 +83,7 @@
                 });
 
               // Activer la mise à jour en temps réel pour chaque élève
-              dweetio.listen_for(codeDweet, function(dweet) {
-                const liveData = dweet.content;
-                const niveau = liveData.niveau;
-                const humidite = liveData.humidite;
-  
-                // Mettre à jour les données en live dans la div
-                let html = `<p>Niveau: ${niveau}</p>`;
-                html += `<p>Humidité: ${humidite}%</p>`;
-                div.innerHTML = `<h4>${nom}</h4>` + html;
-  
-                // Mettre à jour la couleur en fonction du niveau
-                updateDivStyle(div, niveau);
-              });
+              activateLiveStream(codeDweet, div, nom);
             });
           }
         });
@@ -103,6 +91,23 @@
       .catch(error => {
         console.error('Erreur lors de la récupération du CSV :', error);
       });
+
+    // Fonction pour activer la mise à jour live-stream
+    function activateLiveStream(codeDweet, div, nom) {
+      dweetio.listen_for(codeDweet, function(dweet) {
+        const liveData = dweet.content;
+        const niveau = liveData.niveau;
+        const humidite = liveData.humidite;
+
+        // Mettre à jour les données en live dans la div
+        let html = `<p>Niveau: ${niveau}</p>`;
+        html += `<p>Humidité: ${humidite}%</p>`;
+        div.innerHTML = `<h4>${nom}</h4>` + html;
+
+        // Mettre à jour la couleur en fonction du niveau
+        updateDivStyle(div, niveau);
+      });
+    }
 
     // Fonction pour mettre à jour la couleur du div en fonction du niveau
     function updateDivStyle(div, niveau) {

@@ -19,6 +19,8 @@
 
   <!-- Inclusion de jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Inclusion de la bibliothèque PapaParse qui facilite l'analyse des fichiers CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
 </head>
 
@@ -26,89 +28,90 @@
 
   <h1>Tableau de bord SNT</h1>
 
-  <div class="cadre">
-    <div class="boite" id="live-data_x1234abcd"></div>
-    <div class="boite" id="live-data_SRHG83581"></div>
-    <div class="boite" id="live-data_SRHG83582"></div>
-  </div>
-
   <script>
-    // Exemple pour un dweet ID : 'x1234abcd'
-    const dweetID = 'x1234abcd';
-  
-    // URL de l'API de dweet.io pour récupérer les derniers dweets
-    const url = `https://dweet.io/get/latest/dweet/for/${dweetID}`;
-  
-    // Fonction pour récupérer les données avec fetch
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        // Extraire les données dweet
-        const dweet = data.with[0].content;
-  
-        // Récupérer les valeurs du niveau et de l'humidité
-        const nom = dweet.nom;
-        const niveau = dweet.niveau;
-        
-  
-        // Préparer dynamiquement le contenu HTML
-        let html_x1234abcd = "<h2>x1234abcd</h2>";
-        html_x1234abcd += `<p>${nom}</p>`;
-        html_x1234abcd += `<p>Niveau: ${niveau}</p>`;
+    // URL du fichier CSV (tu peux le placer sur GitHub Pages, par exemple)
+    const csvUrl = 'assets/donnees/eleves.csv'; // Remplace par le lien de ton fichier hébergé
 
-  
-        // Sélectionner la div et insérer le contenu
-        const div = document.getElementById('live-data_x1234abcd');
-        div.innerHTML = html_x1234abcd;
-  
-        // Retirer toutes les classes pour éviter les conflits
-        div.classList.remove('low-level', 'medium-level', 'high-level');
-  
-        // Ajouter la classe appropriée en fonction de la valeur de niveau
-        if (niveau < 30) {
-          div.classList.add('low-level'); // Classe pour le niveau bas
-        } else if (niveau >= 30 && niveau < 70) {
-          div.classList.add('medium-level'); // Classe pour le niveau moyen
-        } else {
-          div.classList.add('high-level'); // Classe pour le niveau élevé
-        }
+    // Fonction pour lire et traiter le fichier CSV
+    fetch(csvUrl)
+      .then(response => response.text())
+      .then(csvText => {
+        // Utiliser PapaParse pour analyser le CSV
+        Papa.parse(csvText, {
+          header: true, // Utilise la première ligne comme en-têtes
+          complete: function (results) {
+            // Les données extraites du CSV
+            const eleves = results.data;
+
+            // Boucle sur chaque élève pour créer les div dynamiquement
+            eleves.forEach(eleve => {
+              const nom = eleve.nom;
+              const codeDweet = eleve.code_dweet;
+
+              // Créer dynamiquement une div pour chaque élève
+              const div = document.createElement('div');
+              div.id = `live-data_${codeDweet}`;
+              div.className = 'boite'; // Classe CSS pour le style de la boîte
+
+              // Ajouter un titre avec le nom de l'élève
+              div.innerHTML = `<h4>${nom}</h4>`;
+
+              // Ajouter la div au tableau de bord
+              document.querySelector('.cadre').appendChild(div);
+
+              // Charger les données initiales et activer la mise à jour périodique
+              fetchDweetData(codeDweet, div, nom);
+
+              // Activer le polling à intervalle régulier (toutes les 5 secondes)
+              setInterval(() => {
+                fetchDweetData(codeDweet, div, nom);
+              }, 5000); // 5000 ms = 5 secondes
+            });
+          }
+        });
       })
       .catch(error => {
-        console.error('Erreur lors de la récupération des données :', error);
-        document.getElementById('live-data_x1234abcd').textContent = 'Erreur de récupération des données.';
+        console.error('Erreur lors de la récupération du CSV :', error);
       });
+
+    // Fonction pour récupérer les données de Dweet.io et mettre à jour la div
+    function fetchDweetData(codeDweet, div, nom) {
+      fetch(`https://dweet.io/get/latest/dweet/for/${codeDweet}`)
+        .then(response => response.json())
+        .then(data => {
+          const dweet = data.with[0].content;
+          const niveau = dweet.niveau;
+          const humidite = dweet.humidite;
+
+          // Insérer les données dans la div
+          let html = `<h4>${nom}</h4><p>Niveau: ${niveau}</p><p>Humidité: ${humidite}%</p>`;
+          div.innerHTML = html;
+
+          // Modifier la couleur en fonction du niveau
+          updateDivStyle(div, niveau);
+        })
+        .catch(error => {
+          console.error(`Erreur lors de la récupération des données pour ${nom} :`, error);
+          div.innerHTML = `<h4>${nom}</h4><p>Erreur de récupération des données.</p>`; // Remplacer entièrement le contenu par le message d'erreur
+        });
+    }
+
+    // Fonction pour mettre à jour la couleur du div en fonction du niveau
+    function updateDivStyle(div, niveau) {
+      div.classList.remove('low-level', 'medium-level', 'high-level');
+      if (niveau < 30) {
+        div.classList.add('low-level');
+      } else if (niveau >= 30 && niveau < 70) {
+        div.classList.add('medium-level');
+      } else {
+        div.classList.add('high-level');
+      }
+    }
   </script>
-  
-  
-  
-  
 
-  <script>
-    // Utilisation de dweetio pour écouter les données en temps réel
-    dweetio.listen_for("x1234abcd", function (dweet) {
-      var liveData_x1234abcd = dweet.content;
-      var html_x1234abcd = "<h3>x1234abcd:</h3>";
-      html_x1234abcd += "<p>Niveau: " + liveData_x1234abcd.niveau + "</p>";
-      html_x1234abcd += "<p>Humidité: " + liveData_x1234abcd.humidite + "%</p>";
-      $("#live-data_x1234abcd").html(html_x1234abcd);
-    });
-
-    dweetio.listen_for("SRHG83581", function (dweet) {
-      var liveData_SRHG83581 = dweet.content;
-      var html_SRHG83581 = "<h3>SRHG83581:</h3>";
-      html_SRHG83581 += "<p>Température: " + liveData_SRHG83581.temperature + " °C</p>";
-      html_SRHG83581 += "<p>Humidité: " + liveData_SRHG83581.humidite + "%</p>";
-      $("#live-data_SRHG83581").html(html_SRHG83581);
-    });
-
-    dweetio.listen_for("SRHG83582", function (dweet) {
-      var liveData_SRHG83582 = dweet.content;
-      var html_SRHG83582 = "<h3>SRHG83582:</h3>";
-      html_SRHG83582 += "<p>Température: " + liveData_SRHG83582.temperature + " °C</p>";
-      html_SRHG83582 += "<p>Humidité: " + liveData_SRHG83582.humidite + "%</p>";
-      $("#live-data_SRHG83582").html(html_SRHG83582);
-    });
-  </script>
+  <div class="cadre">
+    <!-- Les div seront ajoutées ici dynamiquement -->
+  </div>
 
 </body>
 

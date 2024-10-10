@@ -194,7 +194,22 @@ span{
   }
 
 
-
+  .sticky {
+    position: fixed; /* Changer de sticky à fixed pour être toujours visible */
+    top: 10px; /* Distance du haut de la fenêtre */
+    right: 10px; /* Distance du bord droit */
+    width:2.5svw;
+    background-color: var(--couleur-gris-fonce); /* Fond légèrement transparent */
+    opacity: 0.8;
+    padding: 10px;
+    border: 1px solid var(--couleur-gris-clair);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Pour s'assurer qu'il reste au-dessus des autres éléments */
+    color: var(--couleur-gris-clair);
+    text-align: center;
+    font-size: 2svw;
+  }
 
 
 

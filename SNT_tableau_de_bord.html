@@ -21,8 +21,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Inclusion de la bibliothèque PapaParse qui facilite l'analyse des fichiers CSV -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  <!-- Inclusion de la bibliothèque dweet.io -->
-  <script src="https://dweet.io/dweet.io.js"></script>
 
 </head>
 
@@ -30,10 +28,13 @@
 
   <h1>Tableau de bord SNT</h1>
 
+  <!-- Div pour le décompte -->
+  <div id="countdown" class="sticky"><span id="timer">5</span>"</div>
+
   <script>
     // URL du fichier CSV (tu peux le placer sur GitHub Pages, par exemple)
     const csvUrl = 'assets/donnees/eleves.csv'; // Remplace par le lien de ton fichier hébergé
-  
+
     // Fonction pour lire et traiter le fichier CSV
     fetch(csvUrl)
       .then(response => response.text())
@@ -41,49 +42,46 @@
         // Utiliser PapaParse pour analyser le CSV
         Papa.parse(csvText, {
           header: true, // Utilise la première ligne comme en-têtes
-          complete: function(results) {
+          complete: function (results) {
             // Les données extraites du CSV
             const eleves = results.data;
-  
+
             // Boucle sur chaque élève pour créer les div dynamiquement
             eleves.forEach(eleve => {
               const nom = eleve.nom;
               const codeDweet = eleve.code_dweet;
-  
+
               // Créer dynamiquement une div pour chaque élève
               const div = document.createElement('div');
               div.id = `live-data_${codeDweet}`;
               div.className = 'boite'; // Classe CSS pour le style de la boîte
-  
+
               // Ajouter un titre avec le nom de l'élève
               div.innerHTML = `<h4>${nom}</h4>`;
-  
+
               // Ajouter la div au tableau de bord
               document.querySelector('.cadre').appendChild(div);
-  
-              // Créer un script pour récupérer les données dweet.io de l'élève
-              fetch(`https://dweet.io/get/latest/dweet/for/${codeDweet}`)
-                .then(response => response.json())
-                .then(data => {
-                  const dweet = data.with[0].content;
-                  const niveau = dweet.niveau;
-                  const humidite = dweet.humidite;
-  
-                  // Insérer les données dans la div
-                  let html = `<p>Niveau: ${niveau}</p>`;
-                  html += `<p>Humidité: ${humidite}%</p>`;
-                  div.innerHTML += html;
-  
-                  // Modifier la couleur en fonction du niveau
-                  updateDivStyle(div, niveau);
-                })
-                .catch(error => {
-                  console.error(`Erreur pour ${nom} :`, error);
-                  div.innerHTML += '<p>Erreur de récupération des données.</p>';
-                });
 
-              // Activer la mise à jour en temps réel pour chaque élève
-              activateLiveStream(codeDweet, div, nom);
+              // Charger les données initiales et activer la mise à jour périodique
+              fetchDweetData(codeDweet, div, nom);
+
+              // Activer le polling à intervalle régulier (toutes les 5 secondes)
+              setInterval(() => {
+                // Démarrer le décompte
+                let countdown = 5;
+                const timerDisplay = document.getElementById('timer');
+                
+                // Mise à jour du décompte
+                const countdownInterval = setInterval(() => {
+                  timerDisplay.textContent = countdown;
+                  countdown--;
+                  if (countdown < 0) {
+                    clearInterval(countdownInterval);
+                    fetchDweetData(codeDweet, div, nom); // Mettre à jour les données
+                    timerDisplay.textContent = '5'; // Réinitialiser le décompte pour la prochaine fois
+                  }
+                }, 1000); // Mettre à jour toutes les secondes
+              }, 5000); // 5000 ms = 5 secondes
             });
           }
         });
@@ -92,21 +90,26 @@
         console.error('Erreur lors de la récupération du CSV :', error);
       });
 
-    // Fonction pour activer la mise à jour live-stream
-    function activateLiveStream(codeDweet, div, nom) {
-      dweetio.listen_for(codeDweet, function(dweet) {
-        const liveData = dweet.content;
-        const niveau = liveData.niveau;
-        const humidite = liveData.humidite;
+    // Fonction pour récupérer les données de Dweet.io et mettre à jour la div
+    function fetchDweetData(codeDweet, div, nom) {
+      fetch(`https://dweet.io/get/latest/dweet/for/${codeDweet}`)
+        .then(response => response.json())
+        .then(data => {
+          const dweet = data.with[0].content;
+          const niveau = dweet.niveau;
+          const humidite = dweet.humidite;
 
-        // Mettre à jour les données en live dans la div
-        let html = `<p>Niveau: ${niveau}</p>`;
-        html += `<p>Humidité: ${humidite}%</p>`;
-        div.innerHTML = `<h4>${nom}</h4>` + html;
+          // Insérer les données dans la div
+          let html = `<h4>${nom}</h4><p>Niveau: ${niveau}</p><p>Humidité: ${humidite}%</p>`;
+          div.innerHTML = html;
 
-        // Mettre à jour la couleur en fonction du niveau
-        updateDivStyle(div, niveau);
-      });
+          // Modifier la couleur en fonction du niveau
+          updateDivStyle(div, niveau);
+        })
+        .catch(error => {
+          console.error(`Erreur lors de la récupération des données pour ${nom} :`, error);
+          div.innerHTML = `<h4>${nom}</h4><p>Erreur de récupération des données.</p>`; // Remplacer entièrement le contenu par le message d'erreur
+        });
     }
 
     // Fonction pour mettre à jour la couleur du div en fonction du niveau

@@ -41,17 +41,19 @@ h3{
     font-family: "Indie Flower", cursive;
     font-weight: 800;
     font-style: normal;
-    font-size:4svw;
+    font-size:2svw;
     color: #aae3ff;
 }
 
 h4{
-  font-family: "Indie Flower", cursive;
-  font-weight: 800;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
   font-style: normal;
   font-size:1.5svw;
-  line-height: 90%;
+  line-height: 100%;
   color: #aae3ff;
+  padding: 0;
+  margin: 0.5svw;
 }
 
 
@@ -157,18 +159,6 @@ span{
 
 
 
-
-
-
-
-
-
-
-  h3 {
-    color: #FFFFFF;
-    font-size: 0.8 em;
-  }
-
   p {
     padding: 0px;
     margin: 0px;
@@ -186,17 +176,22 @@ span{
   .boite {
     border-radius: 15px;
     background: var(--couleur-vert-fonce);
-    padding: 1svw;
-    margin:1svw;
-    width: 200px;
+    padding: 0.85svw;
+    display: flex; /* Utilise flexbox pour la mise en page */
+    flex-direction: column; /* Aligne les enfants en colonne */
+    justify-content: space-between; /* Espace entre le nom et les données */
+    height: 10svw; /* Hauteur fixe pour assurer l'alignement */
+    width: 9svw;
     color: #FFFFFF;
     font-size:1svw;
   }
 
 
+
+
   .sticky {
     position: fixed; /* Changer de sticky à fixed pour être toujours visible */
-    top: 10px; /* Distance du haut de la fenêtre */
+    bottom: 10px; /* Distance du haut de la fenêtre */
     right: 10px; /* Distance du bord droit */
     width:2.5svw;
     background-color: var(--couleur-gris-fonce); /* Fond légèrement transparent */

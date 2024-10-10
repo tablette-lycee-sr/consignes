@@ -26,7 +26,7 @@
 
 <body>
 
-  <h1>Tableau de bord SNT</h1>
+  <h3>Tableau de bord SNT</h3>
 
   <!-- Div pour le décompte -->
   <div id="countdown" class="sticky"><span id="timer">5</span>"</div>
@@ -70,7 +70,7 @@
                 // Démarrer le décompte
                 let countdown = 5;
                 const timerDisplay = document.getElementById('timer');
-                
+
                 // Mise à jour du décompte
                 const countdownInterval = setInterval(() => {
                   timerDisplay.textContent = countdown;
@@ -100,15 +100,19 @@
           const humidite = dweet.humidite;
 
           // Insérer les données dans la div
-          let html = `<h4>${nom}</h4><p>Niveau: ${niveau}</p><p>Humidité: ${humidite}%</p>`;
-          div.innerHTML = html;
+          let html = `<h4 style="margin: 0;">${nom}</h4>`;
+          html += `<div style="margin-top: auto;">`; // Aligne les données en bas
+          html += `<p>Niveau: ${niveau}</p>`;
+          // html += `<p>Humidité: ${humidite}</p>`;
+          html += `</div>`;
+          div.innerHTML = html; L = html;
 
           // Modifier la couleur en fonction du niveau
           updateDivStyle(div, niveau);
         })
         .catch(error => {
           console.error(`Erreur lors de la récupération des données pour ${nom} :`, error);
-          div.innerHTML = `<h4>${nom}</h4><p>Erreur de récupération des données.</p>`; // Remplacer entièrement le contenu par le message d'erreur
+          div.innerHTML = `<h4>${nom}</h4><p>(Aucune donnée)</p>`; // Remplacer entièrement le contenu par le message d'erreur
         });
     }
 

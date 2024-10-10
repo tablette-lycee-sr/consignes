@@ -211,8 +211,9 @@ span{
 
 .no-data {
     background-color: var(--couleur-violet-);
-    color: white; /* Ajuste la couleur du texte si nécessaire */
+    color:var(--couleur-gris-moyen);
     opacity:0.4;
+    border: 1px solid var(--couleur-gris-moyen);
 }
   
 

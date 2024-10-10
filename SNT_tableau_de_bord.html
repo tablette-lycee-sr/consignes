@@ -32,6 +32,9 @@
   <div id="countdown" class="sticky"><span id="timer">5</span>"</div>
 
   <script>
+    // Définir le niveau maximum
+    const niveauMax = 3;
+
     // URL du fichier CSV (tu peux le placer sur GitHub Pages, par exemple)
     const csvUrl = 'assets/donnees/eleves.csv'; // Remplace par le lien de ton fichier hébergé
 
@@ -123,7 +126,7 @@
       div.classList.remove('no-data','low-level', 'medium-level', 'high-level');
       if (niveau < 1) {
         div.classList.add('low-level');
-      } else if (niveau >= 1 && niveau < 3) {
+      } else if (niveau >= 1 && niveau < niveauMax) {
         div.classList.add('medium-level');
       } else {
         div.classList.add('high-level');

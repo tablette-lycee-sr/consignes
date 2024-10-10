@@ -146,6 +146,45 @@ span{
   }
 
 
+
+
+
+
+
+
+
+
+  h3 {
+    color: #FFFFFF;
+    font-size: 0.8 em;
+  }
+
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .cadre {
+    display: flex;
+    margin: 10px;
+  }
+
+  .boite {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+    color: #000000;
+  }
+
+
+
+
+
+
+
+
   .trash{
     background-color: #136e71;
     }

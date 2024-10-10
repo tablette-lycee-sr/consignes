@@ -32,13 +32,13 @@
     + "-" + annee + ":" + heures + "-" + minutes + "-" + secondes + " " ; return minutes; }>
     </script>
   <script>
-    dweetio.listen_for("1234abcd", function (dweet) {
-      var liveData_1234abcd = dweet.content;
-      var liveDataDate_1234abcd = dweet.created;
-      var html_1234abcd = "<h2>1234abcd:</h2>";
-      html_1234abcd += "<p>Niveau: " + liveData_1234abcd.niveau + "</p>";
-      html_1234abcd += "<p>Humidité: " + liveData_1234abcd.humidite + "%</p>";
-      $("#live-data_1234abcd").html(html_1234abcd);
+    dweetio.listen_for("x1234abcd", function (dweet) {
+      var liveData_x1234abcd = dweet.content;
+      var liveDataDate_x1234abcd = dweet.created;
+      var html_x1234abcd = "<h2>1234abcd:</h2>";
+      html_x1234abcd += "<p>Niveau: " + liveData_x1234abcd.niveau + "</p>";
+      html_x1234abcd += "<p>Humidité: " + liveData_x1234abcd.humidite + "%</p>";
+      $("#live-data_x1234abcd").html(html_x1234abcd);
     });
     dweetio.listen_for("SRHG83581", function (dweet) {
       var liveData_SRHG83581 = dweet.content;
@@ -65,7 +65,7 @@
   </p>
   <h3>Tableau de bord</h3>
   <div class="cadre">
-    <div class="boite" id="live-data_1234abcd"> </div>
+    <div class="boite" id="live-data_x1234abcd"> </div>
 
     <div class="boite" id="live-data_SRHG83581"> </div>
 

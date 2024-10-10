@@ -5,6 +5,11 @@ https://tablette-lycee-sr.github.io/consignes/SNT_tableau_de_bord.html
 
 
 
+https://dweet.io/dweet/for/x1234abcd?niveau=50
+
+
+
+
 
 import requests
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="assets/styles/styleSNT_tableau_de_bord.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+
+  <title>SNT - Tableau de bord</title>
+
+  <!-- Inclusion de jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Tableau de bord SNT</h1>
+
+  <div class="cadre">
+    <div class="boite" id="live-data_x1234abcd"></div>
+    <div class="boite" id="live-data_SRHG83581"></div>
+    <div class="boite" id="live-data_SRHG83582"></div>
+  </div>
+
+  <script>
+    // Exemple pour un dweet ID : 'x1234abcd'
+    const dweetID = 'x1234abcd';
+  
+    // URL de l'API de dweet.io pour récupérer les derniers dweets
+    const url = `https://dweet.io/get/latest/dweet/for/${dweetID}`;
+  
+    // Fonction pour récupérer les données avec fetch
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Extraire les données dweet
+        const dweet = data.with[0].content;
+  
+        // Récupérer les valeurs du niveau et de l'humidité
+        const nom = dweet.nom;
+        const niveau = dweet.niveau;
+        
+  
+        // Préparer dynamiquement le contenu HTML
+        let html_x1234abcd = "<h2>x1234abcd</h2>";
+        html_x1234abcd += `<p>${nom}</p>`;
+        html_x1234abcd += `<p>Niveau: ${niveau}</p>`;
+
+  
+        // Sélectionner la div et insérer le contenu
+        const div = document.getElementById('live-data_x1234abcd');
+        div.innerHTML = html_x1234abcd;
+  
+        // Retirer toutes les classes pour éviter les conflits
+        div.classList.remove('low-level', 'medium-level', 'high-level');
+  
+        // Ajouter la classe appropriée en fonction de la valeur de niveau
+        if (niveau < 30) {
+          div.classList.add('low-level'); // Classe pour le niveau bas
+        } else if (niveau >= 30 && niveau < 70) {
+          div.classList.add('medium-level'); // Classe pour le niveau moyen
+        } else {
+          div.classList.add('high-level'); // Classe pour le niveau élevé
+        }
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération des données :', error);
+        document.getElementById('live-data_x1234abcd').textContent = 'Erreur de récupération des données.';
+      });
+  </script>
+  
+  
+  
+  
+
+  <script>
+    // Utilisation de dweetio pour écouter les données en temps réel
+    dweetio.listen_for("x1234abcd", function (dweet) {
+      var liveData_x1234abcd = dweet.content;
+      var html_x1234abcd = "<h3>x1234abcd:</h3>";
+      html_x1234abcd += "<p>Niveau: " + liveData_x1234abcd.niveau + "</p>";
+      html_x1234abcd += "<p>Humidité: " + liveData_x1234abcd.humidite + "%</p>";
+      $("#live-data_x1234abcd").html(html_x1234abcd);
+    });
+
+    dweetio.listen_for("SRHG83581", function (dweet) {
+      var liveData_SRHG83581 = dweet.content;
+      var html_SRHG83581 = "<h3>SRHG83581:</h3>";
+      html_SRHG83581 += "<p>Température: " + liveData_SRHG83581.temperature + " °C</p>";
+      html_SRHG83581 += "<p>Humidité: " + liveData_SRHG83581.humidite + "%</p>";
+      $("#live-data_SRHG83581").html(html_SRHG83581);
+    });
+
+    dweetio.listen_for("SRHG83582", function (dweet) {
+      var liveData_SRHG83582 = dweet.content;
+      var html_SRHG83582 = "<h3>SRHG83582:</h3>";
+      html_SRHG83582 += "<p>Température: " + liveData_SRHG83582.temperature + " °C</p>";
+      html_SRHG83582 += "<p>Humidité: " + liveData_SRHG83582.humidite + "%</p>";
+      $("#live-data_SRHG83582").html(html_SRHG83582);
+    });
+  </script>
+
+</body>
+
+</html>

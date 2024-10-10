@@ -45,6 +45,16 @@ h3{
     color: #aae3ff;
 }
 
+h4{
+  font-family: "Indie Flower", cursive;
+  font-weight: 800;
+  font-style: normal;
+  font-size:1.5svw;
+  line-height: 90%;
+  color: #aae3ff;
+}
+
+
 
 details > summary {
     list-style: none;
@@ -166,17 +176,21 @@ span{
 
   .cadre {
     display: flex;
-    margin: 10px;
-  }
+    flex-wrap: wrap;  /* Permet de passer à la ligne quand la largeur est atteinte */
+    gap: 1svw;        /* Espace entre les divs */
+    margin: 1svw;
+    justify-content: flex-start;  /* Aligne les divs au début de la ligne */
+}
+
 
   .boite {
-    border-radius: 25px;
-    background: var(--couleur-vert-fonce);;
-    padding: 20px;
-    margin: 20px;
+    border-radius: 15px;
+    background: var(--couleur-vert-fonce);
+    padding: 1svw;
+    margin:1svw;
     width: 200px;
     color: #FFFFFF;
-    font-size: 2 em;
+    font-size:1svw;
   }
 
 

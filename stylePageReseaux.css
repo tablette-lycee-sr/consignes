@@ -1,0 +1,86 @@
+body {
+	background-color: #AAAADD;
+}
+
+.page{
+	padding: 2em 0 0 0;
+	width: 90%;
+	margin: auto;
+}
+
+h1 {
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 2em;
+	text-align: center;
+	width: 70%;
+	padding: 0.5em;
+	margin: auto;
+	margin-bottom: 1em;
+		margin-top: 2em;
+	  font-family: "Slackey", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5em;
+	
+}
+
+table {
+  table-layout: fixed;
+  width: 120px;
+  border: 1px solid black;
+  width:100%
+}
+
+td {
+  border: 2px solid white;
+  overflow: hidden;
+  word-wrap: break-word;
+  padding: 1em;
+  
+}
+
+img {
+	width: 90%;
+}
+
+.titre {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.bouton {
+	width: 15%;
+	background-color: #8888BB;
+	border: 1px solid white;
+	border-radius: 0.5em;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+		color: white;
+}
+
+a:hover {
+	color: black;
+}
+
+.citation{
+	text-align: justify;
+	color: black;
+	  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+.source{
+	text-align: right;
+	color: #8888BB;
+	  font-family: "Poiret One", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1em;
+}

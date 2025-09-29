@@ -54,34 +54,36 @@
         De nombreux élèves appliquent une règle de Français et écrivent imput avec un "m" avant le "p", mais il
         s'agit bien d'une instruction en Anglais. On écrit donc input avec un "n".
       </div>
-      La fonction <img class="imgCentree" src="assets/images/input().png" width="12%" /> met en pause le déroulement du script et affiche un prompt dans la console. L'interpréteur qui
+      La fonction <img class="imgCentree" src="assets/images/input().png" width="12%" /> met en pause le déroulement du
+      script et affiche un prompt dans la console. L'interpréteur qui
       exécute le programme attend que l'utilisateur appuie sur la touche Entrée pour poursuivre le programme.
       <br />
     </div>
-        <div class="fond-lecon">
-      - Mais l'utilisateur attend alors sans savoir quoi faire. Alors, <span>on peut ajouter une chaîne de caractères entre les parenthèses pour donner une indication à l'utilisateur.</span><br />
-        <img src="assets/images/input(c-est-a-vous).png" width="50%" />   
+    <div class="fond-lecon">
+      - Mais l'utilisateur attend alors sans savoir quoi faire. Alors, <span>on peut ajouter une chaîne de caractères
+        entre les parenthèses pour donner une indication à l'utilisateur.</span><br />
+      <img src="assets/images/input(c-est-a-vous).png" width="35%" />
       <br /><br />
-      - Plus important encore, si on ne complète pas cette instruction, tout le texte que l'utilisateur a saisi est perdu quand le script
+      - Plus important encore, si on ne complète pas cette instruction, tout le texte que l'utilisateur a saisi est
+      perdu quand le script
       redémarre car on n'a pas indiqué où stocker cette information.<br />
       <span>
-      Pour stocker ce qui a été saisi par l'utilisateur, il faut créer une variable.
+        Pour stocker ce qui a été saisi par l'utilisateur, il faut créer une variable.
       </span>
       <br />
       <div class="commentaire">
-        <ins>Par exemple:</ins> On veut laisser à l'utilisateur la possibilité de rédiger un message. Il faut donc le stocker avant de l'envoyer. On peut ainsi écrire l'instruction suivante:<br />
-          <img src="assets/images/msg-input(Entrez).png" width="70%" /><br />
-          L'utilisateur voit alors apparaître une ligne dans la console qui l'invite à cliquer derrière ce prompt et à taper son texte.<br />
-          Quand il appuie sur la touche Entrée, le texte saisi au clavier est affecté à la variable <img class="imgCentree" src="assets/images/msg.png" width="6%" /> <br /><br />
-          <img src="assets/images/input-illustration.png" width="70%" /><br />
+        <ins>Par exemple:</ins> On veut laisser à l'utilisateur la possibilité de rédiger un message. Il faut donc le
+        stocker avant de l'envoyer. On peut ainsi écrire l'instruction suivante:<br />
+        <img src="assets/images/msg-input(Entrez).png" width="70%" /><br />
+        L'utilisateur voit alors apparaître une ligne dans la console qui l'invite à cliquer derrière ce prompt et à
+        taper son texte.<br />
+        Quand il appuie sur la touche Entrée, le texte saisi au clavier est affecté à la variable <img
+          class="imgCentree" src="assets/images/msg.png" width="6%" /> <br /><br />
+        <img src="assets/images/input-illustration.png" width="70%" /><br />
       </div>
+      <br />
+    </div>
 
-      </span>    
-      <br />
-    </div>
-        <div class="fond-lecon">
-      <br />
-    </div>
   </details>
 
   <details>
@@ -90,7 +92,91 @@
         <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
       </div>
     </summary>
-    <div class="fond-activite">
+     <div class="fond-activite">
+      - Repérez les lignes XX, XX et XX du script. <br />
+      - Modifiez chacune de ces déclarations de variable en fonction des indications suivantes:
+      <ul>
+        <li><code>#A.</code>
+          <br />
+          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/score.png" width="10%" /> de la
+          ligne 17 est vide
+          (l&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> signifie qu&#39;il
+          n&#39;y a
+          &quot;aucune&quot; valeur dans cette variable). <br />
+          <div class="texte-activite">
+            ⮕ Affectez la valeur
+            <img class="imgCentree" src="assets/images/100.png" width="6%" /> (<strong>un nombre entier</strong>) à la
+            variable
+            <img class="imgCentree" src="assets/images/score.png" width="9%" />.<br />
+          </div>
+          <div class="commentaire">
+            <ins>Remarque:</ins> <br />
+            L&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> permet de vider le
+            contenu
+            de la
+            variable mais celle-ci existe toujours.
+          </div>
+        </li><br />
+        <li><code>#B.</code>
+          <br />
+          Le héros de notre jeu peut devenir invisible. C&#39;est la variable
+          <img class="imgCentree" src="assets/images/invisible.png" width="15%" /> de la ligne 19 qui enregistre cet
+          état. Pour
+          l&#39;instant ce
+          n&#39;est pas le cas car la valeur est <img class="imgCentree" src="assets/images/false.png"
+            width="9%" />.<br />
+          <div class="texte-activite">
+            ⮕ Modifez cette valeur pour que notre héros devienne invisible. Il ne vous reste plus
+            qu&#39;à trouver quelle <strong>expression anglaise signifie <em>&quot;Vrai&quot;</em></strong> <br />
+          </div>
+          <div class="commentaire">
+            <ins>Indice:</ins> Tant que la couleur de la valeur n'est pas violette, c'est qu'il ne s'agit pas de la
+            bonne
+            expression...<br />
+          </div>
+          <div class="commentaire">
+            <ins>Remarque:</ins> <br />
+            <span>Une variable <em>Vrai/Faux</em> est de type bouléen.
+              C&#39;est la plus petite boite qui existe, elle ne stocke qu&#39;un
+              <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>)</span>, ce qui est la plus petite
+            unité
+            de mémoire d'un disque.
+          </div>
+        </li><br />
+        <li><code>#C.</code>
+          <br />
+          Le nom du joueur est enregistré dans la variable
+          <img class="imgCentree" src="assets/images/n.png" width="3%" />. Mais comme cela peut prêter à confusion, on
+          veut modifier ce nom de variable en lui donnant un nom qui aura plus de sens pour le programmeur qui reviendra un jour sur ce script, quelque chose comme <strong>&quot;nom du joueur&quot;</strong>.<br />
+          <div class="texte-activite">
+            ⮕ Suivez les règles et conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
+            de variable à la place de <img class="imgCentree" src="assets/images/n.png" width="3%" />. <br />
+          </div>
+          <span>Le nom de variable...<br />
+            ~ ...ne peut pas contenir d&#39;espace<br />
+            ~ ...ne peut pas commencer par un chiffre<br />
+            ~ ...ne peut pas contenir d&#39;autres symboles que
+            <code>_</code> (<em>underscore</em>)<br /></span>
+          ~ ...ne peut pas être un mot-clé qui appartient au langage Python
+          (par exemple <img class="imgCentree" src="assets/images/print.png" width="10%" /> est déjà utilisé) <br />
+          <div class="commentaire">
+            <ins>Remarque:</ins> Par convention, les noms de variable
+            s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
+            le début de chaque nouveau mot. Par exemple:<br />
+            <img class="imgCentree" src="assets/images/jourdelasemaine.png" width="28%" /> ou <img class="imgCentree"
+              src="assets/images/anneedenaissance.png" width="32%" />
+          </div>
+          <br />
+          <div class="texte-activite">
+            ⮕ Enfin, affectez à cette variable la chaîne de caractères de votre choix,
+            pourquoi pas votre propre prénom.
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div>
 
       #C
       lignes 39-42:

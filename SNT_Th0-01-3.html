@@ -38,7 +38,7 @@
   <!--  === ÉTAPE 04 === -->
   <div class="bandeau"><img src="assets/bandeaux/SNT_Python_Etape-04.png" /></div>
   </p>
-  <h3 id="04-1-xxx">04-1. L'instruction input</h3>
+  <h3 id="04-1-xxx">04-1. Syntaxe de l'instruction input</h3>
   <details>
     <summary>
       <div class="titre-bandeau-lecon">
@@ -195,44 +195,41 @@
       </div>
     </summary>
     <div class="fond-lecon">
-      - La fonction <img class="imgCentree" src="assets/images/input().png" width="12%" /> , on l'a dit, 
-      permet de récupérer du texte saisi par l'utilisateur, c'est à dire sous la forme d'une chaîne de caractères.
+      - La fonction <img class="imgCentree" src="assets/images/input().png" width="12%" /> , on l'a dit,
+      permet de récupérer du texte saisi par l'utilisateur, c'est à dire sous la forme d'<strong> chaîne de
+        caractères.</strong>
       Cela signifie que si l'on utilise le pavé numérique et que l'on saisit des chiffres, ceux-ci seront en fait
       compris comme du texte et pas comme un nombre.
-      On ne peut donc pas faire directement de calcul à partir de ce qui est récupéré par la fonction 
+      On ne peut donc pas faire directement de calcul à partir de ce qui est récupéré par la fonction
       <img class="imgCentree" src="assets/images/input().png" width="12%" />.
       <div class="commentaire">
         <ins>Par exemple:</ins> On crée un programme qui doit calculer automatiquement la réduction appliquée à des
-        habits en soldes à -20%. On laisse le client saisir au clavier le montant de son article avec la fonction 
-        <img class="imgCentree" src="assets/images/input().png" width="12%" /> et on affiche le résultat du calcul 
+        habits en solde à -20%. On laisse le client saisir au clavier le montant de son article avec la fonction
+        <img class="imgCentree" src="assets/images/input().png" width="12%" /> et on affiche le résultat du calcul
         avec la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />.<br />
         On imagine donc le script suivant: <br />
-        <img src="assets/images/script_prix-erreur-type.png" width="70%" /><br />
+        <img src="assets/images/script_prix-erreur-type.png" width="85%" /><br />
         Mais le code ci-dessus affichera une erreur <br />
-        <img src="assets/images/typeError-non-int.png" width="50%" /><br />
+        <img src="assets/images/typeError-non-int.png" width="70%" /><br />
         qui peut se traduire par "Erreur de type de variable: impossible de multiplier par autre chose qu'un nombre".
         <br />
         En effet, le prix que l'utilisateur va saisir au clavier sera de type "chaîne de caractères" et non pas un
         nombre entier, rendant le calcul impossible.
         <br />
       </div>
-        <br />
-      - Alors,<span> pour transformer le contenu d'une variable en nombre entier, on utilise la fonction 
-        <img class="imgCentree" src="assets/images/int().png" width="6%" /> </span> <br />
+      <br />
+      - Alors,<span> pour transformer le contenu d'une variable en nombre entier, on utilise la fonction
+        <img class="imgCentree" src="assets/images/int().png" width="9%" /> </span> <br />
       <div class="commentaire">
         <ins>Remarque:</ins> "int" est la contraction de l'Anglais "integer", "nombre entier" en Français.
         <br />
       </div>
-        <br />
-      Ainsi en rajoutant l'instruction <img class="imgCentree" src="assets/images/int(prix).png" width="18%" /> 
-      au lieu de la variable <img class="imgCentree" src="assets/images/prix.png" width="7%" /> , 
+      Ainsi en rajoutant l'instruction <img class="imgCentree" src="assets/images/int(prix).png" width="9%" />
+      au lieu de la variable <img class="imgCentree" src="assets/images/prix.png" width="7%" />
       l'erreur est corrigée et le programme fonctionne.
-
     </div>
-    <br />
 
-    <br />
-    </div>
+
     <div class="fond-lecon">
       -
       <br />

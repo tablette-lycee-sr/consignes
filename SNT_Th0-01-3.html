@@ -196,7 +196,7 @@
     </summary>
     <div class="fond-lecon">
       - La fonction <img class="imgCentree" src="assets/images/input().png" width="12%" /> , on l'a dit,
-      permet de récupérer du texte saisi par l'utilisateur, c'est à dire sous la forme d'<strong> chaîne de
+      permet de récupérer du texte saisi par l'utilisateur, c'est à dire sous la forme d'une <strong> chaîne de
         caractères.</strong>
       Cela signifie que si l'on utilise le pavé numérique et que l'on saisit des chiffres, ceux-ci seront en fait
       compris comme du texte et pas comme un nombre.
@@ -230,17 +230,33 @@
         <img class="imgCentree" src="assets/images/prix.png" width="7%" /> l'instruction
         <img class="imgCentree" src="assets/images/int(prix).png" width="13%" /> est intégrée à la formule
         dans le calcul de l'affichage: <br />
-        <img class="imgCentree" src="assets/images/print(int(prix)).png" width="50%" /> <br />
+        <img class="imgCentree" src="assets/images/print(int(prix)).png" width="45%" /> <br />
         ce qui corrige l'erreur et le programme fonctionne comme attendu.
       </div>
     </div>
 
     <div class="fond-lecon">
-      - À l'inverse, la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />, si elle
-      comporte déjà un élément de texte, n'accepte plus qu'une concaténation de textes, mais plus aucun nombre.
+      - À l'inverse, quand on veut concaténer des éléments (c'est à dire les ajouter les uns à la suite des autres) 
+      avec la la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />, 
+      on ne peut pas "additionner" des lettres et des nombres.
       <br />
       <div class="commentaire">
-        <ins>Par exemple:</ins> On crée un programme qui doit calculer automatiquement la réduction appliquée à des
+        <ins>Par exemple:</ins> Dans le précédent script qui calcule le prix des articles en solde, on voudrait afficher
+        le montant de la réduction à l'intérieur d'une phrase. <br />
+        On envisage donc de modifier l'instruction de la manière suivante: <br />
+        <img src="assets/images/print(votre-article-int()).png" width="95%" /><br />
+        Mais le code ci-dessus affichera une erreur <br />
+        <img src="assets/images/typeError_concatenate.png" width="75%" /><br />
+        qui peut se traduire par "Erreur de type de variable: vous ne pouvez concaténer que des chaînes de caractères".
+        <br />
+        En effet, le montant de la promotion sera de type "nombre décimal" et non pas une chaîne de caractères, 
+        rendant l'affichage impossible.
+        <br />
+        
+        
+        
+        
+        On crée un programme qui doit calculer automatiquement la réduction appliquée à des
         habits en solde à -20%. On laisse le client saisir au clavier le montant de son article avec la fonction
         <img class="imgCentree" src="assets/images/input().png" width="12%" /> et on affiche le résultat du calcul
         avec la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />.<br />

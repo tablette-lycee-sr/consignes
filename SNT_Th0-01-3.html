@@ -237,22 +237,37 @@
 
     <div class="fond-lecon">
       - À l'inverse, avec la la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />,
-      quand on veut concaténer des éléments (c'est à dire les ajouter les uns à la suite des autres)     
+      quand on veut concaténer des éléments (c'est à dire les ajouter les uns à la suite des autres)
       on ne peut pas "additionner" des lettres et des nombres.
       <br />
       <div class="commentaire">
         <ins>Par exemple:</ins> Dans le précédent script qui calcule le prix des articles en solde, on voudrait afficher
         le montant de la réduction à l'intérieur d'une phrase. <br />
         On envisage donc de modifier l'instruction de la manière suivante: <br />
-        <img src="assets/images/print(votre-article-int()).png" width="95%" /><br />
+        <img src="assets/images/print(promo-erreur).png" width="85%" /><br />
         Mais le code ci-dessus affichera une erreur <br />
         <img src="assets/images/typeError_concatenate.png" width="60%" /><br />
         qui peut se traduire par "Erreur de type de variable: vous ne pouvez concaténer que des chaînes de caractères".
         <br />
-        En effet, le montant de la promotion sera de type "nombre décimal" et non pas une chaîne de caractères, 
+        En effet, le montant de la promotion sera de type "nombre décimal" et non pas une chaîne de caractères,
         rendant l'affichage impossible.
         <br />
       </div>
+      - Alors,<span> pour transformer le contenu d'une variable en chaîne de caractères, on utilise la fonction
+        <img class="imgCentree" src="assets/images/str().png" width="9%" /> avec le nom de la variable entre les
+        parenthèses.</span> <br />
+      <div class="commentaire">
+        <ins>Remarque:</ins> "str" est la contraction de l'Anglais "string", "chaîne" en Français.
+        <br />
+      </div>
+      <div class="commentaire">
+        <ins>Par exemple:</ins> Dans le script précédent, à la place de l'instruction 
+        <img class="imgCentree" src="assets/images/print(int(prix)).png" width="45%" /> <br />
+        on modifie la formule dans le calcul de l'affichage:
+        <img src="assets/images/print(promo-str()).png" width="95%" /><br />
+        ce qui corrige l'erreur et le programme fonctionne comme attendu.
+      </div>
+      <br />
     </div>
   </details>
 

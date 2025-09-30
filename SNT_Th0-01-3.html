@@ -86,6 +86,13 @@
 
   </details>
 
+
+  #C
+  lignes 39-42:
+  nomDuJoueur2 = input("...")
+  print("Bienvenue "+nomDuJoueur2)
+
+
   <details>
     <summary>
       <div class="titre-bandeau-activite">
@@ -93,83 +100,53 @@
       </div>
     </summary>
     <div class="fond-activite">
-      - Repérez les lignes 25, 27 et 29 du script. <br />
+      - Repérez les lignes 17 et 19 du script. <br />
       - Modifiez chacune de ces instructions en fonction des indications suivantes:
       <ul>
         <li><code>#A.</code>
           <br />
-          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/date.png" width="10%" /> de la
-          ligne 25 est vide
-          (l&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> signifie qu&#39;il
-          n&#39;y a
-          &quot;aucune&quot; valeur dans cette variable). <br />
+          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/nomDuJoueur2.png" width="16%" /> de
+          la
+          ligne 27 contient une chaîne de caractères. <br />
           <div class="texte-activite">
-            ⮕ Modifiez cette ligne afin que l'utilisateur soit invité à saisir au clavier son année de naissance et que
-            cette valeur soit stockée dans la variable <img class="imgCentree" src="assets/images/date.png"
-              width="10%" />
+            ⮕ Modifiez cette ligne afin que l'utilisateur soit invité à saisir au clavier son <strong>nom ou un
+              pseudo</strong> et que
+            cette valeur soit stockée dans la variable <img class="imgCentree" src="assets/images/nomDuJoueur2.png"
+              width="16%" />
           </div>
           <div class="commentaire">
-            <ins>Indice:</ins> <br /> N'oubliez pas de donner une indication suffisamment claire à l'utilisateur pour 
-            qu'il sache ce qu'il doit faire.
+            <ins>Indice:</ins> <br /> Conservez le texte actuel ("Quel est ton nom ? : ") comme argument de la fonction
+            <img class="imgCentree" src="assets/images/input().png" width="12%" />
           </div>
         </li><br />
         <li><code>#B.</code>
           <br />
-          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/age.png" width="10%" /> de la
-          ligne 27 est vide <br />
+          Pour l'instant, la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" /> de la ligne
+          19, est vide.
           <div class="texte-activite">
-            ⮕ Modifiez cette ligne afin d'affecter à cette variable l'âge approximatif de l'utilisateur d'après la date qu'il a donnée précédemment.
-            Il s'agit donc du résultat du calcul de la différence entre l'année actuelle et la valeur de la variable 
-            <img class="imgCentree" src="assets/images/date.png" width="10%" />
+            ⮕ Modifiez cette ligne afin qu'apparaisse dans la console une phrase sur le modèle suivant: <br />
+            <strong>Bienvenue, [nom du joueur saisi par l'utilisateur] !</strong><br />
+            en remplaçant ce qui est entre crochets par la valeur de la variable déjà créée.<br />
           </div>
           <div class="commentaire">
-            <ins>Indice:</ins> <br /> Rappelez-vous que le type de la variable <img class="imgCentree" src="assets/images/date.png" width="10%" />
-            est une <strong>chaîne de caractères</strong> puisque sa valeur a été saisie au clavier par l'utilisateur. Puisque vous souhaitez réaliser un calcul, 
-            il faut donc que tous les éléments de l'instruction soient des valeurs numériques. Au besoin, il faudra donc <strong> changer le type </strong> 
-            d'une des variables en utilisant soit la fonction <img class="imgCentree" src="assets/images/int().png" width="9%" /> ou la fonction 
-            <img class="imgCentree" src="assets/images/str().png" width="9%" />...
+            <ins>Indice:</ins> Il s'agit d'une simple concaténation entre des chaînes de caractères et une variable.
+            <br />
           </div>
-        </li><br />
-        <li><code>#C.</code>
-          <br />([nom]+" a "+str(age)+" ans")
-          Le nom du joueur est enregistré dans la variable
-          <img class="imgCentree" src="assets/images/n.png" width="3%" />. Mais comme cela peut prêter à confusion, on
-          veut modifier ce nom de variable en lui donnant un nom qui aura plus de sens pour le programmeur qui reviendra
-          un jour sur ce script, quelque chose comme <strong>&quot;nom du joueur&quot;</strong>.<br />
-          <div class="texte-activite">
-            ⮕ Suivez les règles et conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
-            de variable à la place de <img class="imgCentree" src="assets/images/n.png" width="3%" />. <br />
-          </div>
-          <span>Le nom de variable...<br />
-            ~ ...ne peut pas contenir d&#39;espace<br />
-            ~ ...ne peut pas commencer par un chiffre<br />
-            ~ ...ne peut pas contenir d&#39;autres symboles que
-            <code>_</code> (<em>underscore</em>)<br /></span>
-          ~ ...ne peut pas être un mot-clé qui appartient au langage Python
-          (par exemple <img class="imgCentree" src="assets/images/print.png" width="10%" /> est déjà utilisé) <br />
-          <div class="commentaire">
-            <ins>Remarque:</ins> Par convention, les noms de variable
-            s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
-            le début de chaque nouveau mot. Par exemple:<br />
-            <img class="imgCentree" src="assets/images/jourdelasemaine.png" width="28%" /> ou <img class="imgCentree"
-              src="assets/images/anneedenaissance.png" width="32%" />
-          </div>
-          <br />
-          <div class="texte-activite">
-            ⮕ Enfin, affectez à cette variable la chaîne de caractères de votre choix,
-            pourquoi pas votre propre prénom.
         </li>
+        <br />
       </ul>
+      <div class="texte-activite">
+        ⮕ Exécutez maintenant le script pour vous assurer qu'il fonctionne correctement.<br />
+      </div>
+      <div class="commentaire">
+        <ins>Rappel:</ins> Quand vous exécutez le script et que vous êtes invité à saisir du texte au clavier dans la
+        console,
+        vous devez d'abord cliquer au niveau du prompt de cette invitation, et ne pas oublier d'appuyer sur "Entrée" une
+        fois le texte saisi.
+        <br />
+      </div>
     </div>
-
-
-
     <div>
-
-      #C
-      lignes 39-42:
-      nomDuJoueur2 = input("...")
-      print("Bienvenue "+nomDuJoueur2)
       <br />
     </div>
   </details>
@@ -223,7 +200,7 @@
     </div>
 
     <div class="fond-lecon">
-      - À l'inverse, avec la la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />,
+      - À l'inverse, avec la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" />,
       quand on veut concaténer des éléments (c'est à dire les ajouter les uns à la suite des autres)
       on ne peut pas "additionner" des lettres et des nombres.
       <br />
@@ -265,341 +242,80 @@
       </div>
     </summary>
     <div class="fond-activite">
-
-      #C
-      Lignes 45...:
-      date = input("Année de naissance")
-      age = 2025-int(date)
-      print([nom]+" a "+str(age)+" ans")
-      <br />
-    </div>
-  </details>
-  <br /><br /><br /><br /><br /><br />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--  === ÉTAPE 03 === -->
-  <div class="bandeau"><img src="assets/bandeaux/SNT_Python_Etape-03.png" /></div>
-  <h3 id="03-1-la-d-claration-de-variable">
-    03-1. La déclaration de variable
-  </h3>
-  <details>
-    <summary>
-      <div class="titre-bandeau-lecon">
-        <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
-      </div>
-    </summary>
-    <div class="fond-lecon">
-      -
-      <span class="copier">Une variable est une zone de la mémoire de l&#39;ordinateur dans
-        laquelle on peut stocker une valeur. L&#39;expression
-        &quot;variable&quot; signifie que cette valeur peut changer.</span>
-      <div class="commentaire">
-        <ins>Par exemple:</ins>
-        Dans un jeu vidéo, une variable sert à stocker le score d&#39;un
-        joueur. Ce score évolue pendant toute la partie, la variable va donc
-        tout le temps changer de valeur (dans la capture d&#39;écran
-        ci-dessous Mario a 2600 points...pour l'instant).
-        <img src="assets/images/mario-commentaires.png" width="85%" /><br />
-      </div>
-    </div>
-    <div class="fond-lecon">
-      - <span>On peut se représenter une variable comme une boite dans laquelle on
-        va stocker </span> des affaires (= <span>nos <em><strong>données</strong></em></span>). Cette boite est rangée
-      avec d&#39;autres sur une
-      étagère (= la <em><strong>mémoire</strong></em> de l&#39;ordinateur). Suivant ce que
-      l&#39;on stocke dedans, les boites peuvent avoir des tailles différentes
-      (= le <em><strong>type</strong></em> de donnée). Pour pouvoir ensuite retrouver nos affaires, <span>il est
-        impératif d'indiquer son contenu en
-        collant une étiquette sur la boite (= le <strong><em>nom</em></strong> de
-        la variable).</span>
-      <div class="commentaire">
-        <ins>Par exemple:</ins>
-        On crée deux variables: l&#39;une est nommée
-        <img class="imgCentree" src="assets/images/score.png" width="9%" /> et va servir à stocker un nombre entier
-        (pour le moment sa valeur est 10), l&#39;autre variable est nommée
-        <img class="imgCentree" src="assets/images/message.png" width="12%" /> et contiendra une chaîne de caractères
-        (il s&#39;agit du message de fin de partie. Suivant la langue sélectionnée
-        par le joueur, il sera différent. Pour l&#39;instant on y a placé
-        l&#39;expression &quot;Game over&quot;)
-        <img src="assets/images/variables-illustration.png" width="60%" /><br />
-      </div>
-      - <span> En langage informatique, pour créer une variable il faut donc:</span>
-      <ul>
-        <li><ins>typer</ins> la variable pour réserver un espace mémoire plus ou
-          moins grand (une chaine de caractère prend souvent plus de place
-          qu&#39;un nombre entier).
-          <em>Cela revient à choisir la taille de la boite</em>
-        </li>
-        <li>
-          <span>
-            <ins>déclarer</ins> la variable en lui donnant un nom.</span>
-          <em>C&#39;est l&#39;étape où l&#39;on colle une étiquette sur la
-            boite</em>
-        </li>
-        <li>
-          <span>
-            <ins>affecter</ins> une valeur à la variable.</span>
-          <em>C&#39;est le moment où l&#39;on met nos affaires dans la boite</em>
-        </li>
-      </ul>
-    </div>
-
-    <div class="fond-lecon">
-      <p>Heureusement, <span>en Python la syntaxe de cette instruction est </span>très simple:</p>
-      <img src="assets/images/affectation-commentaires.png" width="85%" /><br />
-      <div class="commentaire">
-        <ins>Remarque:</ins><br />
-        C&#39;est bien pratique pour nous, le langage Python,
-        contrairement à d&#39;autres langages, n&#39;exige pas que nous
-        précisions la taille de la boite (c&#39;est à dire le type de la
-        variable). Un simple signe <img class="imgCentree" src="assets/images/touches/Touche_egal.png" width="4%" />
-        et Python crée une variable à la bonne dimension (c&#39;est à dire
-        qu&#39;il réserve une portion de mémoire suffisante pour stocker vos
-        données).
-      </div>
-    </div>
-  </details>
-
-  <details>
-    <summary>
-      <div class="titre-bandeau-activite">
-        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" />
-        Activité
-      </div>
-    </summary>
-    <div class="fond-activite">
-      - Repérez les lignes 17, 19 et 21 du script. <br />
-      - Modifiez chacune de ces déclarations de variable en fonction des indications suivantes:
+      - Repérez les lignes 25, 27 et 29 du script. <br />
+      - Modifiez chacune de ces instructions en fonction des indications suivantes:
       <ul>
         <li><code>#A.</code>
           <br />
-          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/score.png" width="10%" /> de la
-          ligne 17 est vide
+          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/date.png" width="10%" /> de la
+          ligne 25 est vide
           (l&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> signifie qu&#39;il
           n&#39;y a
           &quot;aucune&quot; valeur dans cette variable). <br />
           <div class="texte-activite">
-            ⮕ Affectez la valeur
-            <img class="imgCentree" src="assets/images/100.png" width="6%" /> (<strong>un nombre entier</strong>) à la
-            variable
-            <img class="imgCentree" src="assets/images/score.png" width="9%" />.<br />
+            ⮕ Modifiez cette ligne afin que l'utilisateur soit invité à saisir au clavier son <strong>année de
+              naissance</strong> et que
+            cette valeur soit stockée dans la variable <img class="imgCentree" src="assets/images/date.png"
+              width="10%" />
           </div>
           <div class="commentaire">
-            <ins>Remarque:</ins> <br />
-            L&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> permet de vider le
-            contenu
-            de la
-            variable mais celle-ci existe toujours.
+            <ins>Indice:</ins> <br /> N'oubliez pas de donner une indication suffisamment claire à l'utilisateur pour
+            qu'il sache ce qu'il doit faire.
           </div>
         </li><br />
         <li><code>#B.</code>
           <br />
-          Le héros de notre jeu peut devenir invisible. C&#39;est la variable
-          <img class="imgCentree" src="assets/images/invisible.png" width="15%" /> de la ligne 19 qui enregistre cet
-          état. Pour
-          l&#39;instant ce
-          n&#39;est pas le cas car la valeur est <img class="imgCentree" src="assets/images/false.png"
-            width="9%" />.<br />
+          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/age.png" width="8%" /> de la
+          ligne 27 est vide <br />
           <div class="texte-activite">
-            ⮕ Modifez cette valeur pour que notre héros devienne invisible. Il ne vous reste plus
-            qu&#39;à trouver quelle <strong>expression anglaise signifie <em>&quot;Vrai&quot;</em></strong> <br />
+            ⮕ Modifiez cette ligne afin d'affecter à cette variable l'<strong>âge approximatif de l'utilisateur
+            </strong>
+            d'après la date qu'il a donnée précédemment. Il s'agit donc du résultat du calcul de la différence entre
+            l'année actuelle et la valeur de la variable <img class="imgCentree" src="assets/images/date.png"
+              width="10%" />
           </div>
           <div class="commentaire">
-            <ins>Indice:</ins> Tant que la couleur de la valeur n'est pas violette, c'est qu'il ne s'agit pas de la
-            bonne
-            expression...<br />
-          </div>
-          <div class="commentaire">
-            <ins>Remarque:</ins> <br />
-            <span>Une variable <em>Vrai/Faux</em> est de type bouléen.
-              C&#39;est la plus petite boite qui existe, elle ne stocke qu&#39;un
-              <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>)</span>, ce qui est la plus petite
-            unité
-            de mémoire d'un disque.
+            <ins>Indice:</ins> <br /> Rappelez-vous que le type de la variable <img class="imgCentree"
+              src="assets/images/date.png" width="10%" />
+            est une <strong>chaîne de caractères</strong> car sa valeur a été saisie au clavier par l'utilisateur.
+            Puisque vous souhaitez réaliser un calcul,
+            il faut donc que tous les éléments de l'instruction soient des valeurs numériques. Au besoin, il faudra donc
+            <strong> changer le type </strong>
+            d'une des variables en utilisant soit la fonction <img class="imgCentree" src="assets/images/int().png"
+              width="9%" /> soit la fonction
+            <img class="imgCentree" src="assets/images/str().png" width="9%" />...
           </div>
         </li><br />
         <li><code>#C.</code>
           <br />
-          Le nom du joueur est enregistré dans la variable
-          <img class="imgCentree" src="assets/images/n.png" width="3%" />. Mais comme cela peut prêter à confusion, on
-          veut modifier ce nom de variable en lui donnant un nom qui aura plus de sens pour le programmeur qui reviendra
-          un jour sur ce script, quelque chose comme <strong>&quot;nom du joueur&quot;</strong>.<br />
+          Pour l'instant, la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" /> de la ligne
+          29,
+          est vide.
           <div class="texte-activite">
-            ⮕ Suivez les règles et conventions énoncées ci-dessous pour écrire correctement ce nouveau nom
-            de variable à la place de <img class="imgCentree" src="assets/images/n.png" width="3%" />. <br />
+            ⮕ Modifiez cette ligne afin qu'apparaisse dans la console une phrase sur le modèle suivant: <br />
+            <strong>[nom du joueur saisi par l'utilisateur] a [âge] ans.</strong><br />
+            en remplaçant ce qui est entre crochets par la valeur des variables déjà créées.<br />
           </div>
-          <span>Le nom de variable...<br />
-            ~ ...ne peut pas contenir d&#39;espace<br />
-            ~ ...ne peut pas commencer par un chiffre<br />
-            ~ ...ne peut pas contenir d&#39;autres symboles que
-            <code>_</code> (<em>underscore</em>)<br /></span>
-          ~ ...ne peut pas être un mot-clé qui appartient au langage Python
-          (par exemple <img class="imgCentree" src="assets/images/print.png" width="10%" /> est déjà utilisé) <br />
           <div class="commentaire">
-            <ins>Remarque:</ins> Par convention, les noms de variable
-            s&#39;écrivent en minuscule. Les Majuscules sont utilisées pour marquer
-            le début de chaque nouveau mot. Par exemple:<br />
-            <img class="imgCentree" src="assets/images/jourdelasemaine.png" width="28%" /> ou <img class="imgCentree"
-              src="assets/images/anneedenaissance.png" width="32%" />
+            <ins>Indice:</ins> Attention, une telle concaténation ne peut se faire qu'entre des chaînes de caractères.
+            Vérifiez donc
+            que toutes les variables soient de ce type. Sinon, au besoin, changer le type d'une de ces variables en
+            utilisant soit la fonction
+            <img class="imgCentree" src="assets/images/int().png" width="9%" /> soit la fonction
+            <img class="imgCentree" src="assets/images/str().png" width="9%" />... <br />
           </div>
           <br />
-          <div class="texte-activite">
-            ⮕ Enfin, affectez à cette variable la chaîne de caractères de votre choix,
-            pourquoi pas votre propre prénom.
-        </li>
       </ul>
-    </div>
-    <div class="fond-activite">
-      - Vous pouvez maintenant lancer ce script en appuyant sur le bouton
-      <p><img src="assets/images/bouton-executer.png" width="20%" /></p>
-      Vérifiez si vous avez tout juste, sinon modifiez à nouveau les lignes
-      concernées.
-    </div>
-
-    </div>
-  </details>
-
-  <h3 id="03-2-l-utilisation-des-variables">
-    03-2. L&#39;utilisation des variables
-  </h3>
-  <details>
-    <summary>
-      <div class="titre-bandeau-lecon">
-        <img src="assets/bandeaux/bandeau_lecon.png" width="80svw" /> Leçon
+      <div class="texte-activite">
+        ⮕ Exécutez maintenant le script pour vous assurer qu'il fonctionne correctement.<br />
+        Si c'est le cas, vous avez fini cette activité ! Félicitations !!! <br />
       </div>
-    </summary>
-    <div class="fond-lecon">
-      - Maintenant que les variables sont déclarées et qu&#39;elles stockent des
-      valeurs, on peut lire leur contenu dans la suite du script.
-      <span>On utilise la fonction <img class="imgCentree" src="assets/images/print().png" width="12%" /> pour afficher
-        la valeur des variables dans la console. Il suffit alors de passer le nom de la variable comme argument
-        entre les parenthèses.<br />
-        <p>
-          <ins>Par exemple:</ins>
-      </span>
-
+    </div>
+    <div>
       <br />
-      <img src="assets/images/code-a-entier-commentaires.png" width="95%" /><br />
-      </p>
-      <div class="commentaire">
-        <ins>Attention:</ins> Il ne faut pas mettre de guillemets au nom de
-        la variable quand on l&#39;appelle. Sinon la fonction
-        <img class="imgCentree" src="assets/images/print().png" width="12%" /> l&#39;affichera sous la forme d&#39;une
-        chaîne de caractères. Par exemple:
-        <img src="assets/images/code-a-string.png" width="95%" /><br />
-      </div>
-    </div>
-    <div class="fond-lecon">
-      - <span>On peut concaténer (c&#39;est à dire additionner) des chaînes de
-        caractères et des variables en utilisant le signe
-        <img class="imgCentree" src="assets/images/touches/Touche_plus.png" width="4%" />.
-        <p>
-          <ins>Par exemple:</ins>
-          <br />
-      </span>
-      <img src="assets/images/code-bonjour-bob-commentaires.png" width="95%" /><br />
-      </p>
-    </div>
-    <div class="fond-lecon">
-      - <span>Pour incrémenter (c&#39;est à dire augmenter) la valeur d&#39;une variable, on utilise la syntaxe
-        suivante</span>
-      <p>
-        <ins>Exemple pour des nombres:</ins> <br />
-
-        <img src="assets/images/code-a-incremente-commentaires.png" width="95%" /><br />
-      </p>
-      <p>
-        <ins>Exemple pour des textes:</ins> <br />
-        <img src="assets/images/code-message.png" width="95%" />
-      </p>
     </div>
   </details>
-
-  </div>
-  <details>
-    <summary>
-      <div class="titre-bandeau-activite">
-        <img src="assets/bandeaux/bandeau_activite.png" width="80svw" /> Activité
-      </div>
-    </summary>
-    <div class="fond-activite">
-      - Repérez les lignes 26, 28-29 et 31-32 du script. <br />
-      - Modifiez chacune de ces lignes en fonction des indications suivantes: <br />
-      <ul>
-        <li><code>#A.</code>
-          <br />
-          On veut afficher la valeur de la variable <img class="imgCentree" src="assets/images/score.png" width="9%" />
-          dans la
-          console. <br />
-          <div class="texte-activite">
-            ⮕ Passez le bon argument à la fonction <img class="imgCentree" src="assets/images/print().png"
-              width="12%" /> de la ligne 26.
-          </div>
-        </li><br />
-        <li><code>#B.</code>
-          <br />
-          On souhaite affichez un message de bienvenue sous la forme
-          &quot;Bonjour ... !&quot;, avec la valeur de la variable qui stocke le nom
-          du joueur à la place des points de suspension <img class="imgCentree" src="assets/images/point-suspension.png"
-            width="5%" />. Mais il faut bien sûr que le résultat puisse varier à chaque partie. <br />
-          <div class="texte-activite">
-            ⮕ Modifiez l&#39;instruction à la ligne 28. N&#39;écrivez pas directement le nom du
-            joueur. Utilisez la variable que vous aviez déjà défini à la ligne 21.
-          </div>
-          <div class="commentaire">
-            <ins>Attention:</ins>
-            N&#39;oubliez pas le point d&#39;exclamation ni les espaces.
-          </div>
-          <div class="texte-activite">
-            ⮕ Modifiez la ligne 29 pour afficher ce message dans la console. Ne
-            rédigez pas tout le texte à nouveau, appelez la variable <img class="imgCentree"
-              src="assets/images/message.png" width="13%" /> qui le contient.
-          </div>
-        </li><br />
-        <li><code>#C.</code>
-          <br />
-          Notre joueur vient de remporter un bonus qui double son score. On veut effectuez le calcul puis afficher le
-          nouveau
-          score. <br />
-          <div class="texte-activite">
-            ⮕ Complétez la ligne 31 pour réaliser l&#39;opération qui fera doubler le score du joueur.<br />
-            ⮕ Utilisez la ligne 32 pour afficher ce nouveau score dans la console.
-          </div>
-          <div class="commentaire">
-            <ins>Attention:</ins>
-            N&#39;effectuez pas le calcul vous-même, appelez seulement la variable.
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="fond-activite">
-      - Vous pouvez maintenant lancer ce script en appuyant sur le bouton
-      <p><img src="assets/images/bouton-executer.png" width="20%" /></p>
-      Vérifiez si vous avez tout juste en tenant compte des remarques qui s'affichent dans la Console, sinon modifiez à
-      nouveau les lignes
-      concernées.
-    </div>
-  </details>
-
   <br /><br /><br /><br /><br /><br />
 
-</body>
 
-</html>
+

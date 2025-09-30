@@ -93,58 +93,45 @@
       </div>
     </summary>
     <div class="fond-activite">
-      - Repérez les lignes XX, XX et XX du script. <br />
-      - Modifiez chacune de ces déclarations de variable en fonction des indications suivantes:
+      - Repérez les lignes 25, 27 et 29 du script. <br />
+      - Modifiez chacune de ces instructions en fonction des indications suivantes:
       <ul>
         <li><code>#A.</code>
           <br />
-          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/score.png" width="10%" /> de la
-          ligne 17 est vide
+          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/date.png" width="10%" /> de la
+          ligne 25 est vide
           (l&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> signifie qu&#39;il
           n&#39;y a
           &quot;aucune&quot; valeur dans cette variable). <br />
           <div class="texte-activite">
-            ⮕ Affectez la valeur
-            <img class="imgCentree" src="assets/images/100.png" width="6%" /> (<strong>un nombre entier</strong>) à la
-            variable
-            <img class="imgCentree" src="assets/images/score.png" width="9%" />.<br />
+            ⮕ Modifiez cette ligne afin que l'utilisateur soit invité à saisir au clavier son année de naissance et que
+            cette valeur soit stockée dans la variable <img class="imgCentree" src="assets/images/date.png"
+              width="10%" />
           </div>
           <div class="commentaire">
-            <ins>Remarque:</ins> <br />
-            L&#39;expression <img class="imgCentree" src="assets/images/none.png" width="8%" /> permet de vider le
-            contenu
-            de la
-            variable mais celle-ci existe toujours.
+            <ins>Indice:</ins> <br /> N'oubliez pas de donner une indication suffisamment claire à l'utilisateur pour 
+            qu'il sache ce qu'il doit faire.
           </div>
         </li><br />
         <li><code>#B.</code>
           <br />
-          Le héros de notre jeu peut devenir invisible. C&#39;est la variable
-          <img class="imgCentree" src="assets/images/invisible.png" width="15%" /> de la ligne 19 qui enregistre cet
-          état. Pour
-          l&#39;instant ce
-          n&#39;est pas le cas car la valeur est <img class="imgCentree" src="assets/images/false.png"
-            width="9%" />.<br />
+          Pour l&#39;instant la variable <img class="imgCentree" src="assets/images/age.png" width="10%" /> de la
+          ligne 27 est vide <br />
           <div class="texte-activite">
-            ⮕ Modifez cette valeur pour que notre héros devienne invisible. Il ne vous reste plus
-            qu&#39;à trouver quelle <strong>expression anglaise signifie <em>&quot;Vrai&quot;</em></strong> <br />
+            ⮕ Modifiez cette ligne afin d'affecter à cette variable l'âge approximatif de l'utilisateur d'après la date qu'il a donnée précédemment.
+            Il s'agit donc du résultat du calcul de la différence entre l'année actuelle et la valeur de la variable 
+            <img class="imgCentree" src="assets/images/date.png" width="10%" />
           </div>
           <div class="commentaire">
-            <ins>Indice:</ins> Tant que la couleur de la valeur n'est pas violette, c'est qu'il ne s'agit pas de la
-            bonne
-            expression...<br />
-          </div>
-          <div class="commentaire">
-            <ins>Remarque:</ins> <br />
-            <span>Une variable <em>Vrai/Faux</em> est de type bouléen.
-              C&#39;est la plus petite boite qui existe, elle ne stocke qu&#39;un
-              <code>1</code> (<em>Vrai</em>) ou un <code>0</code> (<em>Faux</em>)</span>, ce qui est la plus petite
-            unité
-            de mémoire d'un disque.
+            <ins>Indice:</ins> <br /> Rappelez-vous que le type de la variable <img class="imgCentree" src="assets/images/date.png" width="10%" />
+            est une <strong>chaîne de caractères</strong> puisque sa valeur a été saisie au clavier par l'utilisateur. Puisque vous souhaitez réaliser un calcul, 
+            il faut donc que tous les éléments de l'instruction soient des valeurs numériques. Au besoin, il faudra donc <strong> changer le type </strong> 
+            d'une des variables en utilisant soit la fonction <img class="imgCentree" src="assets/images/int().png" width="9%" /> ou la fonction 
+            <img class="imgCentree" src="assets/images/str().png" width="9%" />...
           </div>
         </li><br />
         <li><code>#C.</code>
-          <br />
+          <br />([nom]+" a "+str(age)+" ans")
           Le nom du joueur est enregistré dans la variable
           <img class="imgCentree" src="assets/images/n.png" width="3%" />. Mais comme cela peut prêter à confusion, on
           veut modifier ce nom de variable en lui donnant un nom qui aura plus de sens pour le programmeur qui reviendra
@@ -261,7 +248,7 @@
         <br />
       </div>
       <div class="commentaire">
-        <ins>Par exemple:</ins> Dans le script précédent, à la place de l'instruction 
+        <ins>Par exemple:</ins> Dans le script précédent, à la place de l'instruction
         <img class="imgCentree" src="assets/images/print(int(prix)).png" width="45%" /> <br />
         on modifie la formule dans le calcul de l'affichage:
         <img src="assets/images/print(promo-str()).png" width="98%" /><br />
@@ -282,7 +269,7 @@
       #C
       Lignes 45...:
       date = input("Année de naissance")
-      age = 2023-int(date)
+      age = 2025-int(date)
       print([nom]+" a "+str(age)+" ans")
       <br />
     </div>

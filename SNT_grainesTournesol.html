@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Tournesol</title>
 
+<style>
+    body {
+        margin: 0;
+        background: black;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+    }
+
+    canvas {
+        display: block;
+    }
+
+    #controls {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        padding: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div id="controls">
+    Angle : <span id="angleValue">137</span>°
+    <br>
+    <input type="range" id="slider" min="0" max="180" value="137">
+</div>
+
+<script>
+// Canvas
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// Ajuster la taille
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.onresize = resize;
+
+// Variables
+let angle = 137;
+let i = 0;
+const maxPoints = 800;
+
+// Slider
+const slider = document.getElementById("slider");
+const angleValue = document.getElementById("angleValue");
+
+slider.oninput = function() {
+    angle = this.value;
+    angleValue.textContent = angle;
+    
+    // reset animation
+    i = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
+// Animation
+function draw() {
+    if (i < maxPoints) {
+        let r = Math.sqrt(i) * 6;
+        let theta = i * angle * Math.PI / 180;
+
+        let x = canvas.width / 2 + r * Math.cos(theta);
+        let y = canvas.height / 2 + r * Math.sin(theta);
+
+        ctx.fillStyle = "gold";
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, 2 * Math.PI);
+        ctx.fill();
+
+        i++;
+    }
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>

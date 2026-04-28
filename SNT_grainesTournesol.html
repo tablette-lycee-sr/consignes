@@ -126,13 +126,15 @@ input[type=range] {
 /* ================= CONSIGNE ================= */
 #consigneBox {
     position: fixed;
-    bottom: 260px; /* remontée */
-    left: 30px;
+    bottom: 240px; /* remontée */
+    left: 2em;
     max-width: 320px;
+    font-size: var(--h2-size);
 }
 
 #consigneBox h2 {
     font-family: "Comic Sans MS", cursive;
+    font-size: var(--h2-size);
 }
 
 /* ================= BOUTON BULLE ================= */
@@ -224,7 +226,7 @@ Angle : <span id="angleValue">0</span>°
 </h2>
 
 <div id="goldenContainer">
-    <input type="range" id="slider" min="0" max="180" step="0.5" value="137">
+    <input type="range" id="slider" min="0" max="180" step="0.5" value="0">
     <button id="goldenBtn">Angle d'Or</button>
 </div>
 
@@ -345,7 +347,7 @@ function update(){
         let i = points.length;
 
         let cx = canvas.width / 2;
-        let cy = canvas.height * 0.40;
+        let cy = canvas.height * 0.45;
 
         let r = Math.sqrt(i) * scale;
         let theta = i * angle * Math.PI / 180;

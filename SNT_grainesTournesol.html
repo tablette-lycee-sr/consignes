@@ -134,18 +134,10 @@ function dist(a,b){
 // COULEUR 4 CLASSES
 // =====================
 function colorFromScore(t){
-    if(t >= 0.75){
-        return "rgb(0,200,0)"; // vert
-    }
-    else if(t >= 0.5){
-        return "rgb(255,220,0)"; // jaune
-    }
-    else if(t >= 0.25){
-        return "rgb(255,140,0)"; // orange
-    }
-    else{
-        return "rgb(255,0,0)"; // rouge
-    }
+    if(t >= 0.75) return "rgb(0,200,0)";
+    else if(t >= 0.5) return "rgb(255,220,0)";
+    else if(t >= 0.25) return "rgb(255,140,0)";
+    else return "rgb(255,0,0)";
 }
 
 // =====================
@@ -174,7 +166,20 @@ function update(){
             if(d < minD) minD = d;
         }
 
-        let t = Math.min(1, minD/50);
+        let cx = canvas.width / 2;
+        let cy = canvas.height / 2;
+
+        // distance au centre
+        let r = Math.sqrt((p.x - cx)**2 + (p.y - cy)**2);
+
+        // espacement attendu (paramètre clé)
+        let dExpected = 0.8 * Math.sqrt(r + 1);
+
+        // score normalisé
+        let t = minD / dExpected;
+
+        // bornage
+        t = Math.max(0, Math.min(1, t));
         p.score = t;
 
         points.push(p);

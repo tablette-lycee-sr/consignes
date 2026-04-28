@@ -169,16 +169,21 @@ function update(){
         let cx = canvas.width / 2;
         let cy = canvas.height / 2;
 
-        // distance au centre
-        let r = Math.sqrt((p.x - cx)**2 + (p.y - cy)**2);
+        // distance au centre (stabilisée)
+        let dx = p.x - cx;
+        let dy = p.y - cy;
+        let r = Math.sqrt(dx*dx + dy*dy);
 
-        // espacement attendu (paramètre clé)
-        let dExpected = 0.8 * Math.sqrt(r + 1);
+        // éviter les valeurs trop faibles
+        r = Math.max(r, 10);
 
-        // score normalisé
+        // espacement attendu (modèle spirale)
+        let dExpected = 0.9 * Math.sqrt(i + 1);
+
+        // score local stable
         let t = minD / dExpected;
 
-        // bornage
+        // bornage propre
         t = Math.max(0, Math.min(1, t));
         p.score = t;
 

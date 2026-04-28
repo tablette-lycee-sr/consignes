@@ -20,28 +20,28 @@ canvas {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.92);
     padding: 20px;
     text-align: center;
 }
 
 #angleValue {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: bold;
 }
 
 input[type=range] {
     width: 90%;
-    height: 40px;
+    height: 45px;
     margin-top: 10px;
 }
 
 button {
     font-size: 26px;
-    padding: 12px 20px;
+    padding: 14px 22px;
     margin-top: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     background: gold;
     color: black;
     font-weight: bold;
@@ -70,9 +70,10 @@ Angle : <span id="angleValue">137</span>°
 </div>
 
 <script>
-// =====================
+
+// ======================
 // CANVAS
-// =====================
+// ======================
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -83,27 +84,26 @@ function resize(){
 resize();
 window.onresize = resize;
 
-// =====================
+// ======================
 // VARIABLES
-// =====================
+// ======================
 let angle = 137;
 let points = [];
-
 const maxPoints = 800;
 
-// =====================
+// ======================
 // UI
-// =====================
+// ======================
 const slider = document.getElementById("slider");
 const angleValue = document.getElementById("angleValue");
 const scoreBox = document.getElementById("score");
 const goldenBtn = document.getElementById("goldenBtn");
 
-// =====================
+// ======================
 // INTERACTIONS
-// =====================
+// ======================
 slider.oninput = function(){
-    angle = this.value;
+    angle = parseFloat(this.value);
     angleValue.textContent = angle;
     reset();
 };
@@ -115,42 +115,42 @@ goldenBtn.onclick = function(){
     reset();
 };
 
-// =====================
+// ======================
 // RESET
-// =====================
+// ======================
 function reset(){
     points = [];
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
 
-// =====================
+// ======================
 // DISTANCE
-// =====================
+// ======================
 function dist(a,b){
     return Math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2);
 }
 
-// =====================
-// COULEUR 4 CLASSES
-// =====================
+// ======================
+// COULEURS 4 CLASSES
+// ======================
 function colorFromScore(t){
-    if(t >= 0.75) return "rgb(0,200,0)";
-    else if(t >= 0.5) return "rgb(255,220,0)";
-    else if(t >= 0.25) return "rgb(255,140,0)";
-    else return "rgb(255,0,0)";
+    if(t >= 0.75) return "rgb(0,200,0)";      // vert
+    else if(t >= 0.5) return "rgb(255,220,0)"; // jaune
+    else if(t >= 0.25) return "rgb(255,140,0)";// orange
+    else return "rgb(255,0,0)";               // rouge
 }
 
-// =====================
-// BOUCLE ANIMATION
-// =====================
+// ======================
+// ANIMATION
+// ======================
 function update(){
 
-    // ajout de points
+    // ajout progressif des points
     if(points.length < maxPoints){
 
         let i = points.length;
 
-        let r = Math.sqrt(i)*6;
+        let r = Math.sqrt(i) * 6;
         let theta = i * angle * Math.PI / 180;
 
         let x = canvas.width/2 + r*Math.cos(theta);
@@ -158,7 +158,7 @@ function update(){
 
         let p = {x:x, y:y, score:1};
 
-        // calcul distance minimale
+        // distance minimale aux autres points
         let minD = Infinity;
 
         for(let other of points){
@@ -166,31 +166,23 @@ function update(){
             if(d < minD) minD = d;
         }
 
-        let cx = canvas.width / 2;
-        let cy = canvas.height / 2;
+        // ======================
+        // SCORE STABLE (CORRIGÉ)
+        // ======================
 
-        // distance au centre (stabilisée)
-        let dx = p.x - cx;
-        let dy = p.y - cy;
-        let r = Math.sqrt(dx*dx + dy*dy);
-
-        // éviter les valeurs trop faibles
-        r = Math.max(r, 10);
-
-        // espacement attendu (modèle spirale)
         let dExpected = 0.9 * Math.sqrt(i + 1);
-
-        // score local stable
         let t = minD / dExpected;
 
-        // bornage propre
         t = Math.max(0, Math.min(1, t));
+
         p.score = t;
 
         points.push(p);
     }
 
-    // score global + stats
+    // ======================
+    // SCORE GLOBAL + STATISTIQUES
+    // ======================
     let total = 0;
     let verts = 0;
     let jaunes = 0;
@@ -212,7 +204,9 @@ function update(){
     "Score : " + score.toFixed(3) + "<br>" +
     "🟢 " + verts + "  🟡 " + jaunes + "  🟠 " + oranges + "  🔴 " + rouges;
 
-    // dessin
+    // ======================
+    // DESSIN
+    // ======================
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     for(let p of points){

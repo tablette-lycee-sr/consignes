@@ -2,59 +2,50 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🌻Le Tournesol 🌱</title>
+<title>Langage des semences 🌱</title>
 
 <style>
-    body {
-        margin: 0;
-        background: black;
-        color: white;
-        font-family: Arial;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: Arial;
+}
 
-    canvas {
-        display: block;
-    }
+canvas {
+    display: block;
+}
 
-    #controls {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.9);
-        padding: 20px;
-    }
+#controls {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    text-align: center;
+}
 
-    #angleValue {
-        font-size: 40px;
-        font-weight: bold;
-    }
+#angleValue {
+    font-size: 40px;
+    font-weight: bold;
+}
 
-    #label {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
+input[type=range] {
+    width: 90%;
+    height: 40px;
+    margin-top: 10px;
+}
 
-    input[type=range] {
-        width: 90%;
-        height: 40px;
-        margin-top: 10px;
-    }
-
-    button {
-        margin-top: 15px;
-        font-size: 28px;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 10px;
-        background: gold;
-        color: black;
-        font-weight: bold;
-    }
-
-    button:active {
-        transform: scale(0.98);
-    }
+button {
+    font-size: 26px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+}
 </style>
 </head>
 
@@ -64,83 +55,167 @@
 
 <div id="controls">
 
-    <div id="label">
-        Angle : <span id="angleValue">137</span>°
-    </div>
+<div>
+Angle : <span id="angleValue">137</span>°
+</div>
 
-    <input type="range" id="slider" min="0" max="180" value="137">
+<input type="range" id="slider" min="0" max="180" value="137">
 
-    <br>
+<br>
 
-    <button id="goldenBtn">🌻 Angle d'or</button>
+<button id="goldenBtn">🌻 Angle d'or</button>
+
+<div id="score">Score : -</div>
 
 </div>
 
 <script>
-
+// =====================
+// CANVAS
+// =====================
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-function resize() {
+function resize(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 resize();
 window.onresize = resize;
 
-// Variables
+// =====================
+// VARIABLES
+// =====================
 let angle = 137;
-let i = 0;
+let points = [];
+
 const maxPoints = 800;
 
+// =====================
 // UI
+// =====================
 const slider = document.getElementById("slider");
 const angleValue = document.getElementById("angleValue");
+const scoreBox = document.getElementById("score");
 const goldenBtn = document.getElementById("goldenBtn");
 
-// Slider
-slider.oninput = function() {
+// =====================
+// INTERACTIONS
+// =====================
+slider.oninput = function(){
     angle = this.value;
     angleValue.textContent = angle;
     reset();
 };
 
-// Bouton angle d'or
-goldenBtn.onclick = function() {
+goldenBtn.onclick = function(){
     angle = 137.5;
     slider.value = 137.5;
     angleValue.textContent = "137.5";
     reset();
 };
 
-// Reset animation
-function reset() {
-    i = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+// =====================
+// RESET
+// =====================
+function reset(){
+    points = [];
+    ctx.clearRect(0,0,canvas.width,canvas.height);
 }
 
-// Animation
-function draw() {
-    if (i < maxPoints) {
+// =====================
+// DISTANCE
+// =====================
+function dist(a,b){
+    return Math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2);
+}
 
-        let r = Math.sqrt(i) * 6;
+// =====================
+// COULEUR 4 CLASSES
+// =====================
+function colorFromScore(t){
+    if(t >= 0.75){
+        return "rgb(0,200,0)"; // vert
+    }
+    else if(t >= 0.5){
+        return "rgb(255,220,0)"; // jaune
+    }
+    else if(t >= 0.25){
+        return "rgb(255,140,0)"; // orange
+    }
+    else{
+        return "rgb(255,0,0)"; // rouge
+    }
+}
+
+// =====================
+// BOUCLE ANIMATION
+// =====================
+function update(){
+
+    // ajout de points
+    if(points.length < maxPoints){
+
+        let i = points.length;
+
+        let r = Math.sqrt(i)*6;
         let theta = i * angle * Math.PI / 180;
 
-        let x = canvas.width / 2 + r * Math.cos(theta);
-        let y = canvas.height / 2 + r * Math.sin(theta);
+        let x = canvas.width/2 + r*Math.cos(theta);
+        let y = canvas.height/2 + r*Math.sin(theta);
 
-        ctx.fillStyle = "gold";
-        ctx.beginPath();
-        ctx.arc(x, y, 3, 0, 2 * Math.PI);
-        ctx.fill();
+        let p = {x:x, y:y, score:1};
 
-        i++;
+        // calcul distance minimale
+        let minD = Infinity;
+
+        for(let other of points){
+            let d = dist(p, other);
+            if(d < minD) minD = d;
+        }
+
+        let t = Math.min(1, minD/50);
+        p.score = t;
+
+        points.push(p);
     }
 
-    requestAnimationFrame(draw);
+    // score global + stats
+    let total = 0;
+    let verts = 0;
+    let jaunes = 0;
+    let oranges = 0;
+    let rouges = 0;
+
+    for(let p of points){
+        total += p.score;
+
+        if(p.score >= 0.75) verts++;
+        else if(p.score >= 0.5) jaunes++;
+        else if(p.score >= 0.25) oranges++;
+        else rouges++;
+    }
+
+    let score = points.length ? total / points.length : 0;
+
+    scoreBox.innerHTML =
+    "Score : " + score.toFixed(3) + "<br>" +
+    "🟢 " + verts + "  🟡 " + jaunes + "  🟠 " + oranges + "  🔴 " + rouges;
+
+    // dessin
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    for(let p of points){
+        ctx.fillStyle = colorFromScore(p.score);
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,3,0,Math.PI*2);
+        ctx.fill();
+    }
+
+    requestAnimationFrame(update);
 }
 
-draw();
+update();
 
 </script>
 

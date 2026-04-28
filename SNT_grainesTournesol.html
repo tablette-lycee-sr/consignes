@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Langage des semences 🌱</title>
+<title>🌻Le Tournesol 🌱</title>
 
 <style>
     body {
@@ -21,7 +21,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        background: rgba(0,0,0,0.85);
+        background: rgba(0,0,0,0.9);
         padding: 20px;
     }
 
@@ -32,12 +32,28 @@
 
     #label {
         font-size: 28px;
+        margin-bottom: 10px;
     }
 
     input[type=range] {
         width: 90%;
         height: 40px;
+        margin-top: 10px;
+    }
+
+    button {
         margin-top: 15px;
+        font-size: 28px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        background: gold;
+        color: black;
+        font-weight: bold;
+    }
+
+    button:active {
+        transform: scale(0.98);
     }
 </style>
 </head>
@@ -47,11 +63,21 @@
 <canvas id="canvas"></canvas>
 
 <div id="controls">
-    <div id="label">Angle : <span id="angleValue">137</span>°</div>
+
+    <div id="label">
+        Angle : <span id="angleValue">137</span>°
+    </div>
+
     <input type="range" id="slider" min="0" max="180" value="137">
+
+    <br>
+
+    <button id="goldenBtn">🌻 Angle d'or</button>
+
 </div>
 
 <script>
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -62,23 +88,41 @@ function resize() {
 resize();
 window.onresize = resize;
 
+// Variables
 let angle = 137;
 let i = 0;
 const maxPoints = 800;
 
+// UI
 const slider = document.getElementById("slider");
 const angleValue = document.getElementById("angleValue");
+const goldenBtn = document.getElementById("goldenBtn");
 
+// Slider
 slider.oninput = function() {
     angle = this.value;
     angleValue.textContent = angle;
-
-    i = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    reset();
 };
 
+// Bouton angle d'or
+goldenBtn.onclick = function() {
+    angle = 137.5;
+    slider.value = 137.5;
+    angleValue.textContent = "137.5";
+    reset();
+};
+
+// Reset animation
+function reset() {
+    i = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Animation
 function draw() {
     if (i < maxPoints) {
+
         let r = Math.sqrt(i) * 6;
         let theta = i * angle * Math.PI / 180;
 
@@ -87,7 +131,7 @@ function draw() {
 
         ctx.fillStyle = "gold";
         ctx.beginPath();
-        ctx.arc(x, y, 4, 0, 2 * Math.PI);
+        ctx.arc(x, y, 3, 0, 2 * Math.PI);
         ctx.fill();
 
         i++;
@@ -97,6 +141,7 @@ function draw() {
 }
 
 draw();
+
 </script>
 
 </body>

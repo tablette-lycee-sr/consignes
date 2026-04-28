@@ -2,9 +2,18 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Implantation des graines du Tournesol 🌱</title>
+<title>Tournesol</title>
 
 <style>
+
+/* ================= VARIABLES TYPO ================= */
+:root {
+    --h1-size: 2em;
+    --h2-size: 1.1em;
+    --p-size: 0.8em;
+}
+
+/* ================= GLOBAL ================= */
 body {
     margin: 0;
     background: black;
@@ -13,14 +22,27 @@ body {
     overflow: hidden;
 }
 
+h1 {
+    font-size: var(--h1-size);
+    margin: 10px;
+}
+
+h2 {
+    font-size: var(--h2-size);
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+p {
+    font-size: var(--p-size);
+}
+
 /* ================= TITRE ================= */
 #title {
     position: fixed;
     top: 10px;
     width: 100%;
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
 }
 
 /* ================= CANVAS ================= */
@@ -31,24 +53,21 @@ canvas {
 /* ================= PANNEAUX ================= */
 .panel {
     position: fixed;
-    top: 60px;
+    top: 70px;
     background: rgba(20,20,20,0.85);
     padding: 12px;
+    margin: 10px 0;
     border-radius: 12px;
 }
 
-/* gauche (historique réduit d’1/3) */
 #historyPanel {
-    left: 10px;
-    width: 160px;
-    font-size: 14px;
+    left: 2em;
+    width: 15%;
 }
 
-/* droite */
 #scorePanel {
-    right: 10px;
-    width: 240px;
-    font-size: 18px;
+    right: 2em;
+    width: 20%;
 }
 
 /* ================= HISTORIQUE ================= */
@@ -56,27 +75,27 @@ canvas {
     display: flex;
     justify-content: space-between;
     font-family: monospace;
-    margin: 4px 0;
+    font-size: 1.5em;
 }
 
 /* ================= SCORE ================= */
 #bigScore {
-    font-size: 42px;
+    font-size: var(--h1-size);
     font-weight: bold;
+    text-align: center;
     margin: 10px 0;
 }
 
 .legendRow {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin: 3px 0;
     font-family: monospace;
+    font-size: 1.5em;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: inline-block;
     margin-right: 6px;
@@ -88,103 +107,148 @@ canvas {
     bottom: 0;
     width: 100%;
     background: rgba(0,0,0,0.92);
-    padding: 15px;
+    padding: 30px 15px 60px 15px; /* correction */
     text-align: center;
 }
 
 #angleValue {
-    font-size: 42px;
+    font-size: var(--h1-size);
     font-weight: bold;
 }
 
+/* SLIDER */
 input[type=range] {
     width: 85%;
-    height: 45px;
+    height: 70px;
     margin-top: 10px;
 }
 
-button {
-    font-size: 24px;
-    padding: 12px 18px;
-    margin-top: 10px;
+/* ================= CONSIGNE ================= */
+#consigneBox {
+    position: fixed;
+    bottom: 260px; /* remontée */
+    left: 30px;
+    max-width: 320px;
+}
+
+#consigneBox h2 {
+    font-family: "Comic Sans MS", cursive;
+}
+
+/* ================= BOUTON BULLE ================= */
+#goldenContainer {
+    position: relative;
+    width: 85%;
+    margin: auto;
+}
+
+#goldenBtn {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: var(--h2-size);
+    padding: 10px 16px;
     border: none;
     border-radius: 12px;
     background: gold;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 
-/* consigne manuscrite */
-#consigne {
-    font-family: "Comic Sans MS", cursive;
-    font-size: 16px;
-    margin-top: 10px;
-    opacity: 0.9;
+/* pointe */
+#goldenBtn::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 10px 8px;
+    border-style: solid;
+    border-color: transparent transparent gold transparent;
 }
+
 </style>
 </head>
 
 <body>
 
-<div id="title">Implantation des graines du Tournesol 🌻</div>
+<div id="title">
+    <h1>Implantation des graines <br>du Tournesol 🌻</h1>
+</div>
 
 <canvas id="canvas"></canvas>
 
-<!-- ================= HISTORIQUE ================= -->
 <div id="historyPanel" class="panel">
-    <b>Historique</b>
+    <h2>Historique</h2>
     <div id="history"></div>
 </div>
 
-<!-- ================= SCORE ================= -->
 <div id="scorePanel" class="panel">
-    <b>Score global</b>
+    <h2>Score global</h2>
 
     <div id="bigScore">-</div>
 
-    <b>Niveau de congestion des graines</b>
+    <h2>Qualité de la disposition des graines:</h2>
 
     <div class="legendRow">
-        <span><span class="dot" style="background:rgb(0,200,0)"></span>Vert</span>
+        <span><span class="dot" style="background:rgb(0,200,0)"></span>Optimale</span>
         <span id="v"></span>
     </div>
 
     <div class="legendRow">
-        <span><span class="dot" style="background:rgb(255,220,0)"></span>Jaune</span>
+        <span><span class="dot" style="background:rgb(255,220,0)"></span>Satisfaisante</span>
         <span id="j"></span>
     </div>
 
     <div class="legendRow">
-        <span><span class="dot" style="background:rgb(255,140,0)"></span>Orange</span>
+        <span><span class="dot" style="background:rgb(255,140,0)"></span>Dégradée</span>
         <span id="o"></span>
     </div>
 
     <div class="legendRow">
-        <span><span class="dot" style="background:rgb(255,0,0)"></span>Rouge</span>
+        <span><span class="dot" style="background:rgb(255,0,0)"></span>Congestionnée</span>
         <span id="r"></span>
     </div>
 </div>
 
-<!-- ================= CONTROLES ================= -->
-<div id="controls">
-
-<div>
-Angle : <span id="angleValue">137</span>°
+<div id="consigneBox">
+    <h2>
+    Déplacez le curseur pour modifier l’angle d’implantation des graines et essayez de battre le nombre d’or !
+    </h2>
 </div>
 
-<input type="range" id="slider" min="0" max="180" step="0.5" value="137">
+<div id="controls">
 
-<br>
+<h2>
+Angle : <span id="angleValue">0</span>°
+</h2>
 
-<button id="goldenBtn">🌻 Angle d'or</button>
-
-<div id="consigne">
-Déplacez le curseur pour modifier l’angle d’implantation des nouvelles graines et essayez de battre le nombre d’or !
+<div id="goldenContainer">
+    <input type="range" id="slider" min="0" max="180" step="0.5" value="137">
+    <button id="goldenBtn">Angle d'Or</button>
 </div>
 
 </div>
 
 <script>
+
+// ================= POSITION BOUTON =================
+function positionGoldenButton(){
+    const slider = document.getElementById("slider");
+    const btn = document.getElementById("goldenBtn");
+
+    const sliderRect = slider.getBoundingClientRect();
+    const containerRect = slider.parentElement.getBoundingClientRect();
+
+    const percent = 137.5 / 180;
+    const x = percent * sliderRect.width;
+
+    btn.style.left = (sliderRect.left - containerRect.left + x) + "px";
+    btn.style.top = (slider.offsetHeight + 10) + "px";
+}
+
+window.addEventListener("resize", positionGoldenButton);
+window.addEventListener("load", positionGoldenButton);
 
 // ================= CANVAS =================
 const canvas = document.getElementById("canvas");
@@ -198,10 +262,10 @@ resize();
 window.onresize = resize;
 
 // ================= VARIABLES =================
-let angle = 137;
+let angle = 0;
 let points = [];
 const maxPoints = 800;
-const scale = 7; // 🔻 réduit comme demandé
+const scale = 8;
 
 let isRunning = false;
 let history = [];
@@ -236,40 +300,25 @@ function dist(a,b){
 // ================= RESET =================
 function reset(){
     points = [];
-    ctx.clearRect(0,0,canvas.width,canvas.height);
     isRunning = true;
 }
 
 // ================= HISTORIQUE =================
 function addHistory(){
-
-    history.unshift({
-        angle: angle,
-        score: currentScore
-    });
-
+    history.unshift({angle, score: currentScore});
     if(history.length > 10) history.pop();
-
-    renderHistory();
-}
-
-function renderHistory(){
 
     historyBox.innerHTML = "";
 
     history.forEach(h => {
-
         let line = document.createElement("div");
         line.className = "historyItem";
 
-        let pct = Math.round(h.score * 100);
-
         line.innerHTML =
-            `<span>${h.angle.toFixed(1)}°</span>
-             <span>${pct}%</span>`;
+        `<span>${h.angle.toFixed(1)}°</span>
+         <span>${Math.round(h.score*100)}%</span>`;
 
         line.style.color = colorFromScore(h.score);
-
         historyBox.appendChild(line);
     });
 }
@@ -313,16 +362,14 @@ function update(){
             if(d < minD) minD = d;
         }
 
-        let t = minD / 10;
+        let t = minD / 13;
         t = Math.max(0,Math.min(1,t));
 
         p.score = t;
         points.push(p);
     }
 
-    // ================= SCORE =================
-    let total = 0;
-    let v=0,j=0,o=0,r=0;
+    let total = 0, v=0,j=0,o=0,r=0;
 
     for(let p of points){
         total += p.score;
@@ -335,22 +382,18 @@ function update(){
 
     currentScore = points.length ? total / points.length : 0;
 
-    let pct = Math.round(currentScore * 100);
+    scoreBox.innerHTML = Math.round(currentScore*100) + "%";
 
-    scoreBox.innerHTML = `<b>${pct}%</b>`;
+    vBox.textContent = Math.round(v/points.length*100||0)+"%";
+    jBox.textContent = Math.round(j/points.length*100||0)+"%";
+    oBox.textContent = Math.round(o/points.length*100||0)+"%";
+    rBox.textContent = Math.round(r/points.length*100||0)+"%";
 
-    vBox.textContent = Math.round(v/points.length*100 || 0) + "%";
-    jBox.textContent = Math.round(j/points.length*100 || 0) + "%";
-    oBox.textContent = Math.round(o/points.length*100 || 0) + "%";
-    rBox.textContent = Math.round(r/points.length*100 || 0) + "%";
-
-    // fin expérience
     if(points.length === maxPoints && isRunning){
         addHistory();
         isRunning = false;
     }
 
-    // ================= DESSIN =================
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     for(let p of points){

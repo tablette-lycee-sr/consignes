@@ -10,41 +10,72 @@ body {
     background: black;
     color: white;
     font-family: Arial;
+    overflow: hidden;
 }
 
 canvas {
     display: block;
 }
 
+/* ================= CONTROLES ================= */
 #controls {
     position: fixed;
     bottom: 0;
     width: 100%;
     background: rgba(0,0,0,0.92);
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
 
 #angleValue {
-    font-size: 42px;
+    font-size: 50px;
     font-weight: bold;
 }
 
 input[type=range] {
-    width: 90%;
+    width: 85%;
     height: 45px;
     margin-top: 10px;
 }
 
 button {
-    font-size: 26px;
-    padding: 14px 22px;
+    font-size: 24px;
+    padding: 12px 18px;
     margin-top: 10px;
     border: none;
     border-radius: 12px;
     background: gold;
     color: black;
     font-weight: bold;
+}
+
+/* ================= PANNEAUX ================= */
+.panel {
+    position: fixed;
+    top: 20px;
+    width: 260px;
+    background: rgba(20,20,20,0.85);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/* score à droite */
+#scorePanel {
+    right: 10px;
+    font-size: 36px;
+    text-align: center;
+}
+
+/* historique à gauche */
+#historyPanel {
+    left: 10px;
+    font-size: 18px;
+}
+
+.historyItem {
+    margin: 6px 0;
+    padding: 4px;
+    border-radius: 6px;
 }
 </style>
 </head>
@@ -53,27 +84,36 @@ button {
 
 <canvas id="canvas"></canvas>
 
+<!-- ================= HISTORIQUE ================= -->
+<div id="historyPanel" class="panel">
+    <b>Historique</b>
+    <div id="history"></div>
+</div>
+
+<!-- ================= SCORE ================= -->
+<div id="scorePanel" class="panel">
+    <b>Score global</b>
+    <div id="score">-</div>
+</div>
+
+<!-- ================= CONTROLES ================= -->
 <div id="controls">
 
 <div>
-Angle : <span id="angleValue">137</span>°
+Angle : <span id="angleValue">0</span>°
 </div>
 
-<input type="range" id="slider" min="0" max="180" value="137">
+<input type="range" id="slider" min="0" max="180" step="0.5" value="137">
 
 <br>
 
 <button id="goldenBtn">🌻 Angle d'or</button>
 
-<div id="score">Score : -</div>
-
 </div>
 
 <script>
 
-// ======================
-// CANVAS
-// ======================
+// ================= CANVAS =================
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -84,81 +124,119 @@ function resize(){
 resize();
 window.onresize = resize;
 
-// ======================
-// VARIABLES
-// ======================
-let angle = 137;
+// ================= VARIABLES =================
+let angle = 0;
 let points = [];
 const maxPoints = 800;
+const scale = 9;
 
-// ======================
-// UI
-// ======================
+// état expérimental
+let isRunning = false;
+
+// historique
+let history = [];
+
+// ================= UI =================
 const slider = document.getElementById("slider");
 const angleValue = document.getElementById("angleValue");
 const scoreBox = document.getElementById("score");
+const historyBox = document.getElementById("history");
 const goldenBtn = document.getElementById("goldenBtn");
 
-// ======================
-// INTERACTIONS
-// ======================
+// ================= COULEURS =================
+function colorFromScore(t){
+    if(t >= 0.75) return "rgb(0,200,0)";
+    else if(t >= 0.5) return "rgb(255,220,0)";
+    else if(t >= 0.25) return "rgb(255,140,0)";
+    else return "rgb(255,0,0)";
+}
+
+// ================= DISTANCE =================
+function dist(a,b){
+    return Math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2);
+}
+
+// ================= RESET =================
+function reset(){
+    points = [];
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+// ================= HISTORIQUE =================
+function addHistory(){
+
+    history.unshift({
+        angle: angle,
+        score: currentScore
+    });
+
+    if(history.length > 10){
+        history.pop();
+    }
+
+    renderHistory();
+}
+
+function renderHistory(){
+
+    historyBox.innerHTML = "";
+
+    history.forEach(h => {
+
+        let div = document.createElement("div");
+        div.className = "historyItem";
+
+        let pct = Math.round(h.score * 100);
+
+        div.style.color = colorFromScore(h.score);
+        div.innerHTML = `${h.angle.toFixed(1)}° → ${pct}%`;
+
+        historyBox.appendChild(div);
+    });
+}
+
+// ================= INTERACTIONS =================
 slider.oninput = function(){
     angle = parseFloat(this.value);
     angleValue.textContent = angle;
+
     reset();
+
+    isRunning = true;
 };
 
 goldenBtn.onclick = function(){
     angle = 137.5;
     slider.value = 137.5;
     angleValue.textContent = "137.5";
+
     reset();
+
+    isRunning = true;
 };
 
-// ======================
-// RESET
-// ======================
-function reset(){
-    points = [];
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-}
+// ================= SCORE GLOBAL =================
+let currentScore = 0;
 
-// ======================
-// DISTANCE
-// ======================
-function dist(a,b){
-    return Math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2);
-}
-
-// ======================
-// COULEURS 4 CLASSES
-// ======================
-function colorFromScore(t){
-    if(t >= 0.75) return "rgb(0,200,0)";      // vert
-    else if(t >= 0.5) return "rgb(255,220,0)"; // jaune
-    else if(t >= 0.25) return "rgb(255,140,0)";// orange
-    else return "rgb(255,0,0)";               // rouge
-}
-
-// ======================
-// ANIMATION
-// ======================
+// ================= ANIMATION =================
 function update(){
 
-    // ajout progressif des points
     if(points.length < maxPoints){
 
         let i = points.length;
 
-        let r = Math.sqrt(i) * 6;
+        let cx = canvas.width / 2;
+        let cy = canvas.height * 0.40;
+
+        let r = Math.sqrt(i) * scale;
         let theta = i * angle * Math.PI / 180;
 
-        let x = canvas.width/2 + r*Math.cos(theta);
-        let y = canvas.height/2 + r*Math.sin(theta);
+        let x = cx + r * Math.cos(theta);
+        let y = cy + r * Math.sin(theta);
 
         let p = {x:x, y:y, score:1};
 
-        // distance minimale aux autres points
+        // ================= SCORE LOCAL =================
         let minD = Infinity;
 
         for(let other of points){
@@ -166,13 +244,9 @@ function update(){
             if(d < minD) minD = d;
         }
 
-        // ======================
-        // SCORE STABLE (CORRIGÉ)
-        // ======================
+        let dExpected = 16;
 
-        let dExpected = 0.9 * Math.sqrt(i + 1);
         let t = minD / dExpected;
-
         t = Math.max(0, Math.min(1, t));
 
         p.score = t;
@@ -180,9 +254,7 @@ function update(){
         points.push(p);
     }
 
-    // ======================
-    // SCORE GLOBAL + STATISTIQUES
-    // ======================
+    // ================= SCORE GLOBAL =================
     let total = 0;
     let verts = 0;
     let jaunes = 0;
@@ -198,21 +270,28 @@ function update(){
         else rouges++;
     }
 
-    let score = points.length ? total / points.length : 0;
+    currentScore = points.length ? total / points.length : 0;
+
+    let pct = Math.round(currentScore * 100);
 
     scoreBox.innerHTML =
-    "Score : " + score.toFixed(3) + "<br>" +
-    "🟢 " + verts + "  🟡 " + jaunes + "  🟠 " + oranges + "  🔴 " + rouges;
+        `${pct}%<br>
+        🟢 ${verts} 🟡 ${jaunes}<br>
+        🟠 ${oranges} 🔴 ${rouges}`;
 
-    // ======================
-    // DESSIN
-    // ======================
+    // ================= FIN EXPERIENCE =================
+    if(points.length === maxPoints && isRunning){
+        addHistory();
+        isRunning = false;
+    }
+
+    // ================= DESSIN =================
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     for(let p of points){
         ctx.fillStyle = colorFromScore(p.score);
         ctx.beginPath();
-        ctx.arc(p.x,p.y,3,0,Math.PI*2);
+        ctx.arc(p.x,p.y,5,0,Math.PI*2);
         ctx.fill();
     }
 

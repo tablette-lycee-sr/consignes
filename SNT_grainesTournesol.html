@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Tournesol</title>
+<title>Langage des semences 🌱</title>
 
 <style>
     body {
@@ -21,8 +21,23 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        background: rgba(0,0,0,0.7);
-        padding: 10px;
+        background: rgba(0,0,0,0.85);
+        padding: 20px;
+    }
+
+    #angleValue {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    #label {
+        font-size: 28px;
+    }
+
+    input[type=range] {
+        width: 90%;
+        height: 40px;
+        margin-top: 15px;
     }
 </style>
 </head>
@@ -32,17 +47,14 @@
 <canvas id="canvas"></canvas>
 
 <div id="controls">
-    Angle : <span id="angleValue">137</span>°
-    <br>
+    <div id="label">Angle : <span id="angleValue">137</span>°</div>
     <input type="range" id="slider" min="0" max="180" value="137">
 </div>
 
 <script>
-// Canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Ajuster la taille
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -50,25 +62,21 @@ function resize() {
 resize();
 window.onresize = resize;
 
-// Variables
 let angle = 137;
 let i = 0;
 const maxPoints = 800;
 
-// Slider
 const slider = document.getElementById("slider");
 const angleValue = document.getElementById("angleValue");
 
 slider.oninput = function() {
     angle = this.value;
     angleValue.textContent = angle;
-    
-    // reset animation
+
     i = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
 
-// Animation
 function draw() {
     if (i < maxPoints) {
         let r = Math.sqrt(i) * 6;
@@ -79,7 +87,7 @@ function draw() {
 
         ctx.fillStyle = "gold";
         ctx.beginPath();
-        ctx.arc(x, y, 3, 0, 2 * Math.PI);
+        ctx.arc(x, y, 4, 0, 2 * Math.PI);
         ctx.fill();
 
         i++;
